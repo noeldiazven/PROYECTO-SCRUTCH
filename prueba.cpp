@@ -1,24 +1,25 @@
 #include<iostream>
 using namespace std;
-typedef int T;
 
-/*MODIFIQUEN ESTE CODIGO PARA PROBAR*/
-/*PRUEBEN TODOS LOS COMANDOS DE GITHUB*/
+template<typename valor>
 
 class prueba{
-private:
-    T valor;
+    valor x;
+    valor y;
 public:
-    prueba(T valor_inicial=0){valor=valor_inicial;}
-    void cambiar(T nuevo){valor=nuevo;}
-    void print(){cout<<this->valor<<endl;}
-};
-
-int main(){
-    cout<<"hello world"<<endl;
-    prueba nuevo;
-    nuevo.print();
-    nuevo.cambiar(4);
-    nuevo.print();
-    return 0;
+    prueba(valor eje_x=0,valor eje_Y=0){
+        x=eje_x;
+        y=eje_Y;
     }
+    valor sumar_valores(valor,valor);
+};
+// siempre se pone templete denuevo aqui avajo
+template<typename valor>
+valor prueba<valor>::sumar_valores(valor a,valor b){
+    return a+b;
+}
+int main(){
+    prueba <int>uno;
+    cout<<uno.sumar_valores(4,4);
+    return 0;
+}
