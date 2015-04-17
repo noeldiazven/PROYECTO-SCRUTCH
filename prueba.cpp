@@ -9,7 +9,7 @@ class prueba{
 private:
     T valor;
 public:
-    prueba(){valor=0;}
+    prueba(T valor_inicial=0){valor=valor_inicial;}
     void cambiar(T nuevo){valor=nuevo;}
     void print(){cout<<this->valor<<endl;}
 };
