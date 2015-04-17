@@ -3,6 +3,7 @@ using namespace std;
 typedef int T;
 
 /*MODIFIQUEN ESTE CODIGO PARA PROBAR*/
+/*PRUEBEN TODOS LOS COMANDOS DE GITHUB*/
 
 class prueba{
 private:
