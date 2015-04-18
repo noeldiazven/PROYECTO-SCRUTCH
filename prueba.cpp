@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+typedef int T;
+
 template<typename valor>
 
 class prueba{
@@ -12,14 +14,22 @@ public:
         y=eje_Y;
     }
     valor sumar_valores(valor,valor);
+    void multiplicar_valores(T*);
 };
-// siempre se pone templete denuevo aqui avajo
+// siempre se pone template de nuevo aqui abajo
 template<typename valor>
 valor prueba<valor>::sumar_valores(valor a,valor b){
     return a+b;
 }
+template<typename valor>
+void prueba<valor>::multiplicar_valores(T * resultado){
+    *resultado=x*y;
+}
 int main(){
-    prueba <int>uno;
-    cout<<uno.sumar_valores(4,4);
+    prueba <int>uno(5,6);
+    cout<<uno.sumar_valores(4,4)<<endl;
+    T resultado;
+    uno.multiplicar_valores(&resultado);
+    cout<<resultado;
     return 0;
 }
