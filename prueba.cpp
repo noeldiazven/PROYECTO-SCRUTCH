@@ -33,3 +33,4 @@ int main(){
     cout<<resultado;
     return 0;
 }
+// ayque implementar los smart points
