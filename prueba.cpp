@@ -40,15 +40,14 @@ public:
     void display_r(){cout<<x<<","<<y<<endl;}
 };
 
-///////clase smart pointer pero sin template, relacionado con la clase recta//////
-class s_pointer
-
+///////clase smart pointer con template//////
+template<typename P> class s_pointer
 {
-    recta *m_p;
+    P *m_p;
 public:
 
 
-    s_pointer(recta * new_m_p) : m_p(new_m_p)
+    s_pointer(P * new_m_p) : m_p(new_m_p)
     {
     }
     ~s_pointer()
@@ -78,7 +77,7 @@ int main(){
     //////Prueba de punteros inteligentes////
     ////////////////////////////////////////
 
-    s_pointer r1(new recta());
+    s_pointer <recta> r1(new recta(3,1));
     r1->display_r();
 
 
