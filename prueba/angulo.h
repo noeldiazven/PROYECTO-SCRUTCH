@@ -1,18 +1,18 @@
-#ifndef MOVER
-#define MOVER
+#ifndef ANGULO_H
+#define ANGULO_H
+#include <QtCore/qglobal.h>
 #include<QWidget>
 #include "gato.h"
 #include <QMouseEvent>
 #include <QTextEdit>
-
-class Mover: public QWidget{
+class Angulo: public QWidget{
 private:
     int pasos;
-    Gato * obj;//puntero al gato
+    Gato * obj;
     QTextEdit * setpasos;
     entero mover_x;entero mover_y;
 public:
-    Mover(Gato * g);
+    Angulo(Gato *g);
     entero get_mover_x();
     entero get_mover_y();
     void set_mover_x(entero valor);
@@ -22,5 +22,5 @@ public:
     void mouseDoubleClickEvent( QMouseEvent * event );//evento del doble click
     void mouseMoveEvent(QMouseEvent * event);
 };
-#endif // MOVER
 
+#endif // ANGULO_H

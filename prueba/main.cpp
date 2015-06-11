@@ -6,7 +6,7 @@
 #include "mover.h"
 #include "gato.h"
 #include <thread>
-
+#include <angulo.h>
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
@@ -14,18 +14,24 @@ int main(int argc, char *argv[])
     QMainWindow *window = new QMainWindow();
     //titulo
     window->setWindowTitle(QString::fromUtf8("QT - Capture Mouse Move"));
-    window->resize(700, 400);
+    window->resize(900, 400);
 
 ///////////////////
     QWidget * Botones=new QWidget(window);
-    Botones->resize(350,400);
-    Botones->setGeometry(0,0,350,400);
-    Botones->setStyleSheet("background-color:#B5B3B3;");
+    Botones->setGeometry(0,0,300,400);
+    Botones->setStyleSheet("background-color:#B5B3B04;");
+
+   // QWidget * Botones1=new QWidget(window);
+    //Botones1->setGeometry(0,0,300,400);
+   // Botones1->setStyleSheet("background-color:#B5B3B3;");
 
     QWidget * mostrador=new QWidget(window);
-    mostrador->resize(350,400);
-    mostrador->setGeometry(350,0,350,400);
+    mostrador->setGeometry(600,0,300,400);
     mostrador->setStyleSheet("background-color:#FFFFFF;");
+
+    QWidget * operaciones=new QWidget(window);
+    operaciones->setGeometry(300,0,300,400);
+    operaciones->setStyleSheet("background-color:#79E592;");
 
 
 ///////////////////////////////
@@ -38,6 +44,9 @@ int main(int argc, char *argv[])
 ///////////////////BOTONES/////
     Mover * m1=new Mover(g1);
     m1->setParent(Botones);//agregandolo al widget botones
+
+    Angulo * a1=new Angulo(g1);
+    a1->setParent(Botones);//agregandolo al widget botones
 
 ///////////////////////////////
 

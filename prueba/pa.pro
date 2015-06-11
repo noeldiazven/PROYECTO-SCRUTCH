@@ -16,12 +16,14 @@ CONFIG += c++11
 SOURCES += main.cpp \
     boton.cpp \
     mover.cpp \
-    gato.cpp
+    gato.cpp \
+    angulo.cpp
 
 HEADERS  += \
     mylabel.h \
     boton.h \
     mover.h \
-    gato.h
+    gato.h \
+    angulo.h
 
 FORMS    +=
