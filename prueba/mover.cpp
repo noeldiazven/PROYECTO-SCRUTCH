@@ -53,6 +53,7 @@ void Mover::mover(entero a, entero b)
 void Mover::mouseDoubleClickEvent(QMouseEvent *event)
 {
     //mover gato al hacer dobleclick
+    pasos=setpasos->toPlainText().toInt();
     if(mover_x>0 && mover_x<300){obj->mover(pasos);}
 }
 
@@ -63,6 +64,5 @@ void Mover::mouseMoveEvent(QMouseEvent *event)
         mover(event->x(),event->y());
 
         qDebug() << "funciona\n"<<event->x()<<","<<event->y()<<"\n";
-
     }
 }
