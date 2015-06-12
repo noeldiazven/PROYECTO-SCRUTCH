@@ -14,16 +14,15 @@ TEMPLATE = app
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    boton.cpp \
     mover.cpp \
     gato.cpp \
-    angulo.cpp
+    angulo.cpp \
+    ventana.cpp
 
 HEADERS  += \
-    mylabel.h \
-    boton.h \
     mover.h \
     gato.h \
-    angulo.h
+    angulo.h \
+    ventana.h
 
 FORMS    +=

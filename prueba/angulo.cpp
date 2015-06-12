@@ -68,7 +68,7 @@ void Angulo::mover(entero a, entero b)
 void Angulo::mouseDoubleClickEvent(QMouseEvent *event)
 {
     //mover gato al hacer dobleclick
-    obj->mover(pasos);
+    if(mover_x>0 &&mover_x<300){obj->mover(pasos);}
 }
 
 void Angulo::mouseMoveEvent(QMouseEvent *event)

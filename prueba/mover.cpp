@@ -5,10 +5,9 @@
 #include  <QLabel>
 #include <iostream>
 #include <QTextEdit>
-
 #include <QDebug>
-//constructor del mover
 
+//constructor del mover
 Mover::Mover(Gato * g)
 {
     obj=g;
@@ -26,7 +25,7 @@ Mover::Mover(Gato * g)
     layout->addWidget(l1);
 
     setpasos=new QTextEdit(this);
-    setpasos->setGeometry(70,15,10,10);
+    setpasos->setGeometry(70,15,20,20);
     layout->addWidget(setpasos);
 }
 
@@ -44,7 +43,6 @@ void Mover::set_mover_y(entero valor){
 }
 
 
-
 void Mover::mover(entero a, entero b)
 {
     set_mover_x(a);
@@ -55,13 +53,13 @@ void Mover::mover(entero a, entero b)
 void Mover::mouseDoubleClickEvent(QMouseEvent *event)
 {
     //mover gato al hacer dobleclick
-    obj->mover(pasos);
+    if(mover_x>0 && mover_x<300){obj->mover(pasos);}
 }
 
 void Mover::mouseMoveEvent(QMouseEvent *event)
 {
     if(event->buttons()==Qt::LeftButton){
-        //mover(event->x(),0);
+
         mover(event->x(),event->y());
 
         qDebug() << "funciona\n"<<event->x()<<","<<event->y()<<"\n";
