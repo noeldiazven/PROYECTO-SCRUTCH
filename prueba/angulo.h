@@ -7,7 +7,7 @@
 #include <QTextEdit>
 class Angulo: public QWidget{
 private:
-    int pasos;
+    int angulo;
     Gato * obj;
     QTextEdit * setpasos;
     entero mover_x;entero mover_y;
@@ -21,6 +21,7 @@ public:
     void mover(entero x,entero y);
     void mouseDoubleClickEvent( QMouseEvent * event );//evento del doble click
     void mouseMoveEvent(QMouseEvent * event);
+    void mousePressEvent(QMouseEvent * event);
 };
 
 #endif // ANGULO_H
