@@ -29,15 +29,16 @@ void Gato::set_posicion_y(entero valor){
     posicion_y+=valor;
 }
 void Gato::set_cambiar_posicion_x(entero valor){
-    cambiar_posicion_x=valor;
+    cambiar_posicion_x+=valor;
 }
 
 void Gato::set_cambiar_posicion_y(entero valor){
-    cambiar_posicion_y=valor;
+    cambiar_posicion_y+=valor;
 }
 
 void Gato::mover_gato(entero a, entero b){
     set_posicion_x(a);
     set_posicion_y(b);
     this->setGeometry(get_posicion_x(),get_posicion_y(),50,50);
+
 }

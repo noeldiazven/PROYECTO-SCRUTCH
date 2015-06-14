@@ -8,6 +8,7 @@
 class Mover: public QWidget{
 private:
     int pasos;
+    Mover *entrada;
     Gato * obj;//puntero al gato
     QTextEdit * setpasos;
     entero mover_x;entero mover_y;

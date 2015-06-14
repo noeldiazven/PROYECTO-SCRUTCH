@@ -1,7 +1,7 @@
 #ifndef GATO
 #define GATO
 #include<QWidget>
-typedef int(entero);
+typedef double(entero);
 class Gato:public QWidget{
 private:
     entero posicion_x;

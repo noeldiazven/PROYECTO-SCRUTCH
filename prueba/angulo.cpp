@@ -6,12 +6,21 @@
 #include  <QLabel>
 #include <iostream>
 #include <QTextEdit>
+#include <math.h>
 #include <QLineEdit>
 #include <QDebug>
+#include <QTransform>
+#include <QPixmap>
+#include <QTimer>
+#include <qmath.h>
+#include <QGraphicsPixmapItem>
+#include <QObject>
+#include <QList> // list << element
+#include <QPointF>
 Angulo::Angulo(Gato*g){
 
     obj=g;
-    angulo=0;
+    direccion=0;
     mover_x=125;
     mover_y=100;
 
@@ -22,25 +31,16 @@ Angulo::Angulo(Gato*g){
     //add text
     QHBoxLayout* layout = new QHBoxLayout(this);
     QLabel * l4=new QLabel();
-    l4->setText("Angulo");
+    l4->setText("girar");
     l4->setAlignment(Qt::AlignCenter);
     layout->addWidget(l4);
-/*
-
-   QWidget *win = new QWidget();
-   QVBoxLayout* layou = new QVBoxLayout(this);
-   layou->setAlignment(Qt::AlignHCenter);
-   QFrame * line = new QFrame(win);
-   line->setObjectName(QString::fromUtf8("line"));
-   line->setFrameShape(QFrame::HLine);
-   line->setLineWidth(2); line->setFrameShadow(QFrame::Plain);
-   layou->insertWidget(74, line);
-   QLineEdit* ln1 = new QLineEdit();
-   ln1->setText("1"); ln1->setFixedWidth(ln1->width() / 4);*/
 
    setpasos=new QTextEdit(this);
    setpasos->setGeometry(70,15,20,20);
    layout->addWidget(setpasos);
+
+
+
 
 }
 
@@ -67,26 +67,32 @@ void Angulo::mover(entero a, entero b)
 }
 
 void Angulo::mouseDoubleClickEvent(QMouseEvent *event){
-    angulo=setpasos->toPlainText().toInt();
-    if(angulo>0&&angulo<90){
-        obj->set_cambiar_posicion_y(-angulo);
-        //if(get_mover_x()>0 &&get_mover_x()<300){obj->mover_gato(angulo,0);}
-    }
-    else if(angulo==90){
-        obj->set_posicion_y(-(obj->get_posicion_x()));
-        obj->set_posicion_x(0);
+
+
+    direccion=setpasos->toPlainText().toInt();
+
+
+    dobles dy =qSin(qDegreesToRadians(direccion));
+    dobles dx =qCos(qDegreesToRadians(direccion));
+
+    if(direccion>0&&direccion<=45){
+        //obj->set_cambiar_posicion_x(+dx);
+        obj->set_cambiar_posicion_y(-dy);
 
     }
-    //d=pasos;
-    //i=0;
-   //if(get_mover_x()>0 &&get_mover_x()<300){obj->mover_gato(pasos,0);}
-   //if(mover_x>0 && mover_x<300){obj->mover_gato(,i);}
+
+    else if(direccion<90&&direccion>45){
+        obj->set_cambiar_posicion_y((dx+dy));
+
+
+    }
+
 }
 
 void Angulo::mouseMoveEvent(QMouseEvent *event)
 {
     if(event->buttons()==Qt::LeftButton){
-        angulo=setpasos->toPlainText().toInt();
+        direccion=setpasos->toPlainText().toInt();
 
         //mover(event->x(),0);
         mover(event->x(),event->y());
@@ -97,16 +103,14 @@ void Angulo::mouseMoveEvent(QMouseEvent *event)
     //if(event->button()==Qt::)
 
 }
-void Angulo::mousePressEvent(QMouseEvent *event){
-   /* angulo=setpasos->toPlainText().toInt();
-    if(angulo>0&&angulo<90){
-        obj->set_cambiar_posicion_y(45);
-        //if(get_mover_x()>0 &&get_mover_x()<300){obj->mover_gato(angulo,0);}
-    }
-    else if(angulo==90){
-        obj->set_posicion_y(-(obj->get_posicion_x()));
-        obj->set_posicion_x(0);
+void Angulo::paintEvent(QPaintEvent*e){
 
-    }*/
+    QPainter painter(this);
+    painter.setPen(QPen(Qt::blue,1,Qt::DashLine));
+
+    //QTransform obj->get_cambiar_posicion_y();
+
+
 }
+
 

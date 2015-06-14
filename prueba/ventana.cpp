@@ -36,4 +36,6 @@ ventana::ventana()
     botonangulo=new Angulo(cat);
     botonangulo->setParent(Botones);
 
+
+
 }

@@ -6,7 +6,6 @@
 #include <iostream>
 #include <QTextEdit>
 #include <QDebug>
-
 //constructor del mover
 Mover::Mover(Gato * g)
 {
@@ -27,6 +26,10 @@ Mover::Mover(Gato * g)
     setpasos=new QTextEdit(this);
     setpasos->setGeometry(70,15,20,20);
     layout->addWidget(setpasos);
+
+
+
+
 }
 
 entero Mover::get_mover_x(){
@@ -60,6 +63,7 @@ void Mover::set_i(entero valor){
 
 void Mover::mover_gato(entero a, entero b)
 {
+    //transform: obj->Gato{origin.x:25;origin.y:25;angle:45};
     set_mover_x(a);
     set_mover_y(b);
     this->setGeometry(get_mover_x(),get_mover_y(),100,50);
