@@ -23,8 +23,8 @@ public:
     void set_mover_y(entero valor);
 
     void mover(entero x,entero y);
-    void mouseDoubleClickEvent( QMouseEvent * event );//evento del doble click
-    void mouseMoveEvent(QMouseEvent * event);
+    void mouseDoubleClickEvent( QMouseEvent * evento );//evento del doble click
+    void mouseMoveEvent(QMouseEvent * evento);
     void rotateLabel();
     void paintEvent(QPaintEvent*);
 

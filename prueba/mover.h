@@ -1,17 +1,11 @@
 #ifndef MOVER
 #define MOVER
-#include<QWidget>
-#include "gato.h"
-#include <QMouseEvent>
-#include <QTextEdit>
+#include "funciones.h"
 
-class Mover: public QWidget{
+class Mover: public Funciones{
 private:
     int pasos;
     Mover *entrada;
-    Gato * obj;//puntero al gato
-    QTextEdit * setpasos;
-    entero mover_x;entero mover_y;
     int d=0 ;
     int  i=0;
 public:

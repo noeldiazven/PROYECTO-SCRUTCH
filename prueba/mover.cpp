@@ -69,7 +69,7 @@ void Mover::mover_gato(entero a, entero b)
     this->setGeometry(get_mover_x(),get_mover_y(),100,50);
 }
 
-void Mover::mouseDoubleClickEvent(QMouseEvent *event)
+void Mover::mouseDoubleClickEvent(QMouseEvent *evento)
 {
     //mover gato al hacer dobleclick
     pasos=setpasos->toPlainText().toInt();
