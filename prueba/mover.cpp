@@ -65,6 +65,7 @@ void Mover::mouseDoubleClickEvent(QMouseEvent *event)
 
     qDebug() << obj->get_posicion_x()<<"   "<<obj->get_posicion_y();
     //obj->set_receptor(obj->get_receptor());
+<<<<<<< HEAD
     if (obj->get_cambiar_posicion_x()!=0||obj->get_cambiar_posicion_y()!=0){
         if(get_mover_x()>0 && get_mover_x()<300){
             obj->mover_gato(obj->get_cambiar_posicion_x()*pasos,obj->get_cambiar_posicion_y()*pasos);
@@ -74,6 +75,11 @@ void Mover::mouseDoubleClickEvent(QMouseEvent *event)
         if(get_mover_x()>0 && get_mover_x()<300){
             obj->mover_gato(pasos,0);
         }
+=======
+
+    if(get_mover_x()>0 && get_mover_x()<300){
+        obj->mover_gato(obj->get_cambiar_posicion_x()*pasos,obj->get_cambiar_posicion_y()*pasos);
+>>>>>>> 087a7a37ad3aca2e72f52eaaf5f86ef926c14fc6
     }
 
 
