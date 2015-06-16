@@ -7,16 +7,7 @@
 #include <iostream>
 #include <QTextEdit>
 #include <math.h>
-#include <QLineEdit>
-#include <QDebug>
-#include <QTransform>
-#include <QPixmap>
-#include <QTimer>
-#include <qmath.h>
-#include <QGraphicsPixmapItem>
-#include <QObject>
-#include <QList> // list << element
-#include <QPointF>
+
 Angulo::Angulo(Gato*g){
 
     obj=g;
@@ -38,10 +29,6 @@ Angulo::Angulo(Gato*g){
    setpasos=new QTextEdit(this);
    setpasos->setGeometry(70,15,20,20);
    layout->addWidget(setpasos);
-
-
-
-
 }
 
 entero Angulo::get_mover_x(){
@@ -70,22 +57,15 @@ void Angulo::mouseDoubleClickEvent(QMouseEvent *event){
 
 
     direccion=setpasos->toPlainText().toInt();
+    obj->set_receptor(direccion);
 
+    dobles dy=sin((obj->get_receptor()*pi)/180);
+    dobles dx=cos((obj->get_receptor()*pi)/180);
 
-    dobles dy =qSin(qDegreesToRadians(direccion));
-    dobles dx =qCos(qDegreesToRadians(direccion));
-
-    if(direccion>0&&direccion<=45){
+    qDebug() << "cos\n"<<dx<<"  seno "<<dy;
         //obj->set_cambiar_posicion_x(+dx);
         obj->set_cambiar_posicion_y(-dy);
-
-    }
-
-    else if(direccion<90&&direccion>45){
-        obj->set_cambiar_posicion_y((dx+dy));
-
-
-    }
+        obj->set_cambiar_posicion_x(dx);
 
 }
 
@@ -100,6 +80,7 @@ void Angulo::mouseMoveEvent(QMouseEvent *event)
         qDebug() << "funciona\n"<<event->x()<<","<<event->y()<<"\n";
 
     }
+
     //if(event->button()==Qt::)
 
 }
@@ -108,7 +89,6 @@ void Angulo::paintEvent(QPaintEvent*e){
     QPainter painter(this);
     painter.setPen(QPen(Qt::blue,1,Qt::DashLine));
 
-    //QTransform obj->get_cambiar_posicion_y();
 
 
 }
