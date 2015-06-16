@@ -18,13 +18,13 @@ SOURCES += main.cpp \
     gato.cpp \
     angulo.cpp \
     ventana.cpp \
-    funciones.cpp
+    unicadireccion.cpp
 
 HEADERS  += \
     mover.h \
     gato.h \
     angulo.h \
     ventana.h \
-    funciones.h
+    unicadireccion.h
 
 FORMS    +=

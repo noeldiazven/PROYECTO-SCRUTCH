@@ -36,12 +36,6 @@ entero Mover::get_mover_x(){
     return mover_x;
 }
 
-entero Mover::get_d(){
-    return d;
-}
-entero Mover::get_i(){
-    return i;
-}
 
 entero Mover::get_mover_y(){
     return mover_y;
@@ -53,15 +47,9 @@ void Mover::set_mover_y(entero valor){
     mover_y+=valor;
 }
 
-void Mover::set_d(entero valor){
-    d=valor;
-}
-void Mover::set_i(entero valor){
-    i=valor;
-}
 
 
-void Mover::mover_gato(entero a, entero b)
+void Mover::mover(entero a, entero b)
 {
     //transform: obj->Gato{origin.x:25;origin.y:25;angle:45};
     set_mover_x(a);
@@ -69,15 +57,25 @@ void Mover::mover_gato(entero a, entero b)
     this->setGeometry(get_mover_x(),get_mover_y(),100,50);
 }
 
-void Mover::mouseDoubleClickEvent(QMouseEvent *evento)
+void Mover::mouseDoubleClickEvent(QMouseEvent *event)
 {
+
     //mover gato al hacer dobleclick
     pasos=setpasos->toPlainText().toInt();
-    obj->set_posicion_y(obj->get_cambiar_posicion_y());
-    d=pasos;
-    i=0;
-    if(get_mover_x()>0 &&get_mover_x()<300){obj->mover_gato(d,obj->get_cambiar_posicion_y());}
-    //if(mover_x>0 && mover_x<300){obj->mover_gato(d,obj->get_cambiar_posicion_y());}
+
+    qDebug() << obj->get_posicion_x()<<"   "<<obj->get_posicion_y();
+    //obj->set_receptor(obj->get_receptor());
+    if (obj->get_cambiar_posicion_x()!=0||obj->get_cambiar_posicion_y()!=0){
+        if(get_mover_x()>0 && get_mover_x()<300){
+            obj->mover_gato(obj->get_cambiar_posicion_x()*pasos,obj->get_cambiar_posicion_y()*pasos);
+        }
+    }
+    else{
+        if(get_mover_x()>0 && get_mover_x()<300){
+            obj->mover_gato(pasos,0);
+        }
+    }
+
 
 }
 
@@ -85,7 +83,7 @@ void Mover::mouseMoveEvent(QMouseEvent *evento)
 {
     if(evento->buttons()==Qt::LeftButton){
         //mover(event->x(),0);
-        mover_gato(evento->x(),evento->y());
+        mover(evento->x(),evento->y());
 
         qDebug() << "funciona\n"<<evento->x()<<","<<evento->y()<<"\n";
 
