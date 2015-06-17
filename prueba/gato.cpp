@@ -41,11 +41,11 @@ void Gato::set_posicion_y(entero valor){
 }
 //---------------------------------------
 void Gato::set_cambiar_posicion_x(entero valor){
-    cambiar_posicion_x=valor;
+    cambiar_posicion_x = valor;
 }
 
 void Gato::set_cambiar_posicion_y(entero valor){
-    cambiar_posicion_y=valor;
+    cambiar_posicion_y = valor;
 }
 
 void Gato::mover_gato(entero a, entero b){

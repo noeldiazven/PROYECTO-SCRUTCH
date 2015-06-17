@@ -17,22 +17,14 @@ SOURCES += main.cpp \
     mover.cpp \
     gato.cpp \
     angulo.cpp \
-<<<<<<< HEAD
     ventana.cpp \
     unicadireccion.cpp
-=======
-    ventana.cpp
->>>>>>> 087a7a37ad3aca2e72f52eaaf5f86ef926c14fc6
 
 HEADERS  += \
     mover.h \
     gato.h \
     angulo.h \
-<<<<<<< HEAD
     ventana.h \
     unicadireccion.h
-=======
-    ventana.h
->>>>>>> 087a7a37ad3aca2e72f52eaaf5f86ef926c14fc6
 
 FORMS    +=

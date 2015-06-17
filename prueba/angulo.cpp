@@ -57,15 +57,25 @@ void Angulo::mouseDoubleClickEvent(QMouseEvent *event){
 
 
     direccion=setpasos->toPlainText().toInt();
-    obj->set_receptor(direccion);
+
+    if(obj->get_receptor()!=direccion){
+        obj->set_cambiar_posicion_x(0);
+        obj->set_cambiar_posicion_y(0);
+        obj->set_receptor(direccion);
+    }
+
+
+    if(obj->get_receptor() == direccion){
+        obj->set_receptor(direccion);
+    }
 
     dobles dy=sin((obj->get_receptor()*pi)/180);
     dobles dx=cos((obj->get_receptor()*pi)/180);
 
     qDebug() << "cos\n"<<dx<<"  seno "<<dy;
         //obj->set_cambiar_posicion_x(+dx);
-        obj->set_cambiar_posicion_y(-dy);
-        obj->set_cambiar_posicion_x(dx);
+    obj->set_cambiar_posicion_y(-dy);
+    obj->set_cambiar_posicion_x(dx);
 
 }
 
