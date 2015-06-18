@@ -2,26 +2,20 @@
 #define MOVER
 #include<QWidget>
 #include "gato.h"
+#include "bloques.h"
+#include <QGraphicsPixmapItem>
 #include <QMouseEvent>
 #include <QTextEdit>
+#include <QLabel>
 
-class Mover: public QWidget{
+class Mover:public Bloques{
 private:
-    int pasos;
+    entero pasos;
     Mover *entrada;
     Gato * obj;//puntero al gato
     QTextEdit * setpasos;
-    entero mover_x;entero mover_y;
 public:
     Mover(Gato * g);
-    entero get_mover_x();
-    entero get_mover_y();
-    void set_mover_x(entero valor);
-    void set_mover_y(entero valor);
-
-    void mover(entero x,entero y);
-    void mouseDoubleClickEvent( QMouseEvent * evento );//evento del doble click
-    void mouseMoveEvent(QMouseEvent * evento);
+    void mouseDoubleClickEvent(QMouseEvent * evento);//evento del doble click
 };
 #endif // MOVER
-

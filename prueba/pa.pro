@@ -18,13 +18,18 @@ SOURCES += main.cpp \
     gato.cpp \
     angulo.cpp \
     ventana.cpp \
-    unicadireccion.cpp
+    unicadireccion.cpp \
+    bloques.cpp
 
 HEADERS  += \
     mover.h \
     gato.h \
     angulo.h \
     ventana.h \
-    unicadireccion.h
+    unicadireccion.h \
+    bloques.h
 
 FORMS    +=
+
+RESOURCES += \
+    image.qrc

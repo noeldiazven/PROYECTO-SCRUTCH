@@ -1,6 +1,6 @@
 #include<QMainWindow>
 #include "ventana.h"
-
+#include <QLabel>
 
 ventana::ventana()
 {
@@ -25,7 +25,6 @@ ventana::ventana()
     //creando el gato
     cat=new Gato();
     cat->setParent(mostrador);
-
     //creando botones
 
     //agregandolo al boton mover

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>gato.png</file>
+        <file>mover.png</file>
+        <file>girar_izq.png</file>
+    </qresource>
+</RCC>

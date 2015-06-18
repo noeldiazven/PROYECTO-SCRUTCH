@@ -1,8 +1,10 @@
 #ifndef GATO
 #define GATO
 #include<QWidget>
+#include <QGraphicsPixmapItem>
+#include <QLabel>
 typedef double(entero);
-class Gato:public QWidget{
+class Gato:public QLabel{
 private:
     entero posicion_x;
     entero posicion_y;

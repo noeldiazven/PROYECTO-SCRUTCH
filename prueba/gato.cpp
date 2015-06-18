@@ -1,14 +1,16 @@
 #include "gato.h"
+#include <QDebug>
+#include <QGraphicsPixmapItem>
 
 Gato::Gato(){
+    this->setPixmap(QPixmap(":/image/gato.png"));
+
     posicion_x=150;
     posicion_y=150;
     receptor=0;
     cambiar_posicion_x=0;
     cambiar_posicion_y=0;
-    this->setGeometry(get_posicion_x(),get_posicion_y(),50,50);//poniendo en la posicion (x,y) y de tamano (50,50)
-    this->setStyleSheet("background-color:#9347F7;");//cambiar el color del widget
-
+    this->setGeometry(get_posicion_x(),get_posicion_y(),80,80);//poniendo en la posicion (x,y) y de tamano (50,50)
 }
 
 entero Gato::get_receptor(){
@@ -51,6 +53,6 @@ void Gato::set_cambiar_posicion_y(entero valor){
 void Gato::mover_gato(entero a, entero b){
     set_posicion_x(a);
     set_posicion_y(b);
-    this->setGeometry(get_posicion_x(),get_posicion_y(),50,50);
+    this->setGeometry(get_posicion_x(),get_posicion_y(),80,80);
 
 }
