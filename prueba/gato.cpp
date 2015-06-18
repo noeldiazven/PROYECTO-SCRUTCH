@@ -5,7 +5,7 @@
 Gato::Gato(){
     this->setPixmap(QPixmap(":/image/gato.png"));
 
-    posicion_x=150;
+    posicion_x=130;
     posicion_y=150;
     receptor=0;
     cambiar_posicion_x=0;

@@ -11,8 +11,8 @@ Angulo::Angulo(Gato*g){
 
     obj=g;
     direccion=0;
-    mover_x=125;
-    mover_y=100;
+    mover_x=110;
+    mover_y=80;
 
     this->setGeometry(get_mover_x(),get_mover_y(),130,35);
     //this->setStyleSheet("background-color:#00BFFF;");

@@ -10,10 +10,12 @@ Mover::Mover(Gato * g)
 {
     obj=g;
     pasos=10;
-    mover_x=125;
+    mover_x=110;
     mover_y=30;
     this->setGeometry(mover_x,mover_y,130,35);
+    //this->setStyleSheet("background-color:#00BFFF;");
     this->setPixmap(QPixmap(":/image/mover.png"));
+
 
     setpasos=new QTextEdit(this);
     setpasos->setGeometry(51,5,33,23);
