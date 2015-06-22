@@ -5,7 +5,9 @@
 ventana::ventana()
 {
     this->setWindowTitle(QString::fromUtf8("SCRUTCH"));
-    this->resize(900, 400);
+    this->setWindowIcon(QIcon(":/image/logo.png"));
+    this->resize(900,400);
+    this->setMinimumSize(QSize(900,400));
 
     //creando el panel de botones
     Botones=new QWidget(this);
@@ -20,7 +22,7 @@ ventana::ventana()
     //crenado panel de operaciones
     operaciones=new QWidget(Botones);
     operaciones->setGeometry(300,0,300,400);
-    operaciones->setStyleSheet("background-color:#79E592;");
+    operaciones->setStyleSheet("background-color:#A09D9D;");
 
     //creando el gato
     cat=new Gato();
@@ -34,7 +36,5 @@ ventana::ventana()
     //agregandolo al boton angulo
     botonangulo=new Angulo(cat);
     botonangulo->setParent(Botones);
-
-
 
 }

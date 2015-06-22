@@ -1,8 +1,9 @@
 #ifndef GATO
 #define GATO
-#include<QWidget>
-#include <QGraphicsPixmapItem>
 #include <QLabel>
+
+class Bloques;
+
 typedef double(entero);
 class Gato:public QLabel{
 private:
@@ -13,11 +14,11 @@ private:
     entero cambiar_posicion_y;
 
     entero receptor;
+
 public:
     Gato();
     entero get_posicion_x();
     entero get_posicion_y();
-
     entero get_receptor();
     void set_receptor(entero);
 
@@ -31,6 +32,11 @@ public:
     void set_cambiar_posicion_y(entero);
 
     void mover_gato(entero a,entero b);
+
+
+    std::vector <Bloques*> bloques_activos;
+    void agregar_vector(Bloques * nuevo);
+    void verificar(Bloques * nuevo);
 };
 
 #endif // GATO

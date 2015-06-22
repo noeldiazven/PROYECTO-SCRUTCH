@@ -6,6 +6,8 @@
 #include<QMainWindow>
 
 class ventana:public QMainWindow{
+private:
+QSize s;
 protected:
     QWidget * Botones;
     QWidget * mostrador;
@@ -15,6 +17,8 @@ protected:
     Angulo * botonangulo;
 public:
     ventana();
+    QWidget * getbotonmover(){return botonmover;}
+    QWidget * getbotonangulo(){return botonangulo;}
     QWidget * setBotones(){return Botones;}
     QWidget * setmostador(){return mostrador;}
 };

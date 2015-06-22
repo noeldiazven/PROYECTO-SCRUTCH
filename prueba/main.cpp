@@ -1,5 +1,4 @@
 #include <QApplication>
-#include <QMainWindow>
 #include "ventana.h"
 #include <thread>
 

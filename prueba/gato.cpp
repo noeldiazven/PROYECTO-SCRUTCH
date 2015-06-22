@@ -1,6 +1,6 @@
 #include "gato.h"
+#include "bloques.h"
 #include <QDebug>
-#include <QGraphicsPixmapItem>
 
 Gato::Gato(){
     this->setPixmap(QPixmap(":/image/gato.png"));
@@ -33,6 +33,38 @@ entero Gato::get_posicion_x(){
 }
 entero Gato::get_posicion_y(){
     return posicion_y;
+}
+//--------------------------------------VECTOR
+void Gato::agregar_vector(Bloques *nuevo)
+{
+    bloques_activos.push_back(nuevo);
+}
+//VERIFICA SI SE ROZAN
+inline bool verificar_pos(Bloques * a,Bloques * b){
+    if(
+     (((a->get_pointer_back_y()+2>=b->get_pointer_up_y())&&(a->get_pointer_back_y()-2<=b->get_pointer_up_y()))&&
+     ((a->get_pointer_back_x()+5>=b->get_pointer_up_x())&&(a->get_pointer_back_x()-5<=b->get_pointer_up_x())))
+    ){
+        a->set_siguiente(b);
+        return true;
+    }
+    /*
+    else{
+        a->set_siguiente(nullptr);
+        return false;
+    }
+    */
+}
+//RECORRE LA LISTA
+void Gato::verificar(Bloques *nuevo)
+{
+    std::vector<Bloques*>::iterator it;
+    for(it=bloques_activos.begin();it!=bloques_activos.end();it++){
+          if(verificar_pos((*it),nuevo)){
+              qDebug() << "conectado";
+              break;
+          }
+    }
 }
 //-----------------------------------
 void Gato::set_posicion_x(entero valor){
