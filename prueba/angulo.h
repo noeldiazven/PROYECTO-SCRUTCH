@@ -10,9 +10,10 @@ private:
     dobles pi=3.14159265358979323846;
 public:
     Angulo(Gato *g,QWidget * v);
-    void rotateLabel();
+
     void crear_nuevo();
     void correr();
+    void cambiar_direccion();
 };
 
 #endif // ANGULO_H

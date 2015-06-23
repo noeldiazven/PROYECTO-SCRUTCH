@@ -34,7 +34,8 @@ ventana::ventana()
 
     //agregandolo al boton angulo
     botonangulo=new Angulo(cat,Botones);
-
+    //agregando unica direccion
+    botonDireccion=new UnicaDireccion(cat,Botones);
     //agregando el boton correr
     botoninicio=new inicio(cat,Botones);
 

@@ -18,18 +18,18 @@ SOURCES += main.cpp \
     gato.cpp \
     angulo.cpp \
     ventana.cpp \
-    unicadireccion.cpp \
     bloques.cpp \
-    inicio.cpp
+    inicio.cpp \
+    sentidohorario.cpp
 
 HEADERS  += \
     mover.h \
     gato.h \
     angulo.h \
     ventana.h \
-    unicadireccion.h \
     bloques.h \
-    inicio.h
+    inicio.h \
+    sentidohorario.h
 
 FORMS    +=
 
