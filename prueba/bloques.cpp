@@ -1,4 +1,5 @@
 #include "bloques.h"
+#include "ventana.h"
 #include <QMouseEvent>
 #include <algorithm>
 #include <QDebug>
@@ -27,8 +28,7 @@ void Bloques::mouseMoveEvent(QMouseEvent *evento)
 {
     if(evento->buttons()==Qt::LeftButton){
 
-        mover(evento->x(),evento->y());
-        qDebug() << "funciona\n"<<evento->x()<<","<<evento->y()<<"\n";
+        this->mover(evento->x(),evento->y());
     }
 }
 
@@ -43,13 +43,16 @@ void Bloques::mouseReleaseEvent(QMouseEvent *evento)
         this->pointer_up_y=mover_y+varianza_up_y;
         this->pointer_back_x=mover_x+varianza_back_x;
         this->pointer_back_y=mover_y+varianza_back_y;
+
         std::vector<Bloques*>::iterator it;
         it=std::find(obj->bloques_activos.begin(),obj->bloques_activos.end(),this);
+
         //verificar si no hay repeticiones
         if((it==obj->bloques_activos.end())||(obj->bloques_activos.size()==0)){
             obj->agregar_vector(this);
             qDebug() <<"agregado"<<"\n";
         }
+
         obj->verificar(this);
         qDebug() << obj->bloques_activos.size();
     }
@@ -58,5 +61,12 @@ void Bloques::mouseReleaseEvent(QMouseEvent *evento)
 void Bloques::mouseDoubleClickEvent(QMouseEvent * evento)
 {
     this->correr();
-    if(siguiente!=nullptr){siguiente->correr();}
 }
+
+void Bloques::mousePressEvent(QMouseEvent *evento)
+{
+    if(this->get_mover_x()<=300){
+        this->crear_nuevo();
+    }
+}
+

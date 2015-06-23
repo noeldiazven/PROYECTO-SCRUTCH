@@ -41,20 +41,33 @@ void Gato::agregar_vector(Bloques *nuevo)
 }
 //VERIFICA SI SE ROZAN
 inline bool verificar_pos(Bloques * a,Bloques * b){
-    if(
-     (((a->get_pointer_back_y()+2>=b->get_pointer_up_y())&&(a->get_pointer_back_y()-2<=b->get_pointer_up_y()))&&
-     ((a->get_pointer_back_x()+5>=b->get_pointer_up_x())&&(a->get_pointer_back_x()-5<=b->get_pointer_up_x())))
-    ){
-        a->set_siguiente(b);
-        return true;
-    }
-    /*
-    else{
-        a->set_siguiente(nullptr);
+    if(a!=b){
+        if(
+         (((a->get_pointer_back_y()+2>=b->get_pointer_up_y())&&(a->get_pointer_back_y()-2<=b->get_pointer_up_y()))&&
+         ((a->get_pointer_back_x()+5>=b->get_pointer_up_x())&&(a->get_pointer_back_x()-5<=b->get_pointer_up_x())))
+        ){
+            a->set_siguiente(b);
+            return true;
+        }
+        else if(
+          ((a->get_pointer_up_y()-2<=b->get_pointer_back_y())&&((a->get_pointer_up_y()+2>=b->get_pointer_back_y()))&&
+          ((a->get_pointer_up_x()-5<=b->get_pointer_back_x())&&(a->get_pointer_up_x()+5>=b->get_pointer_back_x())))
+        ){
+            if(a->get_siguiente()!=b){b->set_siguiente(a);}
+            else{a->set_siguiente(nullptr);b->set_siguiente(a);}
+            return true;
+        }
+        else{
+            if(a->get_siguiente()==b){
+                a->set_siguiente(nullptr);
+            }
+            return false;
+        }
         return false;
     }
-    */
+    return false;
 }
+
 //RECORRE LA LISTA
 void Gato::verificar(Bloques *nuevo)
 {

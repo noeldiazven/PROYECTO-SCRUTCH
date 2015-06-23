@@ -19,7 +19,8 @@ SOURCES += main.cpp \
     angulo.cpp \
     ventana.cpp \
     unicadireccion.cpp \
-    bloques.cpp
+    bloques.cpp \
+    inicio.cpp
 
 HEADERS  += \
     mover.h \
@@ -27,7 +28,8 @@ HEADERS  += \
     angulo.h \
     ventana.h \
     unicadireccion.h \
-    bloques.h
+    bloques.h \
+    inicio.h
 
 FORMS    +=
 

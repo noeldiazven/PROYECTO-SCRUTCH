@@ -9,5 +9,6 @@ int main(int argc, char *argv[])
     ventana * window=new ventana();
 
     window->show();
+
     return app.exec();
 }

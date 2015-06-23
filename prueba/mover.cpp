@@ -4,7 +4,7 @@
 #include <QTextEdit>
 #include <QDebug>
 
-Mover::Mover(Gato * g)
+Mover::Mover(Gato * g,QWidget * v)
 {
     siguiente=nullptr;
     obj=g;
@@ -12,12 +12,12 @@ Mover::Mover(Gato * g)
     x_inicial=110;y_inicial=30;
     mover_x=110;
     mover_y=30;
-
+    ventana=v;
     varianza_up_x=24;
     varianza_up_y=7.65;
     varianza_back_x=24;
     varianza_back_y=32.3;
-
+    this->setParent(ventana);
     this->setGeometry(mover_x,mover_y,130,35);
     this->setPixmap(QPixmap(":/image/mover.png"));
 
@@ -25,6 +25,14 @@ Mover::Mover(Gato * g)
     setpasos=new QTextEdit(this);
     setpasos->setGeometry(51,5,33,23);
 }
+
+void Mover::crear_nuevo()
+{
+    Mover * n=new Mover(obj,ventana);
+    n->show();
+    qDebug() <<"crear";
+}
+
 void Mover::correr(){
 
     //mover gato al hacer dobleclick
@@ -38,4 +46,5 @@ void Mover::correr(){
     else{
         obj->mover_gato(pasos,0);
     }
+    if(siguiente!=nullptr){siguiente->correr();}
 }

@@ -2,13 +2,16 @@
 #define MOVER
 #include "gato.h"
 #include "bloques.h"
+#include <QWidget>
 
 class Mover:public Bloques{
 private:
     entero pasos;
     Mover *entrada;
+
 public:
-    Mover(Gato * g);
+    Mover(Gato * g,QWidget * v);
+    void crear_nuevo();
     void correr();
 };
 #endif // MOVER

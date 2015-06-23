@@ -30,11 +30,12 @@ ventana::ventana()
     //creando botones
 
     //agregandolo al boton mover
-    botonmover=new Mover(cat);
-    botonmover->setParent(Botones);
+    botonmover=new Mover(cat,Botones);
 
     //agregandolo al boton angulo
-    botonangulo=new Angulo(cat);
-    botonangulo->setParent(Botones);
+    botonangulo=new Angulo(cat,Botones);
+
+    //agregando el boton correr
+    botoninicio=new inicio(cat,Botones);
 
 }

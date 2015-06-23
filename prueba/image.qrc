@@ -4,5 +4,6 @@
         <file>girar_izq.png</file>
         <file>mover.png</file>
         <file>logo.png</file>
+        <file>inicio.png</file>
     </qresource>
 </RCC>
