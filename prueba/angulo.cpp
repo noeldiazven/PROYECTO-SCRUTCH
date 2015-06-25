@@ -10,6 +10,7 @@ Angulo::Angulo(Gato*g,QWidget *v){
     aux=nullptr;
     id="angulo";
     siguiente=nullptr;
+    dentro=nullptr;
     obj=g;
     direccion=0;
     x_inicial=110;y_inicial=80;
@@ -23,6 +24,7 @@ Angulo::Angulo(Gato*g,QWidget *v){
     varianza_up_y=4.7;
     varianza_back_x=20;
     varianza_back_y=30;
+
     this->setParent(ventana);
     this->setGeometry(get_mover_x(),get_mover_y(),width,height);
     this->setPixmap(QPixmap(":/image/girar_izq.png"));
@@ -45,7 +47,7 @@ void Angulo::correr(){
     dobles dy=sin((obj->get_receptor()*pi)/180);
     dobles dx=cos((obj->get_receptor()*pi)/180);
 
-    qDebug() << "cos\n"<<dx<<"  seno "<<dy;
+    qDebug() << "giro";
 
     obj->set_cambiar_posicion_y(-dy);
     obj->set_cambiar_posicion_x(dx);

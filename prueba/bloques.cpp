@@ -23,6 +23,7 @@ void Bloques::mover(entero a, entero b)
     set_mover_y(b);
     this->setGeometry(get_mover_x(),get_mover_y(),this->get_width(),this->get_height());
     if(siguiente!=nullptr){siguiente->mover(a,b);}
+    if(dentro!=nullptr){dentro->mover(a,b);}
 }
 
 void Bloques::mouseMoveEvent(QMouseEvent *evento)
@@ -35,8 +36,10 @@ void Bloques::mouseMoveEvent(QMouseEvent *evento)
 
 void Bloques::mouseReleaseEvent(QMouseEvent *evento)
 {
-    if(get_mover_x()<300){
-        this->setGeometry(x_inicial,y_inicial,this->get_width(),this->get_height());
+    if(get_mover_x()<=300){
+        qDebug()<<"borrado";
+        obj->sacar_del_vector(this);
+        delete(this);
     }
     else{
         //VERIFICANDO QUE NO SE REPITA EN EL VECTOR
@@ -45,7 +48,7 @@ void Bloques::mouseReleaseEvent(QMouseEvent *evento)
         this->pointer_back_x=mover_x+varianza_back_x;
         this->pointer_back_y=mover_y+varianza_back_y;
         if(this->get_id()=="for"){
-            this->pointer_in_x=mover_x+varianza_in_x;
+            this->pointer_in_x=mover_x+varianza_in_x; //especiales en los bloques for y if
             this->pointer_in_y=mover_y+varianza_in_y;
         }
         std::vector<Bloques*>::iterator it;

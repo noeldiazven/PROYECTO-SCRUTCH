@@ -50,6 +50,6 @@ void Mover::correr(){
     else{
         obj->mover_gato(pasos,0);
     }
-    qDebug() << obj->get_posicion_x()<<"   "<<obj->get_posicion_y();
+    qDebug() <<"movio";
     if(siguiente!=nullptr){siguiente->correr();}
 }

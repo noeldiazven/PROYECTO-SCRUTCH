@@ -53,13 +53,14 @@ void For::cambiar_medio(int x){
         medio->setGeometry(0,25,100,10);
         medio->setPixmap(QPixmap(":/image/for_medio.png"));
         abajo->setGeometry(0,35,100,20);
+        varianza_back_y=height-6;
     }
     else{
-        height=height+(20*x)+3;
+        if(x==1){height-=10;}
+        height=(height-(25*(x-1)))+(25*x);
         medio->clear();
         medio->setGeometry(0,25,100,(30)*x);
-        if(x==1){varianza_back_y+=20;}
-        else{varianza_back_y+=30*x;}
+        varianza_back_y=height-6;
         int a=0;
         for(int i=0;i<x;i++){
             QLabel * nuevo=new QLabel(medio);
@@ -72,6 +73,7 @@ void For::cambiar_medio(int x){
         abajo->setGeometry(0,a+30,100,20);
     }
     this->setGeometry(mover_x,mover_y,width,height);
+    qDebug()<<varianza_back_x<<varianza_back_y;
 }
 
 entero For::get_size_lista()

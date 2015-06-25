@@ -49,33 +49,43 @@ void Gato::agregar_vector(Bloques *nuevo)
 {
     bloques_activos.push_back(nuevo);
 }
+
+void Gato::sacar_del_vector(Bloques * nuevo){
+    std::vector<Bloques*>::iterator it;
+    it=std::find(bloques_activos.begin(),bloques_activos.end(),nuevo);
+    bloques_activos.erase(it);
+}
+
 //VERIFICA SI SE ROZAN
 inline bool verificar_pos(Bloques * a,Bloques * b){
     if(a!=b){
         if(a->get_id()=="for"){
             if(
-              (((a->get_pointer_in_y()+2>=b->get_pointer_up_y())&&(a->get_pointer_in_y()-2<=b->get_pointer_up_y()))&&
+              (((a->get_pointer_in_y()+5>=b->get_pointer_up_y())&&(a->get_pointer_in_y()-5<=b->get_pointer_up_y()))&&
                ((a->get_pointer_in_x()+5>=b->get_pointer_up_x())&&(a->get_pointer_in_x()-5<=b->get_pointer_up_x()))
               )
             )
             {
-                a->set_size_lista(1);
-                a->cambiar_medio(a->get_size_lista());
-                a->set_dentro(b);
-                b->set_aux(a);
-                return true;
+                if(b->get_aux()==nullptr){
+                    a->set_size_lista(1);
+                    a->cambiar_medio(a->get_size_lista());
+                    a->set_dentro(b);
+                    b->set_aux(a);
+                    return true;
+                }
+                return false;
             }
         }
         if(
-         (((a->get_pointer_back_y()+2>=b->get_pointer_up_y())&&(a->get_pointer_back_y()-2<=b->get_pointer_up_y()))&&
+         (((a->get_pointer_back_y()+5>=b->get_pointer_up_y())&&(a->get_pointer_back_y()-5<=b->get_pointer_up_y()))&&
          ((a->get_pointer_back_x()+5>=b->get_pointer_up_x())&&(a->get_pointer_back_x()-5<=b->get_pointer_up_x())))
         ){
             a->set_siguiente(b);
-            verificar_bucle(a,b);
+            if(b->get_aux()==nullptr){verificar_bucle(a,b);}
             return true;
         }
         else if(
-          ((a->get_pointer_up_y()-2<=b->get_pointer_back_y())&&((a->get_pointer_up_y()+2>=b->get_pointer_back_y()))&&
+          ((a->get_pointer_up_y()-5<=b->get_pointer_back_y())&&((a->get_pointer_up_y()+5>=b->get_pointer_back_y()))&&
           ((a->get_pointer_up_x()-5<=b->get_pointer_back_x())&&(a->get_pointer_up_x()+5>=b->get_pointer_back_x())))
         ){
             if(a->get_siguiente()!=b){b->set_siguiente(a);}
@@ -126,8 +136,8 @@ void Gato::set_cambiar_posicion_y(entero valor){
 }
 
 void Gato::mover_gato(entero a, entero b){
-    set_posicion_x(a);
-    set_posicion_y(b);
-    this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);
+        set_posicion_x(a);
+        set_posicion_y(b);
+        this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);
 
 }

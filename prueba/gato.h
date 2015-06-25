@@ -41,8 +41,13 @@ public:
 
     std::vector <Bloques*> bloques_activos;
     void agregar_vector(Bloques * nuevo);
+    void sacar_del_vector(Bloques * nuevo);
     void verificar(Bloques * nuevo);
 };
 
 #endif // GATO
 
+/***************************************************************************************************
+*****FALTA IMPLEMENTAR LOS EVENTOS DEL MOUSE PARA PODER MOVER EL GATO CON EL RATON SIN NECESIDAD DE*
+*****ALGUN BOTON,ADEMAS UN POCO DE ORDEN RESPECTO A SU .CPP*****************************************
+***************************************************************************************************/

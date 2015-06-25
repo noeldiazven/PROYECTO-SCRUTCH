@@ -30,3 +30,7 @@ public:
 };
 #endif // VENTANA
 
+/******************************************************************************************************
+*****FALTA CREAR LAS CLASES DE CADA ESPACIO DE LA VENTANA************(BOTONES,MOSTRADOR,OPERACIONES)***
+*****FALTA DIVIDIR LA PARTE DE BOTONES PARA QUE PUEDA MOSTRR MAS DE UN WIDGET *************************
+*******************************************************************************************************/

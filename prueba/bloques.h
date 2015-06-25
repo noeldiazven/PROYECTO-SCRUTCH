@@ -39,26 +39,39 @@ public:
     virtual void cambiar_medio(int x){}
     virtual entero get_size_lista(){}
     virtual void set_size_lista(int x){}
+
     void set_aux(Bloques * nuevo){aux=nuevo;}
     Bloques * get_aux(){return aux;}
+
     void set_siguiente(Bloques * nuevo){siguiente=nuevo;}
     Bloques * get_siguiente(){return siguiente;}
+
     void set_dentro(Bloques * nuevo){dentro=nuevo;}
     Bloques * get_dentro(){return dentro;}
+
     entero get_mover_x();
     entero get_mover_y();
     entero get_width(){return width;}
     entero get_height(){return height;}
     IDS get_id(){return id;}
+
     void set_mover_x(entero valor);
     void set_mover_y(entero valor);
+
     entero get_pointer_back_x(){return pointer_back_x;}
     entero get_pointer_back_y(){return pointer_back_y;}
     entero get_pointer_up_x(){return pointer_up_x;}
     entero get_pointer_up_y(){return pointer_up_y;}
     entero get_pointer_in_x(){return pointer_in_x;}
     entero get_pointer_in_y(){return pointer_in_y;}
-    ~Bloques(){delete(this);}
+    entero get_varianza_up_x(){return varianza_up_x;}
+    entero get_varianza_up_y(){return varianza_up_y;}
+
+    //~Bloques(){delete(this);}
 };
 #endif // BLOQUES
 
+/******************************************************************************************************
+*****FALTA SEPARARLO MAS EN CLASES Y SER MAS ORDENADOS DEPENDIENDO DE QUE METODO NECESITE CADA CLASE***
+*****FALTA CREAR DEMAS BOTONES SERAN ALREDEDOR DE 15 O UN POCO MAS XD**********************************
+*******************************************************************************************************/

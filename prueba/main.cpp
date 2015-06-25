@@ -12,3 +12,8 @@ int main(int argc, char *argv[])
 
     return app.exec();
 }
+ /***************************************************************************************************
+ ***** FALTA EL DESPLAZAMIENTO AL MOMENTO DE AGREGAR Y/O MOVER EL ELEMENTO DE ARRIBA*****************
+ ***** FALTA QUE SE AUTOPOSICIONE AL MOMENTO DE ESTAR SERCA DE OTRO ELEMENTO*************************
+ ***** FALTA ORDENAR ALGUNAS CLASES Y VER LA MEJOR FORMA DE ABSTRACCION PARA NO HACER COSAS REPETIDAS
+ ***************************************************************************************************/
