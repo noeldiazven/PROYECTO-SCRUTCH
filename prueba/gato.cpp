@@ -3,12 +3,13 @@
 #include <QDebug>
 
 Gato::Gato(){
-    this->setPixmap(QPixmap(":/image/gato.png"));
+    img=QPixmap(":/image/gato.png");
+    this->setPixmap(img);
 
     posicion_x=130;
     posicion_y=150;
     receptor=0;
-    width=80;heigth=80;
+    width=100;heigth=100;
     cambiar_posicion_x=0;
     cambiar_posicion_y=0;
     this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);//poniendo en la posicion (x,y) y de tamano (50,50)
@@ -118,6 +119,15 @@ void Gato::verificar(Bloques *nuevo)
               break;
           }
     }
+}
+
+void Gato::set_rotar(entero x)
+{
+    QMatrix m;
+    m.rotate(x);
+    img=img.transformed(m);
+    this->setPixmap(img);
+
 }
 //-----------------------------------
 void Gato::set_posicion_x(entero valor){

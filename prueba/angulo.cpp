@@ -41,7 +41,7 @@ void Angulo::crear_nuevo()
 }
 void Angulo::correr(){
     direccion=setpasos->toPlainText().toInt();
-
+    obj->set_rotar((direccion)*-1);
     obj->set_receptor(direccion);
 
     dobles dy=sin((obj->get_receptor()*pi)/180);

@@ -1,6 +1,7 @@
 #ifndef GATO
 #define GATO
 #include <QLabel>
+#include <QMatrix>
 
 class Bloques;
 
@@ -9,6 +10,7 @@ typedef double(entero);
 
 class Gato:public QLabel{
 private:
+    QPixmap img;
     entero width;
     entero heigth;
 
@@ -43,6 +45,7 @@ public:
     void agregar_vector(Bloques * nuevo);
     void sacar_del_vector(Bloques * nuevo);
     void verificar(Bloques * nuevo);
+    void set_rotar(entero x);
 };
 
 #endif // GATO
