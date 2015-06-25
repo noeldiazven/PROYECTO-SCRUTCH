@@ -5,5 +5,10 @@
         <file>mover.png</file>
         <file>logo.png</file>
         <file>inicio.png</file>
+        <file>for.png</file>
+        <file>for_abajo.png</file>
+        <file>for_arriba.png</file>
+        <file>for_medio.png</file>
+        <file>for_largo.png</file>
     </qresource>
 </RCC>

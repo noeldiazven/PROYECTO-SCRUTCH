@@ -6,6 +6,8 @@
 
 Mover::Mover(Gato * g,QWidget * v)
 {
+    aux=nullptr;
+    id="mover";
     siguiente=nullptr;
     obj=g;
     pasos=10;
@@ -13,12 +15,16 @@ Mover::Mover(Gato * g,QWidget * v)
     mover_x=110;
     mover_y=30;
     ventana=v;
+    width=150;
+    height=35;
+
     varianza_up_x=24;
     varianza_up_y=7.65;
     varianza_back_x=24;
     varianza_back_y=32.3;
+
     this->setParent(ventana);
-    this->setGeometry(mover_x,mover_y,130,35);
+    this->setGeometry(mover_x,mover_y,width,height);
     this->setPixmap(QPixmap(":/image/mover.png"));
 
 
@@ -38,13 +44,12 @@ void Mover::correr(){
     //mover gato al hacer dobleclick
     pasos=setpasos->toPlainText().toDouble();
 
-    qDebug() << obj->get_posicion_x()<<"   "<<obj->get_posicion_y();
-
     if (obj->get_cambiar_posicion_x()!=0 || obj->get_cambiar_posicion_y()!=0){
         obj->mover_gato(obj->get_cambiar_posicion_x()*pasos,obj->get_cambiar_posicion_y()*pasos);
     }
     else{
         obj->mover_gato(pasos,0);
     }
+    qDebug() << obj->get_posicion_x()<<"   "<<obj->get_posicion_y();
     if(siguiente!=nullptr){siguiente->correr();}
 }

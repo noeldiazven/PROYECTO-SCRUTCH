@@ -21,9 +21,10 @@ void Bloques::mover(entero a, entero b)
 {
     set_mover_x(a);
     set_mover_y(b);
-    this->setGeometry(get_mover_x(),get_mover_y(),130,35);
+    this->setGeometry(get_mover_x(),get_mover_y(),this->get_width(),this->get_height());
     if(siguiente!=nullptr){siguiente->mover(a,b);}
 }
+
 void Bloques::mouseMoveEvent(QMouseEvent *evento)
 {
     if(evento->buttons()==Qt::LeftButton){
@@ -35,7 +36,7 @@ void Bloques::mouseMoveEvent(QMouseEvent *evento)
 void Bloques::mouseReleaseEvent(QMouseEvent *evento)
 {
     if(get_mover_x()<300){
-        this->setGeometry(x_inicial,y_inicial,130,35);
+        this->setGeometry(x_inicial,y_inicial,this->get_width(),this->get_height());
     }
     else{
         //VERIFICANDO QUE NO SE REPITA EN EL VECTOR
@@ -43,7 +44,10 @@ void Bloques::mouseReleaseEvent(QMouseEvent *evento)
         this->pointer_up_y=mover_y+varianza_up_y;
         this->pointer_back_x=mover_x+varianza_back_x;
         this->pointer_back_y=mover_y+varianza_back_y;
-
+        if(this->get_id()=="for"){
+            this->pointer_in_x=mover_x+varianza_in_x;
+            this->pointer_in_y=mover_y+varianza_in_y;
+        }
         std::vector<Bloques*>::iterator it;
         it=std::find(obj->bloques_activos.begin(),obj->bloques_activos.end(),this);
 
@@ -69,4 +73,3 @@ void Bloques::mousePressEvent(QMouseEvent *evento)
         this->crear_nuevo();
     }
 }
-

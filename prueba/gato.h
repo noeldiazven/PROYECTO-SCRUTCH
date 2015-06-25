@@ -4,9 +4,14 @@
 
 class Bloques;
 
+typedef QString(IDS);
 typedef double(entero);
+
 class Gato:public QLabel{
 private:
+    entero width;
+    entero heigth;
+
     entero posicion_x;
     entero posicion_y;
 

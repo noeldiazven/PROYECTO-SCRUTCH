@@ -38,4 +38,6 @@ ventana::ventana()
     //agregando el boton correr
     botoninicio=new inicio(cat,Botones);
 
+    //agregando el boton for
+    botonfor=new For(cat,Botones);
 }

@@ -5,6 +5,7 @@
 #include "angulo.h"
 #include "inicio.h"
 #include "bloques.h"
+#include "for.h"
 #include<QMainWindow>
 
 class ventana:public QMainWindow{
@@ -18,6 +19,7 @@ protected:
     Mover * botonmover;
     Angulo * botonangulo;
     inicio * botoninicio;
+    For * botonfor;
 
 public:
     ventana();
