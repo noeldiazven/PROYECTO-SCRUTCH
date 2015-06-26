@@ -24,28 +24,26 @@ private:
 
 public:
     Gato();
-    entero get_posicion_x();
-    entero get_posicion_y();
-    entero get_receptor();
-    void set_receptor(entero);
+    inline entero get_posicion_x(){return posicion_x;}
+    inline entero get_posicion_y(){return posicion_y;}
+    inline entero get_receptor(){return receptor;}
+    inline void set_receptor(entero valor){receptor+=valor;}
 
-    entero get_cambiar_posicion_x();
-    entero get_cambiar_posicion_y();
+    inline entero get_cambiar_posicion_x(){return cambiar_posicion_x;}
+    inline entero get_cambiar_posicion_y(){return cambiar_posicion_y;}
 
-    void set_posicion_y(entero);
-    void set_posicion_x(entero);
+    inline void set_posicion_y(entero valor){posicion_x+=valor;}
+    inline void set_posicion_x(entero valor){posicion_y+=valor;}
 
-    void set_cambiar_posicion_x(entero);
-    void set_cambiar_posicion_y(entero);
+    inline void set_cambiar_posicion_x(entero valor){cambiar_posicion_x = valor;}
+    inline void set_cambiar_posicion_y(entero valor){cambiar_posicion_y = valor;}
 
     void mover_gato(entero a,entero b);
-
 
     std::vector <Bloques*> bloques_activos;
     void agregar_vector(Bloques * nuevo);
     void sacar_del_vector(Bloques * nuevo);
     void verificar(Bloques * nuevo);
-    void set_rotar(entero x);
 };
 
 #endif // GATO

@@ -9,9 +9,9 @@ Mover::Mover(Gato * g,QWidget * v)
     aux=nullptr;
     id="mover";
     siguiente=nullptr;
+    dentro=nullptr;
     obj=g;
     pasos=10;
-    x_inicial=110;y_inicial=30;
     mover_x=110;
     mover_y=30;
     ventana=v;

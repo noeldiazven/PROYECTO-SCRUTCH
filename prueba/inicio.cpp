@@ -4,11 +4,11 @@
 
 inicio::inicio(Gato *g,QWidget * v)
 {
-    id="angulo";
+    aux=nullptr;
+    id="inicio";
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
-    x_inicial=110;y_inicial=130;
     mover_x=110;
     mover_y=130;
     ventana=v;

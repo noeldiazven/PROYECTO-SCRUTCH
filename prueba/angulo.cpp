@@ -13,7 +13,6 @@ Angulo::Angulo(Gato*g,QWidget *v){
     dentro=nullptr;
     obj=g;
     direccion=0;
-    x_inicial=110;y_inicial=80;
     mover_x=110;
     mover_y=80;
     width=143;
@@ -41,7 +40,7 @@ void Angulo::crear_nuevo()
 }
 void Angulo::correr(){
     direccion=setpasos->toPlainText().toInt();
-    obj->set_rotar((direccion)*-1);
+
     obj->set_receptor(direccion);
 
     dobles dy=sin((obj->get_receptor()*pi)/180);

@@ -17,8 +17,8 @@ public:
     void correr();
     void crear_nuevo();
     void cambiar_medio(int x);
-    entero get_size_lista();
-    void set_size_lista(int x);
+    inline entero get_size_lista(){return lista;}
+    inline void set_size_lista(int x){lista+=x;}
 };
 
 #endif // FOR_H

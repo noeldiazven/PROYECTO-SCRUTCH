@@ -8,7 +8,6 @@ For::For(Gato * g,QWidget * v)
     lista=0; //lista es el numero de elementos dentro del for
     obj=g;
     ventana=v;
-    x_inicial=110;y_inicial=170;
     mover_x=110;
     mover_y=170;
     width=100;
@@ -74,16 +73,6 @@ void For::cambiar_medio(int x){
     }
     this->setGeometry(mover_x,mover_y,width,height);
     qDebug()<<varianza_back_x<<varianza_back_y;
-}
-
-entero For::get_size_lista()
-{
-    return lista;
-}
-
-void For::set_size_lista(int x)
-{
-    lista+=x;
 }
 
 void For::correr()

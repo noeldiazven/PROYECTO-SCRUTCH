@@ -15,27 +15,6 @@ Gato::Gato(){
     this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);//poniendo en la posicion (x,y) y de tamano (50,50)
 }
 
-entero Gato::get_receptor(){
-    return receptor;
-}
-
-void Gato::set_receptor(entero valor){
-    receptor+=valor;
-}
-
-entero Gato::get_cambiar_posicion_x(){
-    return cambiar_posicion_x;
-}
-entero Gato::get_cambiar_posicion_y(){
-    return cambiar_posicion_y;
-}
-//-----------------------------------
-entero Gato::get_posicion_x(){
-    return posicion_x;
-}
-entero Gato::get_posicion_y(){
-    return posicion_y;
-}
 //--------------------------------------VECTOR
 
 void verificar_bucle(Bloques *a,Bloques * b){
@@ -52,9 +31,11 @@ void Gato::agregar_vector(Bloques *nuevo)
 }
 
 void Gato::sacar_del_vector(Bloques * nuevo){
-    std::vector<Bloques*>::iterator it;
-    it=std::find(bloques_activos.begin(),bloques_activos.end(),nuevo);
-    bloques_activos.erase(it);
+    if(bloques_activos.size()!=0){
+        std::vector<Bloques*>::iterator it;
+        it=std::find(bloques_activos.begin(),bloques_activos.end(),nuevo);
+        bloques_activos.erase(it);
+    }
 }
 
 //VERIFICA SI SE ROZAN
@@ -120,34 +101,9 @@ void Gato::verificar(Bloques *nuevo)
           }
     }
 }
-
-void Gato::set_rotar(entero x)
-{
-    QMatrix m;
-    m.rotate(x);
-    img=img.transformed(m);
-    this->setPixmap(img);
-
-}
-//-----------------------------------
-void Gato::set_posicion_x(entero valor){
-    posicion_x+=valor;
-}
-void Gato::set_posicion_y(entero valor){
-    posicion_y+=valor;
-}
 //---------------------------------------
-void Gato::set_cambiar_posicion_x(entero valor){
-    cambiar_posicion_x = valor;
-}
-
-void Gato::set_cambiar_posicion_y(entero valor){
-    cambiar_posicion_y = valor;
-}
-
 void Gato::mover_gato(entero a, entero b){
         set_posicion_x(a);
         set_posicion_y(b);
         this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);
-
 }

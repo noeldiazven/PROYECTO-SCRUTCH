@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     unicadireccion.cpp \
     bloques.cpp \
     inicio.cpp \
-    for.cpp
+    for.cpp \
+    ventanabotones.cpp
 
 HEADERS  += \
     mover.h \
@@ -31,7 +32,8 @@ HEADERS  += \
     unicadireccion.h \
     bloques.h \
     inicio.h \
-    for.h
+    for.h \
+    ventanabotones.h
 
 FORMS    +=
 

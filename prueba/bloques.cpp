@@ -4,19 +4,6 @@
 #include <algorithm>
 #include <QDebug>
 
-entero Bloques::get_mover_x(){
-    return mover_x;
-}
-entero Bloques::get_mover_y(){
-    return mover_y;
-}
-void Bloques::set_mover_x(entero valor){
-    mover_x+=valor;
-}
-void Bloques::set_mover_y(entero valor){
-    mover_y+=valor;
-}
-
 void Bloques::mover(entero a, entero b)
 {
     set_mover_x(a);

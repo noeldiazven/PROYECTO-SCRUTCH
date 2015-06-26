@@ -10,9 +10,10 @@ ventana::ventana()
     this->setMinimumSize(QSize(900,400));
 
     //creando el panel de botones
-    Botones=new QWidget(this);
-    Botones->setGeometry(0,0,600,400);
-    Botones->setStyleSheet("background-color:#B5B3B04;");
+    //Botones=new QWidget(this);
+    //Botones->setGeometry(0,0,600,400);
+    //Botones->setStyleSheet("background-color:#B5B3B04;");
+    Botones=new ventanabotones(this);
 
     //creando el panel del gato
     mostrador=new QWidget(this);
