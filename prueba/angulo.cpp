@@ -5,7 +5,7 @@
 #include <math.h>
 #include <QDebug>
 
-Angulo::Angulo(Gato*g,QWidget *v){
+Angulo::Angulo(Gato*g, ventanabotones *v){
 
     aux=nullptr;
     id="angulo";
@@ -14,7 +14,7 @@ Angulo::Angulo(Gato*g,QWidget *v){
     obj=g;
     direccion=0;
     mover_x=110;
-    mover_y=80;
+    mover_y=220;
     width=143;
     height=35;
 

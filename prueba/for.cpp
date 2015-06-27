@@ -1,7 +1,7 @@
 #include "for.h"
 #include <QDebug>
 
-For::For(Gato * g,QWidget * v)
+For::For(Gato * g, ventanabotones *v)
 {
     aux=nullptr;
     id="for";
@@ -9,7 +9,7 @@ For::For(Gato * g,QWidget * v)
     obj=g;
     ventana=v;
     mover_x=110;
-    mover_y=170;
+    mover_y=310;
     width=100;
     height=60;
     siguiente=nullptr;

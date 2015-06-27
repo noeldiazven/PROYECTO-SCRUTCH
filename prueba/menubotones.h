@@ -1,20 +1,14 @@
-#ifndef VETANABOTONES_H
-#define VETANABOTONES_H
-#include <QWidget>
-#include"gato.h"
-#include "menubotones.h"
-#include "mostradorbotones.h"
+#ifndef MENUBOTONES_H
+#define MENUBOTONES_H
+#include<QWidget>
+#include "gato.h"
 
-class ventanabotones:public QWidget
+class menubotones:public QWidget
 {
-private:
     entero posx,posy;
     entero width,heigth;
-    QWidget * operaciones;
-    menubotones * menu;
-    mostradorbotones * mostradorBotones;
 public:
-    ventanabotones(QWidget * parent, Gato *g);
+    menubotones(QWidget * parent);
     inline void set_posx(entero x){posx=x;}
     inline void set_posy(entero y){posy=y;}
     inline entero get_posx(){return posx;}
@@ -25,4 +19,4 @@ public:
     inline entero get_heigth(){return heigth;}
 };
 
-#endif // VETANABOTONES_H
+#endif // MENUBOTONES_H

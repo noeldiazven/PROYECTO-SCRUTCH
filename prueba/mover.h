@@ -10,7 +10,7 @@ private:
     Mover *entrada;
 
 public:
-    Mover(Gato * g,QWidget * v);
+    Mover(Gato * g,ventanabotones * v);
     void crear_nuevo();
     void correr();
 };

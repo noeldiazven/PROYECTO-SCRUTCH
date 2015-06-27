@@ -1,18 +1,21 @@
 #include "gato.h"
 #include "bloques.h"
+#include <QMouseEvent>
 #include <QDebug>
 
-Gato::Gato(){
+Gato::Gato(QWidget * p){
+    parent=p;
     img=QPixmap(":/image/gato.png");
     this->setPixmap(img);
 
-    posicion_x=130;
+    posicion_x=205;
     posicion_y=150;
     receptor=0;
-    width=100;heigth=100;
+    width=80;heigth=80;
     cambiar_posicion_x=0;
     cambiar_posicion_y=0;
     this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);//poniendo en la posicion (x,y) y de tamano (50,50)
+    this->setParent(parent);
 }
 
 //--------------------------------------VECTOR
@@ -80,7 +83,10 @@ inline bool verificar_pos(Bloques * a,Bloques * b){
                 if(b->get_aux()!=nullptr){
                     (b->get_aux())->set_size_lista(-1);
                     (b->get_aux())->cambiar_medio((b->get_aux())->get_size_lista());
-                    b->set_aux(nullptr);
+                     if((b->get_aux())->get_size_lista()==0){
+                         (b->get_aux())->set_dentro(nullptr);
+                     }
+                     b->set_aux(nullptr);
                 }
             }
             return false;
@@ -101,6 +107,7 @@ void Gato::verificar(Bloques *nuevo)
           }
     }
 }
+
 //---------------------------------------
 void Gato::mover_gato(entero a, entero b){
         set_posicion_x(a);

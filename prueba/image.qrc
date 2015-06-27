@@ -10,5 +10,6 @@
         <file>for_arriba.png</file>
         <file>for_medio.png</file>
         <file>for_largo.png</file>
+        <file>comenzar.png</file>
     </qresource>
 </RCC>

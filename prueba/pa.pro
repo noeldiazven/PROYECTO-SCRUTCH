@@ -22,7 +22,10 @@ SOURCES += main.cpp \
     bloques.cpp \
     inicio.cpp \
     for.cpp \
-    ventanabotones.cpp
+    ventanabotones.cpp \
+    ventanamostrador.cpp \
+    menubotones.cpp \
+    mostradorbotones.cpp
 
 HEADERS  += \
     mover.h \
@@ -33,7 +36,10 @@ HEADERS  += \
     bloques.h \
     inicio.h \
     for.h \
-    ventanabotones.h
+    ventanabotones.h \
+    ventanamostrador.h \
+    menubotones.h \
+    mostradorbotones.h
 
 FORMS    +=
 

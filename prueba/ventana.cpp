@@ -6,39 +6,24 @@ ventana::ventana()
 {
     this->setWindowTitle(QString::fromUtf8("SCRUTCH"));
     this->setWindowIcon(QIcon(":/image/logo.png"));
-    this->resize(900,400);
-    this->setMinimumSize(QSize(900,400));
+    this->resize(1200,600);
+    this->setMinimumSize(QSize(1200,600));
+    this->setMaximumSize(QSize(1200,600));
 
-    //creando el panel de botones
-    //Botones=new QWidget(this);
-    //Botones->setGeometry(0,0,600,400);
-    //Botones->setStyleSheet("background-color:#B5B3B04;");
-    Botones=new ventanabotones(this);
+    mostrador=new ventanamostrador(this);
 
-    //creando el panel del gato
-    mostrador=new QWidget(this);
-    mostrador->setGeometry(600,0,300,400);
-    mostrador->setStyleSheet("background-color:#FFFFFF;");
-
-    //crenado panel de operaciones
-    operaciones=new QWidget(Botones);
-    operaciones->setGeometry(300,0,300,400);
-    operaciones->setStyleSheet("background-color:#A09D9D;");
-
-    //creando el gato
-    cat=new Gato();
-    cat->setParent(mostrador);
+    Botones=new ventanabotones(this,mostrador->get_cat());
     //creando botones
 
     //agregandolo al boton mover
-    botonmover=new Mover(cat,Botones);
+    botonmover=new Mover(mostrador->get_cat(),Botones);
 
     //agregandolo al boton angulo
-    botonangulo=new Angulo(cat,Botones);
+    botonangulo=new Angulo(mostrador->get_cat(),Botones);
 
     //agregando el boton correr
-    botoninicio=new inicio(cat,Botones);
+    botoninicio=new inicio(mostrador->get_cat(),Botones);
 
     //agregando el boton for
-    botonfor=new For(cat,Botones);
+    botonfor=new For(mostrador->get_cat(),Botones);
 }

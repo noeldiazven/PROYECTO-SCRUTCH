@@ -9,7 +9,7 @@ private:
     dobles direccion;
     dobles pi=3.14159265358979323846;
 public:
-    Angulo(Gato *g,QWidget * v);
+    Angulo(Gato *g,ventanabotones * v);
     void rotateLabel();
     void crear_nuevo();
     void correr();

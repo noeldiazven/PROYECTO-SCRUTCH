@@ -5,7 +5,7 @@
 class inicio:public Bloques
 {
 public:
-    inicio(Gato *g,QWidget * v);
+    inicio(Gato *g,ventanabotones * v);
     void correr();
     void crear_nuevo();
 };

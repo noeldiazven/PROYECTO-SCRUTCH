@@ -3,11 +3,12 @@
 #include <QLabel>
 #include <QTextEdit>
 #include "gato.h"
+#include "ventanabotones.h"
 
 class Bloques:public QLabel{
 protected:
     IDS id;
-    QWidget * ventana; //ventana donde se crean los bloques
+    ventanabotones * ventana; //ventana donde se crean los bloques
     Gato * obj; //objecto que se modificara
     Bloques * siguiente; //puntero que apunta al bloque de abajo
     Bloques * dentro;
@@ -50,6 +51,9 @@ public:
     inline void set_dentro(Bloques * nuevo){dentro=nuevo;}
     inline Bloques * get_dentro(){return dentro;}
 
+    inline void set_ventana(ventanabotones * nuevo){ventana=nuevo;}
+    inline ventanabotones * get_ventana(){return ventana;}
+
     inline entero get_mover_x(){return mover_x;}
     inline entero get_mover_y(){return mover_y;}
     inline entero get_width(){return width;}
@@ -75,5 +79,4 @@ public:
 /******************************************************************************************************
 *****FALTA SEPARARLO MAS EN CLASES Y SER MAS ORDENADOS DEPENDIENDO DE QUE METODO NECESITE CADA CLASE***
 *****FALTA CREAR DEMAS BOTONES SERAN ALREDEDOR DE 15 O UN POCO MAS XD**********************************
-***** FALTA CORREGIR ERRORES DE ELIMINACION DE BLOQUES*************************************************
 *******************************************************************************************************/

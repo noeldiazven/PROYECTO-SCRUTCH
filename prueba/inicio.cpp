@@ -2,7 +2,7 @@
 #include <QLabel>
 #include<QDebug>
 
-inicio::inicio(Gato *g,QWidget * v)
+inicio::inicio(Gato *g, ventanabotones *v)
 {
     aux=nullptr;
     id="inicio";
@@ -10,7 +10,7 @@ inicio::inicio(Gato *g,QWidget * v)
     dentro=nullptr;
     obj=g;
     mover_x=110;
-    mover_y=130;
+    mover_y=270;
     ventana=v;
     width=130;
     height=35;

@@ -4,7 +4,7 @@
 #include <QTextEdit>
 #include <QDebug>
 
-Mover::Mover(Gato * g,QWidget * v)
+Mover::Mover(Gato * g, ventanabotones *v)
 {
     aux=nullptr;
     id="mover";
@@ -13,7 +13,7 @@ Mover::Mover(Gato * g,QWidget * v)
     obj=g;
     pasos=10;
     mover_x=110;
-    mover_y=30;
+    mover_y=170;
     ventana=v;
     width=150;
     height=35;

@@ -9,7 +9,7 @@ class For:public Bloques
 protected:
     entero iteraciones;
 public:
-    For(Gato * g,QWidget * v);
+    For(Gato * g,ventanabotones * v);
     QLabel * arriba;
     QLabel * abajo;
     QLabel * medio;

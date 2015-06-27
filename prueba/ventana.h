@@ -4,9 +4,9 @@
 #include "mover.h"
 #include "angulo.h"
 #include "inicio.h"
-#include "bloques.h"
 #include "for.h"
 #include "ventanabotones.h"
+#include "ventanamostrador.h"
 #include<QMainWindow>
 
 class ventana:public QMainWindow{
@@ -14,9 +14,8 @@ private:
 QSize s;
 protected:
     ventanabotones * Botones;
-    QWidget * mostrador;
-    QWidget * operaciones;
-    Gato * cat;
+    ventanamostrador * mostrador;
+    //QWidget * operaciones;
     Mover * botonmover;
     Angulo * botonangulo;
     inicio * botoninicio;
