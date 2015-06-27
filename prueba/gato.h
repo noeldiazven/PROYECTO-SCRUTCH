@@ -7,11 +7,13 @@ class Bloques;
 
 typedef QString(IDS);
 typedef double(entero);
+typedef int(tipo_entero);
 
 class Gato:public QLabel{
 private:
     QWidget * parent;
     QPixmap img;
+
     entero width;
     entero heigth;
 
@@ -21,10 +23,13 @@ private:
     entero cambiar_posicion_x;
     entero cambiar_posicion_y;
 
+    tipo_entero rotar;
+
     entero receptor;
 
 public:
-    Gato(QWidget *p);
+    Gato(QWidget *par);
+    void rotar_gato(tipo_entero giro);
     inline QWidget * get_parent(){return parent;}
     inline entero get_posicion_x(){return posicion_x;}
     inline entero get_posicion_y(){return posicion_y;}

@@ -6,7 +6,8 @@
 #include <QDebug>
 
 Angulo::Angulo(Gato*g, ventanabotones *v){
-
+    dx=0;
+    dy=0;
     aux=nullptr;
     id="angulo";
     siguiente=nullptr;
@@ -38,14 +39,18 @@ void Angulo::crear_nuevo()
     n->show();
     qDebug() <<"crear";
 }
-void Angulo::correr(){
-    direccion=setpasos->toPlainText().toInt();
+void Angulo::rotacion_en_el_plano(){
+    dy=sin((obj->get_receptor()*pi)/180);
+    dx=cos((obj->get_receptor()*pi)/180);
+}
 
+void Angulo::correr(){
+
+    direccion=setpasos->toPlainText().toInt();
+    obj->rotar_gato(direccion);
     obj->set_receptor(direccion);
 
-    dobles dy=sin((obj->get_receptor()*pi)/180);
-    dobles dx=cos((obj->get_receptor()*pi)/180);
-
+    rotacion_en_el_plano();
     qDebug() << "giro";
 
     obj->set_cambiar_posicion_y(-dy);

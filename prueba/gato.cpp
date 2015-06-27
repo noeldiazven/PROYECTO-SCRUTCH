@@ -2,20 +2,37 @@
 #include "bloques.h"
 #include <QMouseEvent>
 #include <QDebug>
+#include <QPainter>
+#include <QSize>
 
-Gato::Gato(QWidget * p){
-    parent=p;
+Gato::Gato(QWidget * par){
+    parent=par;
     img=QPixmap(":/image/gato.png");
     this->setPixmap(img);
 
+    rotar=0;
     posicion_x=205;
-    posicion_y=150;
+    posicion_y=250;
     receptor=0;
     width=80;heigth=80;
     cambiar_posicion_x=0;
     cambiar_posicion_y=0;
     this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);//poniendo en la posicion (x,y) y de tamano (50,50)
     this->setParent(parent);
+}
+void Gato::rotar_gato(int giro){
+    rotar+=giro;
+    QPixmap rotatedPixmap(img.size());//adapto el valor del img a otro pixmap
+    rotatedPixmap.fill(QColor::fromRgb(0, 0, 0, 0));//cambio el color de fondo
+    QPainter* p = new QPainter(&rotatedPixmap);//creo un q painter
+    QSize size = img.size();//adapto al tamaño
+    p->translate(size.height()/2,size.height()/2);//posiciono al centro
+    p->rotate(-rotar);
+    p->translate(-size.height()/2,-size.height()/2);
+    p->drawPixmap(0, 0, img);
+    p->end();
+    delete p;
+    this->setPixmap(rotatedPixmap);
 }
 
 //--------------------------------------VECTOR
