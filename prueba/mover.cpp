@@ -1,5 +1,6 @@
 #include "mover.h"
 #include "gato.h"
+#include "imagenes.h"
 #include  <QLabel>
 #include <QTextEdit>
 #include <QDebug>
@@ -25,7 +26,7 @@ Mover::Mover(Gato * g, ventanabotones *v)
 
     this->setParent(ventana);
     this->setGeometry(mover_x,mover_y,width,height);
-    this->setPixmap(QPixmap(":/image/mover.png"));
+    this->setPixmap(block_mover);
 
 
     setpasos=new QTextEdit(this);
@@ -36,6 +37,7 @@ void Mover::crear_nuevo()
 {
     Mover * n=new Mover(obj,ventana);
     n->show();
+    ventana->add_botones_movimiento(n);
     qDebug() <<"crear";
 }
 

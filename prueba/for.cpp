@@ -9,7 +9,7 @@ For::For(Gato * g, ventanabotones *v)
     obj=g;
     ventana=v;
     mover_x=110;
-    mover_y=310;
+    mover_y=220;
     width=100;
     height=60;
     siguiente=nullptr;
@@ -88,6 +88,7 @@ void For::crear_nuevo()
 {
     For * n=new For(obj,ventana);
     n->show();
+    ventana->add_botones_control(n);
     qDebug() <<"crear";
 }
 

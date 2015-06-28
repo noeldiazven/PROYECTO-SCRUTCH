@@ -72,5 +72,6 @@ void Bloques::mousePressEvent(QMouseEvent *evento)
 {
     if(this->get_mover_x()<=300){
         this->crear_nuevo();
+        (this->get_ventana())->sacar_vectores(this);
     }
 }

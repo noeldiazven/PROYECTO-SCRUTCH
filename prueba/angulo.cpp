@@ -1,5 +1,5 @@
 #include "angulo.h"
-#include "gato.h"
+#include "imagenes.h"
 #include  <QLabel>
 #include <QTextEdit>
 #include <math.h>
@@ -27,7 +27,7 @@ Angulo::Angulo(Gato*g, ventanabotones *v){
 
     this->setParent(ventana);
     this->setGeometry(get_mover_x(),get_mover_y(),width,height);
-    this->setPixmap(QPixmap(":/image/girar_izq.png"));
+    this->setPixmap(block_angulo);
 
     setpasos=new QTextEdit(this);
     setpasos->setGeometry(53,3,30,23);
@@ -37,6 +37,7 @@ void Angulo::crear_nuevo()
 {
     Angulo * n=new Angulo(obj,ventana);
     n->show();
+    ventana->add_botones_movimiento(n);
     qDebug() <<"crear";
 }
 void Angulo::rotacion_en_el_plano(){

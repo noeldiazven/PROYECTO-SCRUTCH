@@ -2,7 +2,7 @@
 #define BLOQUES
 #include <QLabel>
 #include <QTextEdit>
-#include "gato.h"
+#include "tipos.h"
 #include "ventanabotones.h"
 
 class Bloques:public QLabel{

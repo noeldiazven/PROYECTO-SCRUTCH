@@ -2,12 +2,9 @@
 #define GATO
 #include <QLabel>
 #include <QMatrix>
+#include "tipos.h"
 
 class Bloques;
-
-typedef QString(IDS);
-typedef double(entero);
-typedef int(tipo_entero);
 
 class Gato:public QLabel{
 private:

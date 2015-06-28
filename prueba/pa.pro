@@ -24,8 +24,7 @@ SOURCES += main.cpp \
     for.cpp \
     ventanabotones.cpp \
     ventanamostrador.cpp \
-    menubotones.cpp \
-    mostradorbotones.cpp
+    botones.cpp
 
 HEADERS  += \
     mover.h \
@@ -38,8 +37,9 @@ HEADERS  += \
     for.h \
     ventanabotones.h \
     ventanamostrador.h \
-    menubotones.h \
-    mostradorbotones.h
+    tipos.h \
+    botones.h \
+    imagenes.h
 
 FORMS    +=
 

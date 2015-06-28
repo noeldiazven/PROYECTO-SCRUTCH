@@ -11,5 +11,7 @@
         <file>for_medio.png</file>
         <file>for_largo.png</file>
         <file>comenzar.png</file>
+        <file>menu_movimiento.png</file>
+        <file>menu_control.png</file>
     </qresource>
 </RCC>

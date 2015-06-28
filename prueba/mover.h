@@ -1,8 +1,6 @@
 #ifndef MOVER
 #define MOVER
-#include "gato.h"
 #include "bloques.h"
-#include <QWidget>
 
 class Mover:public Bloques{
 private:

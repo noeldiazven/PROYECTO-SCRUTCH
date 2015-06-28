@@ -1,9 +1,8 @@
 #ifndef ANGULO_H
 #define ANGULO_H
-#include "gato.h"
+#include "tipos.h"
 #include "bloques.h"
 
-typedef double(dobles);
 class Angulo: public Bloques{
 private:
     dobles direccion;

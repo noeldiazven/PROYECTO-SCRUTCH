@@ -1,10 +1,12 @@
 #ifndef VENTANAOPERACIONES_H
 #define VENTANAOPERACIONES_H
 #include <QWidget>
+#include "tipos.h"
 #include "gato.h"
 
 class ventanamostrador:public QWidget
 {
+private:
     entero posx,posy;
     entero width,heigth;
     QLabel * comenzar;

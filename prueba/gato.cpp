@@ -1,5 +1,6 @@
 #include "gato.h"
 #include "bloques.h"
+#include "imagenes.h"
 #include <QMouseEvent>
 #include <QDebug>
 #include <QPainter>
@@ -7,7 +8,7 @@
 
 Gato::Gato(QWidget * par){
     parent=par;
-    img=QPixmap(":/image/gato.png");
+    img=image_gato;
     this->setPixmap(img);
 
     rotar=0;
@@ -54,7 +55,7 @@ void Gato::sacar_del_vector(Bloques * nuevo){
     if(bloques_activos.size()!=0){
         std::vector<Bloques*>::iterator it;
         it=std::find(bloques_activos.begin(),bloques_activos.end(),nuevo);
-        bloques_activos.erase(it);
+        if((*it)==nuevo){bloques_activos.erase(it);}
     }
 }
 

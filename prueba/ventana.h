@@ -15,7 +15,6 @@ QSize s;
 protected:
     ventanabotones * Botones;
     ventanamostrador * mostrador;
-    //QWidget * operaciones;
     Mover * botonmover;
     Angulo * botonangulo;
     inicio * botoninicio;

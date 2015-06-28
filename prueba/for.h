@@ -1,7 +1,7 @@
 #ifndef FOR_H
 #define FOR_H
 #include "bloques.h"
-#include "gato.h"
+#include "tipos.h"
 #include <QWidget>
 
 class For:public Bloques

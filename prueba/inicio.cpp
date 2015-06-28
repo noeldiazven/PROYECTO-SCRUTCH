@@ -1,4 +1,5 @@
 #include "inicio.h"
+#include "imagenes.h"
 #include <QLabel>
 #include<QDebug>
 
@@ -10,7 +11,7 @@ inicio::inicio(Gato *g, ventanabotones *v)
     dentro=nullptr;
     obj=g;
     mover_x=110;
-    mover_y=270;
+    mover_y=170;
     ventana=v;
     width=130;
     height=35;
@@ -21,7 +22,7 @@ inicio::inicio(Gato *g, ventanabotones *v)
     varianza_back_y=33.7;
     this->setParent(ventana);
     this->setGeometry(mover_x,mover_y,width,height);
-    this->setPixmap(QPixmap(":/image/inicio.png"));
+    this->setPixmap(block_inicio);
 }
 void inicio::correr(){
     if(siguiente!=nullptr){siguiente->correr();}
@@ -31,5 +32,6 @@ void inicio::crear_nuevo()
 {
     inicio * n=new inicio(obj,ventana);
     n->show();
+    ventana->add_botones_control(n);
     qDebug() <<"crear";
 }

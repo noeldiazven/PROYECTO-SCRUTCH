@@ -2,6 +2,7 @@
 #define MOSTRADORBOTONES_H
 #include<QWidget>
 #include "gato.h"
+#include "tipos.h"
 
 class mostradorbotones:public QWidget
 {
