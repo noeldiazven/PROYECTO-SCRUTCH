@@ -8,6 +8,7 @@
 #define block_inicio QPixmap(":/image/inicio.png")
 #define block_mover QPixmap(":/image/mover.png")
 #define image_gato QPixmap(":/image/gato.png")
+#define block_girar_derecha QPixmap(":/image/girar_der.png")
 
 #endif // IMAGENES
 

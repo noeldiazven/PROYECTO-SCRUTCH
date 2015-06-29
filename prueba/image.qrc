@@ -13,5 +13,6 @@
         <file>comenzar.png</file>
         <file>menu_movimiento.png</file>
         <file>menu_control.png</file>
+        <file>girar_der.png</file>
     </qresource>
 </RCC>

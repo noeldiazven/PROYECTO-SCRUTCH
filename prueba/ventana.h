@@ -7,6 +7,7 @@
 #include "for.h"
 #include "ventanabotones.h"
 #include "ventanamostrador.h"
+#include "girarderecha.h"
 #include<QMainWindow>
 
 class ventana:public QMainWindow{
@@ -19,6 +20,8 @@ protected:
     Angulo * botonangulo;
     inicio * botoninicio;
     For * botonfor;
+    GirarDerecha *botongirarderecha;
+
 
 public:
     ventana();

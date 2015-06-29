@@ -24,8 +24,10 @@ public:
     inline void set_heigth(entero h){heigth=h;}
     inline entero get_width(){return width;}
     inline entero get_heigth(){return heigth;}
+
     inline void add_botones_movimiento(QLabel * nuevo){botones_movimiento.push_back(nuevo);}
     inline void add_botones_control(QLabel * nuevo){botones_control.push_back(nuevo);}
+
     void sacar_vectores(QLabel * nuevo);
     void mostrar_botones_movimiento();
     void mostrar_botones_control();

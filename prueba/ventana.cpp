@@ -25,6 +25,10 @@ ventana::ventana()
     botonangulo=new Angulo(mostrador->get_cat(),Botones);
     Botones->add_botones_movimiento(botonangulo);
 
+    //agregandolo al boton girar derecha
+    botongirarderecha = new GirarDerecha(mostrador->get_cat(),Botones);
+    Botones->add_botones_movimiento(botongirarderecha);
+
     //agregando el boton correr
     botoninicio=new inicio(mostrador->get_cat(),Botones);
     Botones->add_botones_control(botoninicio);

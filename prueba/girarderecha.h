@@ -1,22 +1,21 @@
-#ifndef ANGULO_H
-#define ANGULO_H
+#ifndef GIRARDERECHA_H
+#define GIRARDERECHA_H
 
-#include "tipos.h"
 #include "bloques.h"
+#include "tipos.h"
 
-class Angulo: public Bloques{
+class GirarDerecha: public Bloques{
 private:
     dobles direccion;
     dobles pi=3.14159265358979323846;
     dobles dx;
     dobles dy;
 public:
-    Angulo(Gato *g,ventanabotones * v);
+    GirarDerecha(Gato *g, ventanabotones * v);
 
     void rotateLabel();
     void crear_nuevo();
     void correr();
     void rotacion_en_el_plano();
 };
-
-#endif // ANGULO_H
+#endif // GIRARDERECHA_H

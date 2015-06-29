@@ -45,7 +45,7 @@ void ventanabotones::mostrar_botones_movimiento()
 
 void ventanabotones::mostrar_botones_control()
 {
-    std::for_each(botones_control.begin(),botones_control.end(),mostrar);
     std::for_each(botones_movimiento.begin(),botones_movimiento.end(),ocultar);
+    std::for_each(botones_control.begin(),botones_control.end(),mostrar);
 }
 
