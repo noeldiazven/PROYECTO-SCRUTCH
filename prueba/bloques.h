@@ -14,7 +14,7 @@ protected:
     Bloques * dentro;
     Bloques * aux;
     QTextEdit * setpasos; //variable que guarda el valor insertado del usuario
-
+    QTextEdit * setpasos1;
     //Posiciones x,y
     entero mover_x;entero mover_y;
     entero width;entero height; //the block's size

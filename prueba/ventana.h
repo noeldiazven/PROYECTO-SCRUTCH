@@ -8,6 +8,8 @@
 #include "ventanabotones.h"
 #include "ventanamostrador.h"
 #include "girarderecha.h"
+#include "unicadireccion.h"
+#include "posicionargatoen.h"
 #include<QMainWindow>
 
 class ventana:public QMainWindow{
@@ -21,6 +23,9 @@ protected:
     inicio * botoninicio;
     For * botonfor;
     GirarDerecha *botongirarderecha;
+    UnicaDireccion *boton_unica_direccion;
+    PosicionarGatoEn *boton_posicionar;
+
 
 
 public:

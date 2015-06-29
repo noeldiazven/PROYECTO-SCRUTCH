@@ -25,7 +25,8 @@ SOURCES += main.cpp \
     ventanabotones.cpp \
     ventanamostrador.cpp \
     botones.cpp \
-    girarderecha.cpp
+    girarderecha.cpp \
+    posicionargatoen.cpp
 
 HEADERS  += \
     mover.h \
@@ -41,7 +42,8 @@ HEADERS  += \
     tipos.h \
     botones.h \
     imagenes.h \
-    girarderecha.h
+    girarderecha.h \
+    posicionargatoen.h
 
 FORMS    +=
 

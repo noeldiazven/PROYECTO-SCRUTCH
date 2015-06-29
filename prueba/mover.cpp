@@ -46,6 +46,7 @@ void Mover::correr(){
     //mover gato al hacer dobleclick
     pasos=setpasos->toPlainText().toDouble();
 
+
     if (obj->get_cambiar_posicion_x()!=0 || obj->get_cambiar_posicion_y()!=0){
         obj->mover_gato(obj->get_cambiar_posicion_x()*pasos,obj->get_cambiar_posicion_y()*pasos);
     }

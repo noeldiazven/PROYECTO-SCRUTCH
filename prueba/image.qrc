@@ -14,5 +14,8 @@
         <file>menu_movimiento.png</file>
         <file>menu_control.png</file>
         <file>girar_der.png</file>
+        <file>ir_a.png</file>
+        <file>rebotar.png</file>
+        <file>unica_d.png</file>
     </qresource>
 </RCC>

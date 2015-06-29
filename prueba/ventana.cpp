@@ -28,6 +28,13 @@ ventana::ventana()
     //agregandolo al boton girar derecha
     botongirarderecha = new GirarDerecha(mostrador->get_cat(),Botones);
     Botones->add_botones_movimiento(botongirarderecha);
+    //agregando boton unica direccion
+    boton_unica_direccion =new UnicaDireccion(mostrador->get_cat(),Botones);
+    Botones->add_botones_movimiento(boton_unica_direccion);
+
+    //agregando boton posicionar
+    boton_posicionar =new PosicionarGatoEn(mostrador->get_cat(),Botones);
+    Botones->add_botones_movimiento(boton_posicionar);
 
     //agregando el boton correr
     botoninicio=new inicio(mostrador->get_cat(),Botones);

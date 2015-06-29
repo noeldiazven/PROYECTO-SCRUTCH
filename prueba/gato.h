@@ -23,6 +23,7 @@ private:
     tipo_entero rotar;
 
     entero receptor;
+    entero unico_receptor;
 
 public:
     Gato(QWidget *par);
@@ -31,7 +32,10 @@ public:
     inline entero get_posicion_x(){return posicion_x;}
     inline entero get_posicion_y(){return posicion_y;}
     inline entero get_receptor(){return receptor;}
+    inline entero get_receptor_unica_direccion(){return unico_receptor;}
+
     inline void set_receptor(entero valor){receptor+=valor;}
+    inline void set_receptor_unica_direccion(entero valor){unico_receptor=valor;}
 
     inline entero get_cambiar_posicion_x(){return cambiar_posicion_x;}
     inline entero get_cambiar_posicion_y(){return cambiar_posicion_y;}
@@ -39,10 +43,14 @@ public:
     inline void set_posicion_y(entero valor){posicion_y+=valor;}
     inline void set_posicion_x(entero valor){posicion_x+=valor;}
 
+    inline void set_posicion_yy(entero valor){posicion_y=valor;}
+    inline void set_posicion_xx(entero valor){posicion_x=valor;}
+
     inline void set_cambiar_posicion_x(entero valor){cambiar_posicion_x = valor;}
     inline void set_cambiar_posicion_y(entero valor){cambiar_posicion_y = valor;}
 
     void mover_gato(entero a,entero b);
+    void rotar_gato_unica_direccion(tipo_entero valor);
 
     std::vector <Bloques*> bloques_activos;
     void agregar_vector(Bloques * nuevo);
