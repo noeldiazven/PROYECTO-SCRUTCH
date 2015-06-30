@@ -17,5 +17,7 @@
         <file>ir_a.png</file>
         <file>rebotar.png</file>
         <file>unica_d.png</file>
+        <file>bandera_activa.png</file>
+        <file>bandera_desactivada.png</file>
     </qresource>
 </RCC>

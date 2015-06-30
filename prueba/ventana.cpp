@@ -1,11 +1,12 @@
 #include<QMainWindow>
 #include "ventana.h"
+#include "imagenes.h"
 #include <QLabel>
 
 ventana::ventana()
 {
     this->setWindowTitle(QString::fromUtf8("SCRUTCH"));
-    this->setWindowIcon(QIcon(":/image/logo.png"));
+    this->setWindowIcon(icono);
     this->resize(1200,600);
     this->setMinimumSize(QSize(1200,600));
     this->setMaximumSize(QSize(1200,600));

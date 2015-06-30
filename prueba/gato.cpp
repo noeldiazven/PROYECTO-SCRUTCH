@@ -129,6 +129,20 @@ void Gato::verificar(Bloques *nuevo)
     }
 }
 
+inline void verificar_nombre(Bloques * nuevo){
+    if(nuevo->get_id()=="inicio"){
+        nuevo->correr();
+    }
+}
+void Gato::correr_vector()
+{
+    std::vector<Bloques*>::iterator it;
+    for(it=bloques_activos.begin();it!=bloques_activos.end();it++){
+        verificar_nombre((*it));
+    }
+}
+
+
 //---------------------------------------
 void Gato::mover_gato(entero a, entero b){
     if(get_activador()==0){

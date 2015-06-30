@@ -3,6 +3,7 @@
 #include <QWidget>
 #include "tipos.h"
 #include "gato.h"
+#include "botoncomenzar.h"
 
 class ventanamostrador:public QWidget
 {
@@ -10,6 +11,7 @@ private:
     entero posx,posy;
     entero width,heigth;
     QLabel * comenzar;
+    botoncomenzar * bandera;
     Gato * cat;
 public:
     ventanamostrador(QWidget * p);

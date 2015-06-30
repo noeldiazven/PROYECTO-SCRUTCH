@@ -62,6 +62,7 @@ public:
     void agregar_vector(Bloques * nuevo);
     void sacar_del_vector(Bloques * nuevo);
     void verificar(Bloques * nuevo);
+    void correr_vector();
 };
 
 #endif // GATO

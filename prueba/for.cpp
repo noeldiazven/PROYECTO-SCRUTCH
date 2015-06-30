@@ -1,4 +1,5 @@
 #include "for.h"
+#include "imagenes.h"
 #include <QDebug>
 
 For::For(Gato * g, ventanabotones *v)
@@ -25,17 +26,17 @@ For::For(Gato * g, ventanabotones *v)
 
     arriba=new QLabel();
     arriba->setGeometry(0,0,100,30);
-    arriba->setPixmap(QPixmap(":/image/for_arriba.png"));
+    arriba->setPixmap(for_arriba);
     arriba->setParent(this);
 
     medio=new QLabel();
     medio->setGeometry(0,25,100,10);
-    medio->setPixmap(QPixmap(":/image/for_medio.png"));
+    medio->setPixmap(for_medio);
     medio->setParent(this);
 
     abajo=new QLabel();
     abajo->setGeometry(0,35,100,20);
-    abajo->setPixmap(QPixmap(":/image/for_abajo.png"));
+    abajo->setPixmap(for_abajo);
     abajo->setParent(this);
 
     this->setParent(ventana);
@@ -50,7 +51,7 @@ void For::cambiar_medio(int x){
     if(x==0){
         height=60;
         medio->setGeometry(0,25,100,10);
-        medio->setPixmap(QPixmap(":/image/for_medio.png"));
+        medio->setPixmap(for_medio);
         abajo->setGeometry(0,35,100,20);
         varianza_back_y=height-6;
     }
@@ -64,7 +65,7 @@ void For::cambiar_medio(int x){
         for(int i=0;i<x;i++){
             QLabel * nuevo=new QLabel(medio);
             nuevo->setGeometry(0,a,100,30);
-            nuevo->setPixmap(QPixmap(":/image/for_largo.png"));
+            nuevo->setPixmap(for_medio);
             nuevo->show();
             a=a+25;
             qDebug()<<a;
