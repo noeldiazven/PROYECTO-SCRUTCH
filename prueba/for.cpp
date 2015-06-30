@@ -47,7 +47,7 @@ For::For(Gato * g, ventanabotones *v)
 }
 
 //CAMBIA LA IMAGEN SEGUN CUANTOS ELEMENTOS ESTEN
-void For::cambiar_medio(int x){
+void For::cambiar_medio(entero x, int y){
     if(x==0){
         height=60;
         medio->setGeometry(0,25,100,10);
@@ -56,8 +56,9 @@ void For::cambiar_medio(int x){
         varianza_back_y=height-6;
     }
     else{
-        if(x==1){height-=10;}
-        height=(height-(25*(x-1)))+(25*x);
+        if(x==1){height-=5;}
+        if(y>0){height=(height+(25));}
+        else{height=(height-(25));}
         medio->clear();
         medio->setGeometry(0,25,100,(30)*x);
         varianza_back_y=height-6;
@@ -65,7 +66,7 @@ void For::cambiar_medio(int x){
         for(int i=0;i<x;i++){
             QLabel * nuevo=new QLabel(medio);
             nuevo->setGeometry(0,a,100,30);
-            nuevo->setPixmap(for_medio);
+            nuevo->setPixmap(for_largo);
             nuevo->show();
             a=a+25;
             qDebug()<<a;

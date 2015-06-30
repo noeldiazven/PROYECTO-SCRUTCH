@@ -16,7 +16,7 @@ public:
     entero lista;
     void correr();
     void crear_nuevo();
-    void cambiar_medio(int x);
+    void cambiar_medio(entero x, int y);
     inline entero get_size_lista(){return lista;}
     inline void set_size_lista(int x){lista+=x;}
 };

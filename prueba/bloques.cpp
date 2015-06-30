@@ -30,21 +30,25 @@ void Bloques::mouseMoveEvent(QMouseEvent *evento)
         this->mover(evento->x(),evento->y());
     }
 }
-
+void Bloques::borrar(){
+    if(this->get_aux()!=nullptr){
+        (this->get_aux())->set_size_lista(-1);
+        (this->get_aux())->cambiar_medio((this->get_aux())->get_size_lista(),-1);
+         if((this->get_aux())->get_size_lista()==0){
+             (this->get_aux())->set_dentro(nullptr);
+         }
+         this->set_aux(nullptr);
+    }
+    obj->sacar_del_vector(this);
+    if(this->dentro!=nullptr){(this->dentro)->borrar();}
+    if(this->siguiente!=nullptr){(this->siguiente)->borrar();}
+    delete(this);
+}
 void Bloques::mouseReleaseEvent(QMouseEvent *evento)
 {
     if(get_mover_x()<=300){
         qDebug()<<"borrado";
-        if(this->get_aux()!=nullptr){
-            (this->get_aux())->set_size_lista(-1);
-            (this->get_aux())->cambiar_medio((this->get_aux())->get_size_lista());
-             if((this->get_aux())->get_size_lista()==0){
-                 (this->get_aux())->set_dentro(nullptr);
-             }
-             this->set_aux(nullptr);
-        }
-        obj->sacar_del_vector(this);
-        delete(this);
+        this->borrar();
     }
     else{
         //VERIFICANDO QUE NO SE REPITA EN EL VECTOR

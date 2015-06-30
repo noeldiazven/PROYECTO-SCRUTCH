@@ -38,7 +38,7 @@ protected:
 public:
 
     virtual void correr(){}
-    virtual void cambiar_medio(int x){}
+    virtual void cambiar_medio(entero x,int y){}
     virtual entero get_size_lista(){}
     virtual void set_size_lista(int x){}
 
@@ -72,7 +72,7 @@ public:
     inline entero get_varianza_up_x(){return varianza_up_x;}
     inline entero get_varianza_up_y(){return varianza_up_y;}
 
-    //~Bloques(){delete(this);}
+    void borrar();
 };
 #endif // BLOQUES
 

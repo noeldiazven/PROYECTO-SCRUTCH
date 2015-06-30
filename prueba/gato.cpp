@@ -44,7 +44,7 @@ void Gato::rotar_gato(tipo_entero giro){
 void verificar_bucle(Bloques *a,Bloques * b){
     if(a->get_aux()!=nullptr && b->get_aux()==nullptr){
         (a->get_aux())->set_size_lista(1);
-        (a->get_aux())->cambiar_medio((a->get_aux())->get_size_lista());
+        (a->get_aux())->cambiar_medio((a->get_aux())->get_size_lista(),1);
         b->set_aux(a->get_aux());
     }
 }
@@ -74,7 +74,7 @@ inline bool verificar_pos(Bloques * a,Bloques * b){
             {
                 if(b->get_aux()==nullptr){
                     a->set_size_lista(1);
-                    a->cambiar_medio(a->get_size_lista());
+                    a->cambiar_medio(a->get_size_lista(),1);
                     a->set_dentro(b);
                     b->set_aux(a);
                     return true;
@@ -103,7 +103,7 @@ inline bool verificar_pos(Bloques * a,Bloques * b){
                 a->set_siguiente(nullptr);
                 if(b->get_aux()!=nullptr){
                     (b->get_aux())->set_size_lista(-1);
-                    (b->get_aux())->cambiar_medio((b->get_aux())->get_size_lista());
+                    (b->get_aux())->cambiar_medio((b->get_aux())->get_size_lista(),-1);
                      if((b->get_aux())->get_size_lista()==0){
                          (b->get_aux())->set_dentro(nullptr);
                      }
