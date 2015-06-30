@@ -10,6 +10,7 @@
 #include "girarderecha.h"
 #include "unicadireccion.h"
 #include "posicionargatoen.h"
+#include "rebote.h"
 #include<QMainWindow>
 
 class ventana:public QMainWindow{
@@ -25,6 +26,7 @@ protected:
     GirarDerecha *botongirarderecha;
     UnicaDireccion *boton_unica_direccion;
     PosicionarGatoEn *boton_posicionar;
+    Rebote *botonrebotar;
 
 
 

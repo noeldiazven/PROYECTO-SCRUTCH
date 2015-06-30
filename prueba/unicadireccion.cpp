@@ -15,7 +15,7 @@ UnicaDireccion::UnicaDireccion(Gato*g, ventanabotones *v){
     dentro=nullptr;
     obj=g;
     direccion=0;
-    mover_x=110;
+    mover_x=80;
     mover_y=320;
     width=160;
     height=35;

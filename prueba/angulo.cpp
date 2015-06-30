@@ -14,7 +14,7 @@ Angulo::Angulo(Gato*g, ventanabotones *v){
     dentro=nullptr;
     obj=g;
     direccion=0;
-    mover_x=110;
+    mover_x=80;
     mover_y=220;
     width=143;
     height=35;

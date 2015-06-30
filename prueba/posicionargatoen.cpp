@@ -12,8 +12,9 @@ PosicionarGatoEn::PosicionarGatoEn(Gato*g, ventanabotones *v){
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
-
-    mover_x=110;
+    direccion=205;
+    direccion1=250;
+    mover_x=80;
     mover_y=370;
     width=143;
     height=35;
@@ -43,13 +44,13 @@ void PosicionarGatoEn::crear_nuevo()
     qDebug() <<"crear";
 }
 void PosicionarGatoEn::correr(){
-    int direccion=setpasos->toPlainText().toInt();
-    int direccion1=setpasos1->toPlainText().toInt();
+    direccion=setpasos->toPlainText().toInt();
+    direccion1=setpasos1->toPlainText().toInt();
     qDebug() << direccion;
     qDebug() << direccion1;
     obj->set_posicion_xx(direccion);
     obj->set_posicion_yy(direccion1);
-    if(obj->get_posicion_x()<=200&&obj->get_posicion_y()<260){
+    if(obj->get_posicion_x()<=200&&obj->get_posicion_y()<=265&&obj->get_posicion_x()>=-10&&obj->get_posicion_y()>=20){
         obj->mover_gato(obj->get_posicion_x(),obj->get_posicion_y());
     }
 

@@ -10,7 +10,7 @@ inicio::inicio(Gato *g, ventanabotones *v)
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
-    mover_x=110;
+    mover_x=80;
     mover_y=170;
     ventana=v;
     width=130;

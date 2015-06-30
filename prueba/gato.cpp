@@ -18,7 +18,7 @@ Gato::Gato(QWidget * par){
     width=80;heigth=80;
     cambiar_posicion_x=0;
     unico_receptor=0;
-
+    activador=0;
     cambiar_posicion_y=0;
     this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);//poniendo en la posicion (x,y) y de tamano (50,50)
     this->setParent(parent);
@@ -131,9 +131,25 @@ void Gato::verificar(Bloques *nuevo)
 
 //---------------------------------------
 void Gato::mover_gato(entero a, entero b){
+    if(get_activador()==0){
         set_posicion_x(a);
         set_posicion_y(b);
-        this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);
+        this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);}
+
+    else if(get_activador()==1){
+        set_posicion_x(-a);
+        set_posicion_y(b);
+        this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);}
+
+    else if(get_activador()==2){
+        set_posicion_x(a);
+        set_posicion_y(-b);
+        this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);}
+
+    else if(get_activador()==3){
+        set_posicion_x(a);
+        set_posicion_y(b);
+        this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);}
 }
 
 void Gato::rotar_gato_unica_direccion(tipo_entero valor){

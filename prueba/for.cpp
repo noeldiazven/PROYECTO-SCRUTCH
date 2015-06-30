@@ -8,7 +8,7 @@ For::For(Gato * g, ventanabotones *v)
     lista=0; //lista es el numero de elementos dentro del for
     obj=g;
     ventana=v;
-    mover_x=110;
+    mover_x=80;
     mover_y=220;
     width=100;
     height=60;

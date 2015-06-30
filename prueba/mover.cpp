@@ -13,7 +13,7 @@ Mover::Mover(Gato * g, ventanabotones *v)
     dentro=nullptr;
     obj=g;
     pasos=10;
-    mover_x=110;
+    mover_x=80;
     mover_y=170;
     ventana=v;
     width=150;

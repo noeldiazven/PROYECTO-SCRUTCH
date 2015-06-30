@@ -1,15 +1,18 @@
-#ifndef POSICIONARGATOEN_H
-#define POSICIONARGATOEN_H
+#ifndef REBOTE_H
+#define REBOTE_H
+
 #include "bloques.h"
 #include "tipos.h"
 #include <QtCore/qglobal.h>
 
-class PosicionarGatoEn:public Bloques{
+class Rebote:public Bloques{
 private:
     entero posicionar_en_x;
     entero posicionar_en_y;
-    tipo_entero direccion;
-    tipo_entero direccion1;
+    dobles direccion;
+    dobles pi=3.14159265358979323846;
+    dobles dx;
+    dobles dy;
 public:
 
     void set_posicionar_en_x(entero valor){posicionar_en_x=valor;}
@@ -17,10 +20,12 @@ public:
     entero get_posicion_en_x(){return posicionar_en_x;}
     entero get_posicion_en_y(){return posicionar_en_y;}
 
-    PosicionarGatoEn(Gato *g, ventanabotones * v);
+    Rebote(Gato *g, ventanabotones * v);
     void rotateLabel();
     void crear_nuevo();
     void correr();
+    void rotacion_en_el_plano();
 };
 
-#endif // POSICIONARGATOEN_H
+
+#endif // REBOTE_H

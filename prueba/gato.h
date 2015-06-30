@@ -25,12 +25,17 @@ private:
     entero receptor;
     entero unico_receptor;
 
+    tipo_entero activador;
+
 public:
     Gato(QWidget *par);
     void rotar_gato(tipo_entero giro);
     inline QWidget * get_parent(){return parent;}
+    inline entero set_activador(tipo_entero valor){activador=valor;}
+
     inline entero get_posicion_x(){return posicion_x;}
     inline entero get_posicion_y(){return posicion_y;}
+    inline tipo_entero get_activador(){return activador;}
     inline entero get_receptor(){return receptor;}
     inline entero get_receptor_unica_direccion(){return unico_receptor;}
 
@@ -42,6 +47,7 @@ public:
 
     inline void set_posicion_y(entero valor){posicion_y+=valor;}
     inline void set_posicion_x(entero valor){posicion_x+=valor;}
+    inline void set_posicion_y_ayuda(entero valor){posicion_y-=valor;}
 
     inline void set_posicion_yy(entero valor){posicion_y=valor;}
     inline void set_posicion_xx(entero valor){posicion_x=valor;}

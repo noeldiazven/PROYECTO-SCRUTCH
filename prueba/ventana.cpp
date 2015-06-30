@@ -39,6 +39,9 @@ ventana::ventana()
     //agregando el boton correr
     botoninicio=new inicio(mostrador->get_cat(),Botones);
     Botones->add_botones_control(botoninicio);
+    //agregando boton rebotar
+    botonrebotar =new Rebote(mostrador->get_cat(),Botones);
+    Botones->add_botones_movimiento(botonrebotar);
 
     //agregando el boton for
     botonfor=new For(mostrador->get_cat(),Botones);

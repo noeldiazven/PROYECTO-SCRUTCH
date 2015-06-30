@@ -11,6 +11,7 @@
 #define block_girar_derecha QPixmap(":/image/girar_der.png")
 #define block_unica_direccion QPixmap(":/image/unica_d.png")
 #define block_posicion QPixmap(":/image/ir_a.png")
+#define block_rebotar QPixmap(":/image/rebotar.png")
 
 #endif // IMAGENES
 
