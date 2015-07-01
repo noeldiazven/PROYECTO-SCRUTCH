@@ -48,5 +48,10 @@ ventana::ventana()
     botonfor=new For(mostrador->get_cat(),Botones);
     Botones->add_botones_control(botonfor);
 
+    //agregando el boton if
+    botonif=new IF(mostrador->get_cat(),Botones);
+    Botones->add_botones_control(botonif);
+
     Botones->mostrar_botones_movimiento();
+
 }

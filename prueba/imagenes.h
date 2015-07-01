@@ -20,6 +20,13 @@
 #define for_medio QPixmap(":/image/for_medio.png")
 #define for_abajo QPixmap(":/image/for_abajo.png")
 #define for_largo QPixmap(":/image/for_largo.png")
+#define if_arriba_izq QPixmap(":/image/if_arriba_izq.png")
+#define if_arriba_med QPixmap(":/image/if_arriba_med.png")
+#define if_arriba_med_largo QPixmap(":/image/if_arriba_med_largo.png")
+#define if_arriba_der QPixmap(":/image/if_arriba_der.png")
+
+
+
 
 //IMAGEN DE LA BARRA DE COMIENZO
 #define img_comienzo QPixmap(":/image/comenzar.png")

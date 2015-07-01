@@ -19,5 +19,9 @@
         <file>unica_d.png</file>
         <file>bandera_activa.png</file>
         <file>bandera_desactivada.png</file>
+        <file>if_arriba_izq.png</file>
+        <file>if_arriba_med.png</file>
+        <file>if_arriba_med_largo.png</file>
+        <file>if_arriba_der.png</file>
     </qresource>
 </RCC>

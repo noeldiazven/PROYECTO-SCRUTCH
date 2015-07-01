@@ -5,6 +5,7 @@
 #include "angulo.h"
 #include "inicio.h"
 #include "for.h"
+#include "if.h"
 #include "ventanabotones.h"
 #include "ventanamostrador.h"
 #include "girarderecha.h"
@@ -23,6 +24,7 @@ protected:
     Angulo * botonangulo;
     inicio * botoninicio;
     For * botonfor;
+    IF * botonif;
     GirarDerecha *botongirarderecha;
     UnicaDireccion *boton_unica_direccion;
     PosicionarGatoEn *boton_posicionar;
