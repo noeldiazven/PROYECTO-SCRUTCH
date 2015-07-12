@@ -23,5 +23,16 @@
         <file>if_arriba_med.png</file>
         <file>if_arriba_med_largo.png</file>
         <file>if_arriba_der.png</file>
+        <file>bajarlapiz.png</file>
+        <file>borrar.png</file>
+        <file>color.png</file>
+        <file>lapiz.png</file>
+        <file>sellar.png</file>
+        <file>subirlapiz.png</file>
+        <file>punto.png</file>
+        <file>punto0.png</file>
+        <file>punto1.png</file>
+        <file>punto2.png</file>
+        <file>punto3.png</file>
     </qresource>
 </RCC>

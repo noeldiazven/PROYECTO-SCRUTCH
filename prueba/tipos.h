@@ -7,5 +7,7 @@ typedef double(entero);
 typedef int(tipo_entero);
 typedef double(dobles);
 
+
+
 #endif // TIPOS
 

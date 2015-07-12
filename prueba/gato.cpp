@@ -7,12 +7,15 @@
 #include <QSize>
 
 Gato::Gato(QWidget * par){
+    captor_de_rotacion=0;
+    captor_de_mover=0;
+    controlador_De_lapiz=0;
     parent=par;
     img=image_gato;
     this->setPixmap(img);
 
     rotar=0;
-    posicion_x=205;
+    posicion_x=200;
     posicion_y=250;
     receptor=0;
     width=80;heigth=80;
@@ -20,11 +23,22 @@ Gato::Gato(QWidget * par){
     unico_receptor=0;
     activador=0;
     cambiar_posicion_y=0;
+    activador_De_punto=0;
+    activador3=0;
+    activador2=0;
+    sumador=0;
+    color=0;
+    borra=0;
+
+
     this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);//poniendo en la posicion (x,y) y de tamano (50,50)
     this->setParent(parent);
 }
+
+
 void Gato::rotar_gato(tipo_entero giro){
     rotar+=giro;
+
     QPixmap rotatedPixmap(img.size());//adapto el valor del img a otro pixmap
     rotatedPixmap.fill(QColor::fromRgb(0, 0, 0, 0));//cambio el color de fondo
     QPainter* p = new QPainter(&rotatedPixmap);//creo un q painter
@@ -37,7 +51,6 @@ void Gato::rotar_gato(tipo_entero giro){
     delete p;
     this->setPixmap(rotatedPixmap);
 }
-
 
 //--------------------------------------VECTOR
 

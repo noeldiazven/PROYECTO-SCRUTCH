@@ -12,13 +12,13 @@ Angulo::Angulo(Gato*g, ventanabotones *v){
     id="angulo";
     siguiente=nullptr;
     dentro=nullptr;
-    obj=g;
+
     direccion=0;
     mover_x=80;
     mover_y=220;
     width=143;
     height=35;
-
+    obj=g;
     ventana=v;
     varianza_up_x=20;
     varianza_up_y=4.7;
@@ -48,9 +48,10 @@ void Angulo::rotacion_en_el_plano(){
 void Angulo::correr(){
 
     direccion=setpasos->toPlainText().toInt();
+    obj->set_Activador3(1);
     obj->rotar_gato(direccion);
     obj->set_receptor(direccion);
-
+    obj->set_captor_de_rotacion(direccion);
     rotacion_en_el_plano();
     qDebug() << "giro";
 

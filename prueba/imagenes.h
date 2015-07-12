@@ -4,6 +4,7 @@
 //IMAGEN DE LOS BOTONES DEL MENU
 #define m_movimiento QPixmap(":/image/menu_movimiento.png")
 #define m_control QPixmap(":/image/menu_control.png")
+#define m_lapiz QPixmap(":/image/lapiz.png")
 
 //IMAGEN DEL GATO
 #define image_gato QPixmap(":/image/gato.png")
@@ -24,10 +25,19 @@
 #define if_arriba_med QPixmap(":/image/if_arriba_med.png")
 #define if_arriba_med_largo QPixmap(":/image/if_arriba_med_largo.png")
 #define if_arriba_der QPixmap(":/image/if_arriba_der.png")
+#define puntoo QPixmap(":/image/punto.png")
 
-
-
-
+////////////////////////////////////
+#define bajar_lapiz QPixmap(":/image/bajarlapiz.png")
+#define subir_lapiz QPixmap(":/image/subirlapiz.png")
+#define borrar QPixmap(":/image/borrar.png")
+#define color_lapiz QPixmap(":/image/color.png")
+#define sellar QPixmap(":/image/sellar.png")
+//colores
+#define color0 QPixmap(":/image/punto0.png")
+#define color1 QPixmap(":/image/punto1.png")
+#define color2 QPixmap(":/image/punto2.png")
+#define color3 QPixmap(":/image/punto3.png")
 //IMAGEN DE LA BARRA DE COMIENZO
 #define img_comienzo QPixmap(":/image/comenzar.png")
 #define bandera_desactivada QPixmap(":/image/bandera_desactivada.png")

@@ -11,6 +11,9 @@ void botones::mousePressEvent(QMouseEvent *evento)
     else if(this->get_id()=="c"){
         parent->mostrar_botones_control();
     }
+    else if(this->get_id()=="l"){
+        parent->mostrar_botones_lapiz();
+    }
 }
 
 botones::botones(ventanabotones * p, entero x, entero y, QPixmap i,IDS name)

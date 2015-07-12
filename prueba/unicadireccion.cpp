@@ -44,6 +44,8 @@ void UnicaDireccion::crear_nuevo()
 void UnicaDireccion::rotacion_en_el_plano(){
     dy=sin((obj->get_receptor_unica_direccion()*pi)/180);
     dx=cos((obj->get_receptor_unica_direccion()*pi)/180);
+
+
 }
 
 void UnicaDireccion::correr(){
@@ -54,7 +56,7 @@ void UnicaDireccion::correr(){
 
     rotacion_en_el_plano();
     qDebug() << "giro";
-
+    obj->set_captor_de_rotacion(direccion);
     obj->set_cambiar_posicion_y(dy);
     obj->set_cambiar_posicion_x(dx);
     if(siguiente!=nullptr){siguiente->correr();}

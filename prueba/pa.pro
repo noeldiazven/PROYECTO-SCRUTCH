@@ -29,7 +29,13 @@ SOURCES += main.cpp \
     posicionargatoen.cpp \
     rebote.cpp \
     botoncomenzar.cpp \
-    if.cpp
+    if.cpp \
+    bajarlapiz.cpp \
+    borrar.cpp \
+    punto.cpp \
+    puntos.cpp \
+    subirlapiz.cpp \
+    color.cpp
 
 HEADERS  += \
     mover.h \
@@ -49,7 +55,13 @@ HEADERS  += \
     posicionargatoen.h \
     rebote.h \
     botoncomenzar.h \
-    if.h
+    if.h \
+    bajarlapiz.h \
+    borrar.h \
+    punto.h \
+    puntos.h \
+    subirlapiz.h \
+    color.h
 
 FORMS    +=
 

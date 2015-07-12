@@ -12,14 +12,19 @@
 #include "unicadireccion.h"
 #include "posicionargatoen.h"
 #include "rebote.h"
+#include "bajarlapiz.h"
+#include "lineas.h"
 #include<QMainWindow>
-
+#include "borrar.h"
+#include "subirlapiz.h"
+#include "color.h"
 class ventana:public QMainWindow{
 private:
 QSize s;
 protected:
     ventanabotones * Botones;
     ventanamostrador * mostrador;
+
     Mover * botonmover;
     Angulo * botonangulo;
     inicio * botoninicio;
@@ -29,6 +34,14 @@ protected:
     UnicaDireccion *boton_unica_direccion;
     PosicionarGatoEn *boton_posicionar;
     Rebote *botonrebotar;
+    Borrar *botonborrar;
+    Linea *line;
+    color *botoncolor;
+
+    //-----------------
+    BajarLapiz *boton_bajar;
+    subirlapiz *botonsubir;
+
 
 
 

@@ -43,6 +43,7 @@ void GirarDerecha::crear_nuevo()
 void GirarDerecha::rotacion_en_el_plano(){
     dy=sin((obj->get_receptor()*pi)/180);
     dx=cos((obj->get_receptor()*pi)/180);
+
 }
 
 void GirarDerecha::correr(){
@@ -50,7 +51,7 @@ void GirarDerecha::correr(){
     direccion=setpasos->toPlainText().toInt();
     obj->rotar_gato(-direccion);
     obj->set_receptor(direccion);
-
+    obj->set_captor_de_rotacion(direccion);
     rotacion_en_el_plano();
     qDebug() << "giro";
 

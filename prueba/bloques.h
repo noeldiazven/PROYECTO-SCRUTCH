@@ -4,11 +4,14 @@
 #include <QTextEdit>
 #include "tipos.h"
 #include "ventanabotones.h"
+#include "ventanamostrador.h"
+#include "ayuda.h"
 
 class Bloques:public QLabel{
 protected:
     IDS id;
     ventanabotones * ventana; //ventana donde se crean los bloques
+    Punto *punto;
     Gato * obj; //objecto que se modificara
     Bloques * siguiente; //puntero que apunta al bloque de abajo
     Bloques * dentro;

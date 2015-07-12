@@ -4,7 +4,7 @@
 #include  <QLabel>
 #include <QTextEdit>
 #include <QDebug>
-
+#include "ventana.h"
 Mover::Mover(Gato * g, ventanabotones *v)
 {
     aux=nullptr;
@@ -43,9 +43,11 @@ void Mover::crear_nuevo()
 
 void Mover::correr(){
 
-    //mover gato al hacer dobleclick
     pasos=setpasos->toPlainText().toDouble();
 
+    obj->set_captor_de_mover(pasos);
+
+    obj->set_sumador(1);
 
     if (obj->get_cambiar_posicion_x()!=0 || obj->get_cambiar_posicion_y()!=0){
         obj->mover_gato(obj->get_cambiar_posicion_x()*pasos,obj->get_cambiar_posicion_y()*pasos);
@@ -55,4 +57,5 @@ void Mover::correr(){
     }
     qDebug() <<"movio";
     if(siguiente!=nullptr){siguiente->correr();}
+
 }

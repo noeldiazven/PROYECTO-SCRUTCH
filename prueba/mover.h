@@ -1,7 +1,7 @@
 #ifndef MOVER
 #define MOVER
 #include "bloques.h"
-
+#include "punto.h"
 class Mover:public Bloques{
 private:
     entero pasos;

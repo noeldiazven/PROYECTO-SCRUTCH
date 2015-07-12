@@ -13,6 +13,7 @@ private:
     QWidget * operaciones;
     std::vector<QLabel*> botones_movimiento;
     std::vector<QLabel*> botones_control;
+    std::vector<QLabel*> botones_lapiz;
 
 public:
     ventanabotones(QWidget * parent, Gato *g);
@@ -27,10 +28,12 @@ public:
 
     inline void add_botones_movimiento(QLabel * nuevo){botones_movimiento.push_back(nuevo);}
     inline void add_botones_control(QLabel * nuevo){botones_control.push_back(nuevo);}
+    inline void add_botones_lapiz(QLabel* nuevo){botones_lapiz.push_back(nuevo);}
 
     void sacar_vectores(QLabel * nuevo);
     void mostrar_botones_movimiento();
     void mostrar_botones_control();
+    void mostrar_botones_lapiz();
 };
 
 #endif // VETANABOTONES_H
