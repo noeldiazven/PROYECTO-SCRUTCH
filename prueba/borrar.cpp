@@ -10,7 +10,8 @@
 #include "linea.h"
 
 
-Borrar::Borrar(Gato*g, ventanabotones *v){
+Borrar::Borrar(Gato*g, ventanabotones *v, ventanamostrador *venta){
+    ven=venta;
     dx=0;
     dy=0;
     aux=nullptr;
@@ -48,14 +49,14 @@ void Borrar::paintEvent()
 
 void Borrar::crear_nuevo()
 {
-    Borrar * n=new Borrar(obj,ventana);
+    Borrar * n=new Borrar(obj,ventana,ven);
     n->show();
     ventana->add_botones_lapiz(n);
     qDebug() <<"crear";
 }
 void Borrar::correr(){
 
-    obj->set_borra(1);
+    ven->eliminar_puntos();
     if(siguiente!=nullptr){siguiente->correr();}
 
 }

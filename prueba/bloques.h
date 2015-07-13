@@ -13,6 +13,7 @@ protected:
     IDS id;
     ventanabotones * ventana; //ventana donde se crean los bloques
     Punto *punto;
+    ventanamostrador *ven;
     Gato * obj; //objecto que se modificara
     Bloques * siguiente; //puntero que apunta al bloque de abajo
     Bloques * dentro;

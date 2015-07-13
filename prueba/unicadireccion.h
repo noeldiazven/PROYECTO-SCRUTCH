@@ -12,7 +12,7 @@ private:
     dobles dx;
     dobles dy;
 public:
-    UnicaDireccion(Gato *g, ventanabotones * v);
+    UnicaDireccion(Gato *g, ventanabotones * v,ventanamostrador*venta);
 
     void rotateLabel();
     void crear_nuevo();

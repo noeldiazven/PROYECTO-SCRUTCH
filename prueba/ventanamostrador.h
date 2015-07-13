@@ -57,6 +57,7 @@ public:
     void pintar_linea();
     void mostrar_puntitos();
     void rotacion_en_el_plano();
+    void eliminar_puntos();
 
 
    // inline Linea*get_linea(){return line;}

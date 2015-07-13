@@ -11,7 +11,7 @@ private:
     dobles dx;
     dobles dy;
 public:
-    Angulo(Gato *g,ventanabotones * v);
+    Angulo(Gato *g,ventanabotones * v,ventanamostrador *venta);
 
     void rotateLabel();
     void crear_nuevo();

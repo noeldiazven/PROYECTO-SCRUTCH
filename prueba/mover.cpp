@@ -5,8 +5,9 @@
 #include <QTextEdit>
 #include <QDebug>
 #include "ventana.h"
-Mover::Mover(Gato * g, ventanabotones *v)
+Mover::Mover(Gato * g, ventanabotones *v, ventanamostrador *venta)
 {
+    ven=venta;
     aux=nullptr;
     id="mover";
     siguiente=nullptr;
@@ -35,14 +36,14 @@ Mover::Mover(Gato * g, ventanabotones *v)
 
 void Mover::crear_nuevo()
 {
-    Mover * n=new Mover(obj,ventana);
+    Mover * n=new Mover(obj,ventana,ven);
     n->show();
     ventana->add_botones_movimiento(n);
     qDebug() <<"crear";
 }
 
 void Mover::correr(){
-
+    ven->pintar_linea();
     pasos=setpasos->toPlainText().toDouble();
 
     obj->set_captor_de_mover(pasos);

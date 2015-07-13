@@ -61,6 +61,8 @@ void ventanamostrador::pintar_linea(){
                     //qDebug()<<cat->get_posicion_x()<<"  "<<g;
                      add_lapiz(pt);
                 }
+                posInicialX=cat->get_posicion_x();
+                posInicialY=cat->get_posicion_y();
                 cat->set_sumador(0);
 
            }
@@ -111,6 +113,8 @@ void ventanamostrador::pintar_linea(){
 
 
                }
+               posInicialX=cat->get_posicion_x();
+               posInicialY=cat->get_posicion_y();
                if(sumador_de_angulo!=cat->get_captor_de_rotacion()){
                     sumador_de_angulo+=cat->get_captor_de_rotacion();
                }
@@ -123,6 +127,13 @@ void ventanamostrador::pintar_linea(){
     }
 
 }
+void ventanamostrador::eliminar_puntos(){
+    while (!lapiz.empty()) {
+        delete lapiz.back();
+        lapiz.pop_back();
+    }
+}
+
 void ventanamostrador::mostrar_puntitos(){
 
     std::for_each(lapiz.begin(),lapiz.end(),mostrar_lapiz);

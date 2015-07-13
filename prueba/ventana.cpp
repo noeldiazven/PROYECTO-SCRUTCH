@@ -21,7 +21,7 @@ ventana::ventana()
     boton_bajar =new BajarLapiz(mostrador->get_cat(),Botones);
     Botones->add_botones_lapiz(boton_bajar);
 
-    botonborrar =new Borrar(mostrador->get_cat(),Botones);
+    botonborrar =new Borrar(mostrador->get_cat(),Botones,mostrador);
     Botones->add_botones_lapiz(botonborrar);
 
     botonsubir =new subirlapiz(mostrador->get_cat(),Botones);
@@ -32,19 +32,19 @@ ventana::ventana()
 
 
     //agregandolo al boton mover
-    botonmover=new Mover(mostrador->get_cat(),Botones);
+    botonmover=new Mover(mostrador->get_cat(),Botones,mostrador);
     Botones->add_botones_movimiento(botonmover);
 
     //agregandolo al boton angulo
-    botonangulo=new Angulo(mostrador->get_cat(),Botones);
+    botonangulo=new Angulo(mostrador->get_cat(),Botones,mostrador);
     Botones->add_botones_movimiento(botonangulo);
 
     //agregandolo al boton girar derecha
-    botongirarderecha = new GirarDerecha(mostrador->get_cat(),Botones);
+    botongirarderecha = new GirarDerecha(mostrador->get_cat(),Botones,mostrador);
     Botones->add_botones_movimiento(botongirarderecha);
 
     //agregando boton unica direccion
-    boton_unica_direccion =new UnicaDireccion(mostrador->get_cat(),Botones);
+    boton_unica_direccion =new UnicaDireccion(mostrador->get_cat(),Botones,mostrador);
     Botones->add_botones_movimiento(boton_unica_direccion);
 
     //agregando boton posicionar

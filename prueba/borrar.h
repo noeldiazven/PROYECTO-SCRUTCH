@@ -24,7 +24,7 @@ private:
 
 
 public:
-    Borrar(Gato *g, ventanabotones * v);
+    Borrar(Gato *g, ventanabotones * v,ventanamostrador*venta);
 
     void rotateLabel();
     void crear_nuevo();

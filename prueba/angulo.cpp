@@ -5,7 +5,8 @@
 #include <math.h>
 #include <QDebug>
 
-Angulo::Angulo(Gato*g, ventanabotones *v){
+Angulo::Angulo(Gato*g, ventanabotones *v, ventanamostrador *venta){
+    ven=venta;
     dx=0;
     dy=0;
     aux=nullptr;
@@ -35,7 +36,7 @@ Angulo::Angulo(Gato*g, ventanabotones *v){
 
 void Angulo::crear_nuevo()
 {
-    Angulo * n=new Angulo(obj,ventana);
+    Angulo * n=new Angulo(obj,ventana,ven);
     n->show();
     ventana->add_botones_movimiento(n);
     qDebug() <<"crear";
@@ -46,7 +47,7 @@ void Angulo::rotacion_en_el_plano(){
 }
 
 void Angulo::correr(){
-
+    ven->pintar_linea();
     direccion=setpasos->toPlainText().toInt();
     obj->set_Activador3(1);
     obj->rotar_gato(direccion);

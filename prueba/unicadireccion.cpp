@@ -6,7 +6,8 @@
 #include <math.h>
 #include <QDebug>
 
-UnicaDireccion::UnicaDireccion(Gato*g, ventanabotones *v){
+UnicaDireccion::UnicaDireccion(Gato*g, ventanabotones *v, ventanamostrador *venta){
+    ven=venta;
     dx=0;
     dy=0;
     aux=nullptr;
@@ -36,7 +37,7 @@ UnicaDireccion::UnicaDireccion(Gato*g, ventanabotones *v){
 
 void UnicaDireccion::crear_nuevo()
 {
-    UnicaDireccion * n=new UnicaDireccion(obj,ventana);
+    UnicaDireccion * n=new UnicaDireccion(obj,ventana,ven);
     n->show();
     ventana->add_botones_movimiento(n);
     qDebug() <<"crear";
@@ -49,7 +50,7 @@ void UnicaDireccion::rotacion_en_el_plano(){
 }
 
 void UnicaDireccion::correr(){
-
+    ven->pintar_linea();
     direccion=setpasos->toPlainText().toInt();
     obj->set_Activador3(3);
     obj->rotar_gato_unica_direccion(direccion);

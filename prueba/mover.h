@@ -8,7 +8,7 @@ private:
     Mover *entrada;
 
 public:
-    Mover(Gato * g,ventanabotones * v);
+    Mover(Gato * g,ventanabotones * v,ventanamostrador*venta);
     void crear_nuevo();
     void correr();
 };

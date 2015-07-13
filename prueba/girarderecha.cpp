@@ -5,7 +5,8 @@
 #include <math.h>
 #include <QDebug>
 
-GirarDerecha::GirarDerecha(Gato*g, ventanabotones *v){
+GirarDerecha::GirarDerecha(Gato*g, ventanabotones *v, ventanamostrador *venta){
+    venta=ven;
     dx=0;
     dy=0;
     aux=nullptr;
@@ -35,7 +36,7 @@ GirarDerecha::GirarDerecha(Gato*g, ventanabotones *v){
 
 void GirarDerecha::crear_nuevo()
 {
-    GirarDerecha * n=new GirarDerecha(obj,ventana);
+    GirarDerecha * n=new GirarDerecha(obj,ventana,ven);
     n->show();
     ventana->add_botones_movimiento(n);
     qDebug() <<"crear";
@@ -47,7 +48,7 @@ void GirarDerecha::rotacion_en_el_plano(){
 }
 
 void GirarDerecha::correr(){
-
+    ven->pintar_linea();
     direccion=setpasos->toPlainText().toInt();
     obj->set_Activador3(2);
     obj->rotar_gato(-direccion);
