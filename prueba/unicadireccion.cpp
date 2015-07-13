@@ -51,6 +51,7 @@ void UnicaDireccion::rotacion_en_el_plano(){
 void UnicaDireccion::correr(){
 
     direccion=setpasos->toPlainText().toInt();
+    obj->set_Activador3(3);
     obj->rotar_gato_unica_direccion(direccion);
     obj->set_receptor_unica_direccion(-direccion);
 

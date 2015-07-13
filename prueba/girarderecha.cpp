@@ -49,6 +49,7 @@ void GirarDerecha::rotacion_en_el_plano(){
 void GirarDerecha::correr(){
 
     direccion=setpasos->toPlainText().toInt();
+    obj->set_Activador3(2);
     obj->rotar_gato(-direccion);
     obj->set_receptor(direccion);
     obj->set_captor_de_rotacion(direccion);

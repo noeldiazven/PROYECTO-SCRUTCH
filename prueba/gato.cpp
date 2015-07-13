@@ -30,7 +30,6 @@ Gato::Gato(QWidget * par){
     color=0;
     borra=0;
 
-
     this->setGeometry(get_posicion_x(),get_posicion_y(),width,heigth);//poniendo en la posicion (x,y) y de tamano (50,50)
     this->setParent(parent);
 }
