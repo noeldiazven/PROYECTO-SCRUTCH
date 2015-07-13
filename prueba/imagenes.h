@@ -5,6 +5,7 @@
 #define m_movimiento QPixmap(":/image/menu_movimiento.png")
 #define m_control QPixmap(":/image/menu_control.png")
 #define m_lapiz QPixmap(":/image/lapiz.png")
+#define m_operadores QPixmap(":/image/menu_operadores.png")
 
 //IMAGEN DEL GATO
 #define image_gato QPixmap(":/image/gato.png")
@@ -26,6 +27,16 @@
 #define if_arriba_med_largo QPixmap(":/image/if_arriba_med_largo.png")
 #define if_arriba_der QPixmap(":/image/if_arriba_der.png")
 #define puntoo QPixmap(":/image/punto.png")
+
+///////////Operadores//////////////
+#define menor_mayor QPixmap(":/image/menor_mayor.png")
+#define igual QPixmap(":/image/igual.png")
+#define mayor_menor QPixmap(":/image/mayor_menor.png")
+#define suma QPixmap(":/image/suma.png")
+#define resta QPixmap(":/image/resta.png")
+#define multiplicacion QPixmap(":/image/multiplicacion.png")
+#define division QPixmap(":/image/division.png")
+
 
 ////////////////////////////////////
 #define bajar_lapiz QPixmap(":/image/bajarlapiz.png")

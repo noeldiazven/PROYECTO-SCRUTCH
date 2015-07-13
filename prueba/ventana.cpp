@@ -71,6 +71,35 @@ ventana::ventana()
     //Botones->add_botones_lapiz(A);
 
 
+    //agregando el boton ==
+    botonigual=new Igual(mostrador->get_cat(),Botones);
+    Botones->add_botones_operadores(botonigual);
+
+    //agregando el boton >
+    botonmayor_menor=new Mayor_menor(mostrador->get_cat(),Botones);
+    Botones->add_botones_operadores(botonmayor_menor);
+
+    //agregando el boton <
+    botonmenor_mayor=new Menor_mayor(mostrador->get_cat(),Botones);
+    Botones->add_botones_operadores(botonmenor_mayor);
+
+    //agregando el boton +
+    boton_suma=new Suma(mostrador->get_cat(),Botones);
+    Botones->add_botones_operadores(boton_suma);
+
+    //agregando el boton -
+    boton_resta=new Resta(mostrador->get_cat(),Botones);
+    Botones->add_botones_operadores(boton_resta);
+
+    //agregando el boton /
+    boton_division=new Division(mostrador->get_cat(),Botones);
+    Botones->add_botones_operadores(boton_division);
+
+    //agregando el boton *
+    boton_multiplicacion=new Multiplicacion(mostrador->get_cat(),Botones);
+    Botones->add_botones_operadores(boton_multiplicacion);
+
+
 
 
     Botones->mostrar_botones_movimiento();

@@ -111,6 +111,12 @@ public:
     void verificar(Bloques * nuevo);
     void correr_vector();
 
+    std::vector <Bloques*> bloques_operadores;
+    void agregar_vector_h(Bloques * nuevo);
+    void sacar_del_vector_h(Bloques * nuevo);
+    void verificar_h(Bloques * nuevo);
+    void correr_vector_h();
+
 };
 
 #endif // GATO

@@ -2,7 +2,6 @@
 #include "imagenes.h"
 #include <QDebug>
 
-
 IF::IF(Gato * g,ventanabotones * v){
     aux=nullptr;
     id="for";
@@ -52,13 +51,14 @@ IF::IF(Gato * g,ventanabotones * v){
     this->setParent(ventana);
     this->setGeometry(mover_x,mover_y,width,height);
 
+
 }
 void IF::crear_nuevo()
 {
     IF * n=new IF(obj,ventana);
     n->show();
     ventana->add_botones_control(n);
-    qDebug() <<"crear";
+    qDebug() <<"crear"<<n->get_pointer_in_x();
 }
 
 void IF::cambiar_medio(entero x, int y){
@@ -90,13 +90,42 @@ void IF::cambiar_medio(entero x, int y){
     this->setGeometry(mover_x,mover_y,width,height);
     qDebug()<<varianza_back_x<<varianza_back_y;
 }
-void IF::cambiar_arriba(entero x, int y){
+
+void IF :: cambiar_medio_a(entero x, int y)
+{
     if(x==0){
-        height=60;
-        medio->setGeometry(50,0,30,10);
-        medio->setPixmap(for_medio);
-        abajo->setGeometry(0,35,100,20);
-        varianza_back_y=height-6;
+        width=100;
+        arriba_med->setGeometry(63,0,100,30);
+        arriba_med->setPixmap(if_arriba_med);
+        arriba_der->setGeometry(78,0,100,30);
+        varianza_back_x=width-6;
+    }
+    else{
+        if(x==1){width-=5;}
+        if(y>0){width=(width+(25));}
+        else{width=(width-(25));}
+        arriba_med->clear();
+        arriba_med->setGeometry(63,0,(100)*x,30);
+        varianza_back_x=width-6;
+        int a=0;
+        for(int i=0;i<x;i++){
+            QLabel * nuevo=new QLabel(arriba_med);
+            nuevo->setGeometry(a,0,100,30);
+            nuevo->setPixmap(if_arriba_med_largo);
+            nuevo->show();
+            a=a+25;
+            qDebug()<<a;
+        }
     }
 }
 
+void IF::correr(){
+    if(dentro_h!=nullptr){
+        dentro_h->correr();
+        if(dentro_h->get_valor()==true){
+            qDebug()<<"salio";
+            if(dentro!=nullptr){dentro->correr();}
+            }
+              }
+    if(siguiente!=nullptr){siguiente->correr();}
+}

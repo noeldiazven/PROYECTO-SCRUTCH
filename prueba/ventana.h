@@ -18,6 +18,14 @@
 #include "borrar.h"
 #include "subirlapiz.h"
 #include "color.h"
+#include "Igual.h"
+#include "mayor_menor.h"
+#include "menor_mayor.h"
+#include "suma.h"
+#include "resta.h"
+#include "multiplicacion.h"
+#include "division.h"
+
 class ventana:public QMainWindow{
 private:
 QSize s;
@@ -37,6 +45,13 @@ protected:
     Borrar *botonborrar;
     Linea *line;
     color *botoncolor;
+    Igual * botonigual;
+    Mayor_menor * botonmayor_menor;
+    Menor_mayor * botonmenor_mayor;
+    Suma * boton_suma;
+    Resta * boton_resta;
+    Division * boton_division;
+    Multiplicacion * boton_multiplicacion;
 
     //-----------------
     BajarLapiz *boton_bajar;

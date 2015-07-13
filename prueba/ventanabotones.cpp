@@ -23,6 +23,7 @@ ventanabotones::ventanabotones(QWidget * parent,Gato * g)
     botones * menu_movimiento=new botones(this,0,0,m_movimiento,"m");
     botones * menu_control=new botones(this,150,0,m_control,"c");
     botones * menu_lapiz =new botones(this,0,35,m_lapiz,"l");
+    botones * menu_operadores=new botones(this,150,35,m_operadores,"o");
 }
 
 
@@ -38,6 +39,9 @@ void ventanabotones::sacar_vectores(QLabel *nuevo)
 
     it=std::find(botones_lapiz.begin(),botones_lapiz.end(),nuevo);
     if((*it)==nuevo){botones_lapiz.erase(it);}
+
+    it=std::find(botones_operadores.begin(),botones_operadores.end(),nuevo);
+    if((*it)==nuevo){botones_operadores.erase(it);}
 }
 
 void mostrar (QLabel * i) {  // function:
@@ -52,6 +56,7 @@ void ventanabotones::mostrar_botones_movimiento()
     std::for_each(botones_movimiento.begin(),botones_movimiento.end(),mostrar);
     std::for_each(botones_control.begin(),botones_control.end(),ocultar);
     std::for_each(botones_lapiz.begin(),botones_lapiz.end(),ocultar);
+    std::for_each(botones_operadores.begin(),botones_operadores.end(),ocultar);
 }
 
 void ventanabotones::mostrar_botones_control()
@@ -59,11 +64,20 @@ void ventanabotones::mostrar_botones_control()
     std::for_each(botones_movimiento.begin(),botones_movimiento.end(),ocultar);
     std::for_each(botones_control.begin(),botones_control.end(),mostrar);
     std::for_each(botones_lapiz.begin(),botones_lapiz.end(),ocultar);
+    std::for_each(botones_operadores.begin(),botones_operadores.end(),ocultar);
 }
 
 void ventanabotones::mostrar_botones_lapiz(){
     std::for_each(botones_movimiento.begin(),botones_movimiento.end(),ocultar);
     std::for_each(botones_control.begin(),botones_control.end(),ocultar);
     std::for_each(botones_lapiz.begin(),botones_lapiz.end(),mostrar);
+    std::for_each(botones_operadores.begin(),botones_operadores.end(),ocultar);
 }
 
+void ventanabotones::mostrar_botones_operadores()
+{
+    std::for_each(botones_movimiento.begin(),botones_movimiento.end(),ocultar);
+    std::for_each(botones_control.begin(),botones_control.end(),ocultar);
+    std::for_each(botones_operadores.begin(),botones_operadores.end(),mostrar);
+    std::for_each(botones_lapiz.begin(),botones_lapiz.end(),ocultar);
+}

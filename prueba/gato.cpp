@@ -61,6 +61,19 @@ void verificar_bucle(Bloques *a,Bloques * b){
     }
 }
 
+void Gato::agregar_vector_h(Bloques *nuevo)
+{
+    bloques_operadores.push_back(nuevo);
+}
+
+void Gato::sacar_del_vector_h(Bloques * nuevo){
+    if(bloques_operadores.size()!=0){
+        std::vector<Bloques*>::iterator it;
+        it=std::find(bloques_operadores.begin(),bloques_operadores.end(),nuevo);
+        if((*it)==nuevo){bloques_operadores.erase(it);}
+    }
+}
+
 void Gato::agregar_vector(Bloques *nuevo)
 {
     bloques_activos.push_back(nuevo);
@@ -73,6 +86,29 @@ void Gato::sacar_del_vector(Bloques * nuevo){
         if((*it)==nuevo){bloques_activos.erase(it);}
     }
 }
+
+//VERIFICA SI SE ENCUETRA DENTRO
+inline bool verificar_den(Bloques *a,Bloques *b){
+    if(b->get_id()=="operador"){
+        qDebug()<<a->get_pointer_in_x()<<"  "<<b->get_pointer_up_x();
+        if(
+            ((a->get_pointer_in_y()-23>=b->get_pointer_up_y())&&(a->get_pointer_in_y()-28<=b->get_pointer_up_y())) &&
+            ((a->get_pointer_in_x()+45>=b->get_pointer_up_x())&&(a->get_pointer_in_x()+40<=b->get_pointer_up_x()))){
+            if(b->get_aux()==nullptr){
+                a->set_size_lista_h(1);
+                a->cambiar_medio_a(a->get_size_lista_h(),1);
+                a->set_dentro_h(b);
+                b->set_aux_h(a);
+                qDebug()<<"oh si";
+                return true;
+
+            }
+            return false;
+        }
+    }
+    return false;
+}
+
 
 //VERIFICA SI SE ROZAN
 inline bool verificar_pos(Bloques * a,Bloques * b){
@@ -136,6 +172,17 @@ void Gato::verificar(Bloques *nuevo)
     for(it=bloques_activos.begin();it!=bloques_activos.end();it++){
           if(verificar_pos((*it),nuevo)){
               qDebug() << "conectado";
+              break;
+          }
+    }
+}
+
+void Gato::verificar_h(Bloques *nuevo)
+{
+    std::vector<Bloques*>::iterator it;
+    for(it=bloques_operadores.begin();it!=bloques_operadores.end();it++){
+          if(verificar_den((*it),nuevo)){
+              qDebug() << "dentro";
               break;
           }
     }

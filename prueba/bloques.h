@@ -7,6 +7,7 @@
 #include "ventanamostrador.h"
 #include "ayuda.h"
 
+
 class Bloques:public QLabel{
 protected:
     IDS id;
@@ -18,6 +19,11 @@ protected:
     Bloques * aux;
     QTextEdit * setpasos; //variable que guarda el valor insertado del usuario
     QTextEdit * setpasos1;
+
+    Bloques * aux_h;
+    Bloques * dentro_h;
+    bool valor;
+    float valor_num=0;
     //Posiciones x,y
     entero mover_x;entero mover_y;
     entero width;entero height; //the block's size
@@ -40,10 +46,24 @@ protected:
 
 public:
 
+    inline bool get_valor(){return valor;}
+    inline float get_valor_num(){return valor_num;}
+
     virtual void correr(){}
     virtual void cambiar_medio(entero x,int y){}
     virtual entero get_size_lista(){}
     virtual void set_size_lista(int x){}
+
+
+
+    //alargamiento horizontal
+    virtual void cambiar_medio_a(entero x,int y){}
+    virtual entero get_size_lista_h(){}
+    virtual void set_size_lista_h(int x){}
+    inline void set_aux_h(Bloques * nuevo){aux_h=nuevo;}
+    inline Bloques * get_aux_h(){return aux_h;}
+    inline void set_dentro_h(Bloques * nuevo){dentro_h=nuevo;}
+    inline Bloques * get_dentro_h(){return dentro_h;}
 
     inline void set_aux(Bloques * nuevo){aux=nuevo;}
     inline Bloques * get_aux(){return aux;}

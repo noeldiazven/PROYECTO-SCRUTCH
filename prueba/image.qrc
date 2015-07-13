@@ -34,5 +34,13 @@
         <file>punto1.png</file>
         <file>punto2.png</file>
         <file>punto3.png</file>
+        <file>menu_operadores.png</file>
+        <file>mayor_menor.png</file>
+        <file>igual.png</file>
+        <file>menor_mayor.png</file>
+        <file>suma.png</file>
+        <file>resta.png</file>
+        <file>multiplicacion.png</file>
+        <file>division.png</file>
     </qresource>
 </RCC>

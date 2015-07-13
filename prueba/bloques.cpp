@@ -64,6 +64,15 @@ void Bloques::mouseReleaseEvent(QMouseEvent *evento)
 
         obj->verificar(this);
         qDebug() << obj->bloques_activos.size();
+        //VERIFICANDO INTERNOS
+        it=std::find(obj->bloques_operadores.begin(),obj->bloques_operadores.end(),this);
+        if((it==obj->bloques_operadores.end())||(obj->bloques_operadores.size()==0)){
+            obj->agregar_vector_h(this);
+            qDebug() <<"agregado_h"<<"\n";
+        }
+
+        obj->verificar_h(this);
+        qDebug() << obj->bloques_operadores.size();
     }
 }
 

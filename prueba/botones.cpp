@@ -14,6 +14,9 @@ void botones::mousePressEvent(QMouseEvent *evento)
     else if(this->get_id()=="l"){
         parent->mostrar_botones_lapiz();
     }
+    else if(this->get_id()=="o"){
+        parent->mostrar_botones_operadores();
+    }
 }
 
 botones::botones(ventanabotones * p, entero x, entero y, QPixmap i,IDS name)

@@ -35,7 +35,14 @@ SOURCES += main.cpp \
     punto.cpp \
     puntos.cpp \
     subirlapiz.cpp \
-    color.cpp
+    color.cpp \
+    igual.cpp \
+    suma.cpp \
+    division.cpp \
+    menor_mayor.cpp \
+    multiplicacion.cpp \
+    resta.cpp \
+    mayor_menor.cpp
 
 HEADERS  += \
     mover.h \
@@ -61,7 +68,14 @@ HEADERS  += \
     punto.h \
     puntos.h \
     subirlapiz.h \
-    color.h
+    color.h \
+    igual.h \
+    mayor_menor.h \
+    menor_mayor.h \
+    division.h \
+    multiplicacion.h \
+    resta.h \
+    suma.h
 
 FORMS    +=
 
