@@ -93,15 +93,16 @@ void IF::cambiar_medio(entero x, int y){
 
 void IF :: cambiar_medio_a(entero x, int y)
 {
+    qDebug()<<x<<"esta es<<<<"<<y<<"<<<<es esta";
     if(x==0){
         width=100;
-        arriba_med->setGeometry(63,0,100,30);
+        arriba_med->setGeometry(64,0,100,30);
         arriba_med->setPixmap(if_arriba_med);
-        arriba_der->setGeometry(78,0,100,30);
-        varianza_back_x=width-6;
+        arriba_der->setGeometry(85,0,100,30);
+        varianza_back_x=width-20;
     }
     else{
-        if(x==1){width-=5;}
+        if(x==1){width+=25;}
         if(y>0){width=(width+(25));}
         else{width=(width-(25));}
         arriba_med->clear();
@@ -113,10 +114,12 @@ void IF :: cambiar_medio_a(entero x, int y)
             nuevo->setGeometry(a,0,100,30);
             nuevo->setPixmap(if_arriba_med_largo);
             nuevo->show();
-            a=a+25;
+            a=a+55;
             qDebug()<<a;
         }
+        arriba_der->setGeometry(78+a,0,100,30);
     }
+     this->setGeometry(mover_x,mover_y,width,height);
 }
 
 void IF::correr(){

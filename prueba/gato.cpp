@@ -90,11 +90,12 @@ void Gato::sacar_del_vector(Bloques * nuevo){
 //VERIFICA SI SE ENCUETRA DENTRO
 inline bool verificar_den(Bloques *a,Bloques *b){
     if(b->get_id()=="operador"){
-        qDebug()<<a->get_pointer_in_x()<<"  "<<b->get_pointer_up_x();
+        qDebug()<<a->get_pointer_in_x()<<"  "<<b->get_pointer_up_x()<<"     ";
+        qDebug()<<a->get_pointer_in_y()<<"  "<<b->get_pointer_up_y();
         if(
-            ((a->get_pointer_in_y()-23>=b->get_pointer_up_y())&&(a->get_pointer_in_y()-28<=b->get_pointer_up_y())) &&
-            ((a->get_pointer_in_x()+45>=b->get_pointer_up_x())&&(a->get_pointer_in_x()+40<=b->get_pointer_up_x()))){
-            if(b->get_aux()==nullptr){
+            ((a->get_pointer_in_y()-23>=b->get_pointer_up_y())&&(a->get_pointer_in_y()-32<=b->get_pointer_up_y())) &&
+            ((a->get_pointer_in_x()+45>=b->get_pointer_up_x())&&(a->get_pointer_in_x()+37<=b->get_pointer_up_x()))){
+            if(b->get_aux_h()==nullptr){
                 a->set_size_lista_h(1);
                 a->cambiar_medio_a(a->get_size_lista_h(),1);
                 a->set_dentro_h(b);
@@ -103,7 +104,15 @@ inline bool verificar_den(Bloques *a,Bloques *b){
                 return true;
 
             }
+
             return false;
+        }else{
+            if(a->get_size_lista_h()>0){
+                a->set_size_lista_h(-1);
+                a->cambiar_medio_a(a->get_size_lista_h(),1);
+                a->set_dentro_h(nullptr);
+                b->set_aux_h(nullptr);
+            }
         }
     }
     return false;

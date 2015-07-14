@@ -547,6 +547,12 @@ debug/main.o: main.cpp C:/Qt/5.4/mingw491_32/include/QtWidgets/QApplication \
 		subirlapiz.h \
 		color.h \
 		Igual.h \
+		mayor_menor.h \
+		menor_mayor.h \
+		suma.h \
+		resta.h \
+		multiplicacion.h \
+		division.h \
 		C:/Qt/5.4/mingw491_32/include/QtGui/QtGui \
 		C:/Qt/5.4/mingw491_32/include/QtGui/QtGuiDepends \
 		C:/Qt/5.4/mingw491_32/include/QtGui/qaccessible.h \
@@ -896,7 +902,13 @@ debug/mover.o: mover.cpp mover.h \
 		borrar.h \
 		subirlapiz.h \
 		color.h \
-		Igual.h
+		Igual.h \
+		mayor_menor.h \
+		menor_mayor.h \
+		suma.h \
+		resta.h \
+		multiplicacion.h \
+		division.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mover.o mover.cpp
 
 debug/gato.o: gato.cpp gato.h \
@@ -1419,6 +1431,12 @@ debug/ventana.o: ventana.cpp C:/Qt/5.4/mingw491_32/include/QtWidgets/QMainWindow
 		subirlapiz.h \
 		color.h \
 		Igual.h \
+		mayor_menor.h \
+		menor_mayor.h \
+		suma.h \
+		resta.h \
+		multiplicacion.h \
+		division.h \
 		imagenes.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\ventana.o ventana.cpp
 
@@ -1811,6 +1829,12 @@ debug/bloques.o: bloques.cpp bloques.h \
 		subirlapiz.h \
 		color.h \
 		Igual.h \
+		mayor_menor.h \
+		menor_mayor.h \
+		suma.h \
+		resta.h \
+		multiplicacion.h \
+		division.h \
 		C:/Qt/5.4/mingw491_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\bloques.o bloques.cpp
 

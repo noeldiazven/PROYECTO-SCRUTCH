@@ -21,7 +21,7 @@ protected:
     QTextEdit * setpasos; //variable que guarda el valor insertado del usuario
     QTextEdit * setpasos1;
 
-    Bloques * aux_h;
+    Bloques * aux_h=nullptr;
     Bloques * dentro_h;
     bool valor;
     float valor_num=0;
