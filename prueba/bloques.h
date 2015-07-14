@@ -22,7 +22,8 @@ protected:
     QTextEdit * setpasos1;
 
     Bloques * aux_h=nullptr;
-    Bloques * dentro_h;
+    Bloques * dentro_h=nullptr;
+    Bloques * siguiente_h=nullptr;
     bool valor;
     float valor_num=0;
     //Posiciones x,y
@@ -65,6 +66,8 @@ public:
     inline Bloques * get_aux_h(){return aux_h;}
     inline void set_dentro_h(Bloques * nuevo){dentro_h=nuevo;}
     inline Bloques * get_dentro_h(){return dentro_h;}
+    inline void set_siguiente_h(Bloques * nuevo){siguiente_h=nuevo;}
+    inline Bloques * get_siguiente_h(){return siguiente_h;}
 
     inline void set_aux(Bloques * nuevo){aux=nuevo;}
     inline Bloques * get_aux(){return aux;}

@@ -21,6 +21,9 @@ void Bloques::mover(entero a, entero b)
     this->setGeometry(get_mover_x(),get_mover_y(),this->get_width(),this->get_height());
     if(siguiente!=nullptr){siguiente->mover(a,b);}
     if(dentro!=nullptr){dentro->mover(a,b);}
+    if(siguiente_h!=nullptr){siguiente_h->mover(a,b);}
+    if(dentro_h!=nullptr){dentro_h->mover(a,b);}
+
 }
 
 void Bloques::mouseMoveEvent(QMouseEvent *evento)
