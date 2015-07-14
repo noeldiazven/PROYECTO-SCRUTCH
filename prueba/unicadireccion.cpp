@@ -50,7 +50,7 @@ void UnicaDireccion::rotacion_en_el_plano(){
 }
 
 void UnicaDireccion::correr(){
-    ven->pintar_linea();
+
     direccion=setpasos->toPlainText().toInt();
     obj->set_Activador3(3);
     obj->rotar_gato_unica_direccion(direccion);
@@ -62,4 +62,5 @@ void UnicaDireccion::correr(){
     obj->set_cambiar_posicion_y(dy);
     obj->set_cambiar_posicion_x(dx);
     if(siguiente!=nullptr){siguiente->correr();}
+    ven->pintar_linea();
 }

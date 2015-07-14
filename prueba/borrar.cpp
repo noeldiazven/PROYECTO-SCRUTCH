@@ -54,9 +54,8 @@ void Borrar::crear_nuevo()
     ventana->add_botones_lapiz(n);
     qDebug() <<"crear";
 }
-void Borrar::correr(){
-
-    ven->eliminar_puntos();
+void Borrar::correr(){  
     if(siguiente!=nullptr){siguiente->correr();}
+    ven->eliminar_puntos();
 
 }

@@ -27,7 +27,7 @@ ventana::ventana()
     botonsubir =new subirlapiz(mostrador->get_cat(),Botones);
     Botones->add_botones_lapiz(botonsubir);
 
-    botoncolor =new color(mostrador->get_cat(),Botones);
+    botoncolor =new color(mostrador->get_cat(),Botones,mostrador);
     Botones->add_botones_lapiz(botoncolor);
 
 

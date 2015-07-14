@@ -11,7 +11,8 @@
 #include <QDebug>
 
 
-color::color(Gato*g, ventanabotones *v){
+color::color(Gato*g, ventanabotones *v,ventanamostrador *venta){
+    ven=venta;
     dx=0;
     dy=0;
     aux=nullptr;
@@ -42,15 +43,15 @@ color::color(Gato*g, ventanabotones *v){
 void color::crear_nuevo()
 {
 
-    color * n=new color(obj,ventana);
+    color * n=new color(obj,ventana,ven);
     n->show();
     ventana->add_botones_lapiz(n);
     qDebug() <<"crear";
 }
 void color::correr(){
+    ven->pintar_linea();
     direccion=setpasos->toPlainText().toInt();
     obj->set_color(direccion);
-    obj->set_Activador2(0);
     if(siguiente!=nullptr){siguiente->correr();}
 
 }

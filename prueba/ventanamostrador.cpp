@@ -110,11 +110,8 @@ void ventanamostrador::pintar_linea(){
 
                    posInicialX+=1*cos((sumador_de_angulo*pi)/180);
                    posInicialY-=1*sin((sumador_de_angulo*pi)/180);
-
-
                }
-               posInicialX=cat->get_posicion_x();
-               posInicialY=cat->get_posicion_y();
+
                if(sumador_de_angulo!=cat->get_captor_de_rotacion()){
                     sumador_de_angulo+=cat->get_captor_de_rotacion();
                }
@@ -143,31 +140,5 @@ void ventanamostrador::paintEvent(QPaintEvent *){
     pintar_linea();
     mostrar_puntitos();
 }
-
-/*dibujar gato
-void ventanamostrador::pintar_linea(){
-    if(cat->get_activador2()==1){
-        if(cat->get_sumador()==1){
-           if(cat->get_activador3()==0){
-                for(int g=0;g<cat->get_captor_De_mover();g+=2){
-                    pt=new Punto(this,cat->get_posicion_x()+g,cat->get_posicion_y());
-                     add_lapiz(pt);
-                }
-                cat->set_sumador(0);
-
-           }
-           else{
-               rotacion_en_el_plano();
-               for(int g=0;g<cat->get_captor_De_mover();g+=2){
-                   pt=new Punto(this,(cat->get_posicion_x()+(cat->get_cambiar_posicion_x()+pos_x_punto)),
-                                (cat->get_posicion_y()-(cat->get_cambiar_posicion_y()+pos_y_punto)));
-                   add_lapiz(pt);
-               }
-               cat->set_sumador(0);
-               qDebug()<<pos_x_punto<<"  "<<pos_y_punto<<"esto es de rotacion "<<pos_x_punto<<"  "<<pos_y_punto;
-           }
-        }
-    }
-}*/
 
 

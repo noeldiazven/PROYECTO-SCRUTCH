@@ -11,18 +11,13 @@ Punto::Punto(Gato*g,QWidget * par, entero x, entero y){
     hola=g;
     second=par;
     imagen=puntoo;
-    if(g->get_color()==0){
-        this->setPixmap(color0);
-        this->setGeometry(x,y+80,2,2);
-        this->setParent(second);
-    }
-    else if(g->get_color()==1){
+    if(g->get_color()==1){
         this->setPixmap(puntoo);
         this->setGeometry(x,y+80,2,2);
         this->setParent(second);
     }
     else if(g->get_color()==2){
-        this->setPixmap(color2);
+        this->setPixmap(color0);
         this->setGeometry(x,y+80,2,2);
         this->setParent(second);
     }
@@ -31,8 +26,18 @@ Punto::Punto(Gato*g,QWidget * par, entero x, entero y){
         this->setGeometry(x,y+80,2,2);
         this->setParent(second);
     }
-    else{
+    else if(g->get_color()==4){
+        this->setPixmap(color2);
+        this->setGeometry(x,y+80,2,2);
+        this->setParent(second);
+    }
+    else if(g->get_color()==5){
         this->setPixmap(color3);
+        this->setGeometry(x,y+80,2,2);
+        this->setParent(second);
+    }
+    else{
+        this->setPixmap(color0);
         this->setGeometry(x,y+80,2,2);
         this->setParent(second);
     }

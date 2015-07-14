@@ -6,7 +6,7 @@
 #include <QDebug>
 
 GirarDerecha::GirarDerecha(Gato*g, ventanabotones *v, ventanamostrador *venta){
-    venta=ven;
+    ven=venta;
     dx=0;
     dy=0;
     aux=nullptr;
@@ -48,7 +48,7 @@ void GirarDerecha::rotacion_en_el_plano(){
 }
 
 void GirarDerecha::correr(){
-    ven->pintar_linea();
+
     direccion=setpasos->toPlainText().toInt();
     obj->set_Activador3(2);
     obj->rotar_gato(-direccion);
@@ -60,4 +60,5 @@ void GirarDerecha::correr(){
     obj->set_cambiar_posicion_y(dy);
     obj->set_cambiar_posicion_x(dx);
     if(siguiente!=nullptr){siguiente->correr();}
+    ven->pintar_linea();
 }

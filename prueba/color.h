@@ -25,7 +25,7 @@ private:
 
 
 public:
-    color(Gato *g, ventanabotones * v);
+    color(Gato *g, ventanabotones * v, ventanamostrador *venta);
 
     void rotateLabel();
     void crear_nuevo();
