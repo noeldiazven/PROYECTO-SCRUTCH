@@ -59,4 +59,5 @@ void Mover::correr(){
     qDebug() <<"movio";
     if(siguiente!=nullptr){siguiente->correr();}
 
+
 }
