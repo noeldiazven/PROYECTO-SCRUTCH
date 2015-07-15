@@ -118,6 +118,12 @@ inline bool verificar_den(Bloques *a,Bloques *b){
     return false;
 }
 
+void reacomodar(Bloques * a,Bloques *b){
+    b->set_x((a->get_pointer_back_x())-20);
+    b->set_y((a->get_pointer_back_y())-6);
+    b->setGeometry((b->get_mover_x()),(b->get_mover_y()),b->get_width(),b->get_height());
+    b->actualizar_puntos();
+}
 
 //VERIFICA SI SE ROZAN
 inline bool verificar_pos(Bloques * a,Bloques * b){
@@ -143,9 +149,12 @@ inline bool verificar_pos(Bloques * a,Bloques * b){
          (((a->get_pointer_back_y()+5>=b->get_pointer_up_y())&&(a->get_pointer_back_y()-5<=b->get_pointer_up_y()))&&
          ((a->get_pointer_back_x()+5>=b->get_pointer_up_x())&&(a->get_pointer_back_x()-5<=b->get_pointer_up_x())))
         ){
-            a->set_siguiente(b);
-            if(b->get_aux()==nullptr){verificar_bucle(a,b);}
-            return true;
+            if(a->get_siguiente()==nullptr || a->get_siguiente()==b){
+                a->set_siguiente(b);
+                reacomodar(a,b);
+                if(b->get_aux()==nullptr){verificar_bucle(a,b);}
+                return true;
+            }
         }
         else if(
           ((a->get_pointer_up_y()-5<=b->get_pointer_back_y())&&((a->get_pointer_up_y()+5>=b->get_pointer_back_y()))&&
@@ -183,6 +192,20 @@ void Gato::verificar(Bloques *nuevo)
               qDebug() << "conectado";
               break;
           }
+    }
+}
+
+void ver_siguiente(Bloques * a,Bloques * b){
+    if(a->get_siguiente()==b){
+        a->set_siguiente(nullptr);
+    }
+}
+
+void Gato::verificar_vector(Bloques *nuevo)
+{
+    std::vector<Bloques*>::iterator it;
+    for(it=bloques_activos.begin();it!=bloques_activos.end();it++){
+        ver_siguiente((*it),nuevo);
     }
 }
 

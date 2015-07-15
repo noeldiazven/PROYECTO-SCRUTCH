@@ -56,7 +56,7 @@ public:
     virtual entero get_size_lista(){}
     virtual void set_size_lista(int x){}
 
-
+    void actualizar_puntos();
 
     //alargamiento horizontal
     virtual void cambiar_medio_a(entero x,int y){}
@@ -89,6 +89,8 @@ public:
 
     inline void set_mover_x(entero valor){mover_x+=valor;}
     inline void set_mover_y(entero valor){mover_y+=valor;}
+    inline void set_x(entero valor){mover_x=valor;}
+    inline void set_y(entero valor){mover_y=valor;}
 
     inline entero get_pointer_back_x(){return pointer_back_x;}
     inline entero get_pointer_back_y(){return pointer_back_y;}
@@ -103,7 +105,3 @@ public:
 };
 #endif // BLOQUES
 
-/******************************************************************************************************
-*****FALTA SEPARARLO MAS EN CLASES Y SER MAS ORDENADOS DEPENDIENDO DE QUE METODO NECESITE CADA CLASE***
-*****FALTA CREAR DEMAS BOTONES SERAN ALREDEDOR DE 15 O UN POCO MAS XD**********************************
-*******************************************************************************************************/

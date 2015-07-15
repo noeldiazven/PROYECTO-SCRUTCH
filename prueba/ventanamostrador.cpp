@@ -149,7 +149,7 @@ void ventanamostrador::pintar_linea(){
 
 }
 void ventanamostrador::eliminar_puntos(){
-    while (!lapiz.empty()) {
+    while (!lapiz.empty()){
         delete lapiz.back();
         lapiz.pop_back();
     }

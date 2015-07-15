@@ -88,6 +88,7 @@ void IF::cambiar_medio(entero x, int y){
         abajo->setGeometry(0,a+30,100,20);
     }
     this->setGeometry(mover_x,mover_y,width,height);
+    this->actualizar_puntos();
     qDebug()<<varianza_back_x<<varianza_back_y;
 }
 

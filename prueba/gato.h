@@ -109,6 +109,7 @@ public:
     void agregar_vector(Bloques * nuevo);
     void sacar_del_vector(Bloques * nuevo);
     void verificar(Bloques * nuevo);
+    void verificar_vector(Bloques * nuevo);
     void correr_vector();
 
     std::vector <Bloques*> bloques_operadores;
