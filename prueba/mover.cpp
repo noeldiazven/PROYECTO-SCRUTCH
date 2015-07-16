@@ -37,7 +37,10 @@ Mover::Mover(Gato * g, ventanabotones *v, ventanamostrador *venta)
 QString Mover::darValores()
 {
     QString res="";
-    res+=id;
+    QString texto=setpasos->toPlainText();
+    QString posiX = QString::number(mover_x);
+    QString posiY = QString::number(mover_y);
+    res=res+id+" "+texto+" X "+posiX+" Y "+posiY;
     return res;
 }
 

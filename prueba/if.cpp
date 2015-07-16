@@ -57,7 +57,9 @@ IF::IF(Gato * g,ventanabotones * v){
 QString IF::darValores()
 {
     QString res="";
-    res+=id;
+    QString posiX = QString::number(mover_x);
+    QString posiY = QString::number(mover_y);
+    res=res+id+" X "+posiX+" Y "+posiY;
     return res;
 }
 

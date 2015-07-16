@@ -40,7 +40,11 @@ Igual::Igual(Gato * g,ventanabotones * v)
 QString Igual::darValores()
 {
     QString res="";
-    res+=id;
+    QString texto1=setpasos->toPlainText();
+    QString texto2=setpasos1->toPlainText();
+    QString posiX = QString::number(mover_x);
+    QString posiY = QString::number(mover_y);
+    res=res+id+" "+texto1+" "+texto2+" X "+posiX+" Y "+posiY;
     return res;
 }
 

@@ -39,7 +39,9 @@ Borrar::Borrar(Gato*g, ventanabotones *v, ventanamostrador *venta){
 QString Borrar::darValores()
 {
     QString res="";
-    res+=id;
+    QString posiX = QString::number(mover_x);
+    QString posiY = QString::number(mover_y);
+    res=res+id+" X "+posiX+" Y "+posiY;
     return res;
 }
 

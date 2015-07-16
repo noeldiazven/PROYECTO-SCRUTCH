@@ -49,7 +49,11 @@ void Angulo::rotacion_en_el_plano(){
 QString Angulo::darValores()
 {
     QString res="";
-    res+=id;
+    QString texto=setpasos->toPlainText();
+    QString posiX = QString::number(mover_x);
+    QString posiY = QString::number(mover_y);
+    res=res+id+" "+texto+" X "+posiX+" Y "+posiY;
+
     return res;
 }
 

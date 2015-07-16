@@ -28,7 +28,9 @@ inicio::inicio(Gato *g, ventanabotones *v)
 QString inicio::darValores()
 {
     QString res="";
-    res+=id;
+    QString posiX = QString::number(mover_x);
+    QString posiY = QString::number(mover_y);
+    res=res+id+" X "+posiX+" Y "+posiY;
     return res;
 }
 

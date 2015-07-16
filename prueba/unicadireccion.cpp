@@ -38,7 +38,10 @@ UnicaDireccion::UnicaDireccion(Gato*g, ventanabotones *v, ventanamostrador *vent
 QString UnicaDireccion::darValores()
 {
     QString res="";
-    res+=id;
+    QString texto=setpasos->toPlainText();
+    QString posiX = QString::number(mover_x);
+    QString posiY = QString::number(mover_y);
+    res=res+id+" "+texto+" X "+posiX+" Y "+posiY;
     return res;
 }
 
