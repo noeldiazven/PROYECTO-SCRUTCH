@@ -34,6 +34,13 @@ GirarDerecha::GirarDerecha(Gato*g, ventanabotones *v, ventanamostrador *venta){
     setpasos->setGeometry(53,3,30,23);
 }
 
+QString GirarDerecha::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void GirarDerecha::crear_nuevo()
 {
     GirarDerecha * n=new GirarDerecha(obj,ventana,ven);

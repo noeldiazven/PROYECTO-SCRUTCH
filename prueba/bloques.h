@@ -55,8 +55,10 @@ public:
     virtual void cambiar_medio(entero x,int y){}
     virtual entero get_size_lista(){}
     virtual void set_size_lista(int x){}
+    virtual QString darValores(){}
 
     void actualizar_puntos();
+    void verificarColicion();
 
     //alargamiento horizontal
     virtual void cambiar_medio_a(entero x,int y){}

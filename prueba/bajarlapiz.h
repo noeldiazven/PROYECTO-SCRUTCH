@@ -30,6 +30,7 @@ public:
     void rotacion_en_el_plano();
     void pintar_imagen();
     void paintEvent();
+    virtual QString darValores();
 
 
 };

@@ -35,6 +35,14 @@ Division::Division(Gato * g,ventanabotones * v  )
 
 
 }
+
+QString Division::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Division::crear_nuevo()
 {
     Division * n=new Division(obj,ventana);

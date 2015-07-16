@@ -36,6 +36,14 @@ Suma::Suma(Gato *g,ventanabotones * v)
 
 
 }
+
+QString Suma::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Suma::crear_nuevo()
 {
     Suma * n=new Suma(obj,ventana);

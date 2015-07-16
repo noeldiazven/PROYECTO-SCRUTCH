@@ -16,6 +16,7 @@ public:
     Igual(Gato * g,ventanabotones * v);
     void crear_nuevo();
     void correr();
+    virtual QString darValores();
 
 };
 

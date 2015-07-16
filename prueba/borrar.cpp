@@ -36,6 +36,13 @@ Borrar::Borrar(Gato*g, ventanabotones *v, ventanamostrador *venta){
     this->setPixmap(borrar);
 }
 
+QString Borrar::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Borrar::paintEvent()
 {
     QPainter painter(this);

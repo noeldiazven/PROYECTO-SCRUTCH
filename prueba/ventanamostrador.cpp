@@ -19,6 +19,7 @@ ventanamostrador::ventanamostrador(QWidget *p)
     //creando el gato
     cat=new Gato(this); 
     bandera=new botoncomenzar(cat,comenzar);
+    guardar=new botonguardar(cat,comenzar);
     sumador_de_angulo=(cat->get_captor_de_rotacion());
     //mostrar_puntitos();
 

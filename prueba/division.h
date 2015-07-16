@@ -17,6 +17,7 @@ public:
     Division(Gato * g,ventanabotones * v);
     void crear_nuevo();
     void correr();
+    virtual QString darValores();
 };
 
 #endif // DIVISION_H

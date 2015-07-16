@@ -46,6 +46,13 @@ For::For(Gato * g, ventanabotones *v)
     setpasos->setGeometry(55,2,33,23);
 }
 
+QString For::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 //CAMBIA LA IMAGEN SEGUN CUANTOS ELEMENTOS ESTEN
 void For::cambiar_medio(entero x, int y){
     if(x==0){

@@ -21,6 +21,7 @@ public:
     void rotateLabel();
     void crear_nuevo();
     void correr();
+    virtual QString darValores();
 };
 
 #endif // POSICIONARGATOEN_H

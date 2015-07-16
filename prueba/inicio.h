@@ -8,6 +8,7 @@ public:
     inicio(Gato *g,ventanabotones * v);
     void correr();
     void crear_nuevo();
+    virtual QString darValores();
 };
 
 #endif // INICIO_H

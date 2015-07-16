@@ -34,6 +34,13 @@ Mover::Mover(Gato * g, ventanabotones *v, ventanamostrador *venta)
     setpasos->setGeometry(51,5,33,23);
 }
 
+QString Mover::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Mover::crear_nuevo()
 {
     Mover * n=new Mover(obj,ventana,ven);

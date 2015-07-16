@@ -36,6 +36,14 @@ Igual::Igual(Gato * g,ventanabotones * v)
 
 
 }
+
+QString Igual::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Igual::crear_nuevo()
 {
     Igual * n=new Igual(obj,ventana);

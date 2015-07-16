@@ -36,6 +36,14 @@ Multiplicacion::Multiplicacion(Gato *g,ventanabotones * v)
 
 
 }
+
+QString Multiplicacion::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Multiplicacion::crear_nuevo()
 {
     Multiplicacion * n=new Multiplicacion(obj,ventana);

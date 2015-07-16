@@ -34,6 +34,13 @@ subirlapiz::subirlapiz(Gato*g, ventanabotones *v){
     this->setPixmap(subir_lapiz);
 }
 
+QString subirlapiz::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void subirlapiz::crear_nuevo()
 {
     subirlapiz * n=new subirlapiz(obj,ventana);

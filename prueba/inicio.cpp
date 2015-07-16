@@ -24,6 +24,14 @@ inicio::inicio(Gato *g, ventanabotones *v)
     this->setGeometry(mover_x,mover_y,width,height);
     this->setPixmap(block_inicio);
 }
+
+QString inicio::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void inicio::correr(){
     if(siguiente!=nullptr){siguiente->correr();}
 }

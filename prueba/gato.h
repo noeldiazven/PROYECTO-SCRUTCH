@@ -2,6 +2,7 @@
 #define GATO
 #include <QLabel>
 #include <QMatrix>
+#include <QTextStream>
 #include "tipos.h"
 
 class Bloques;
@@ -117,7 +118,7 @@ public:
     void sacar_del_vector_h(Bloques * nuevo);
     void verificar_h(Bloques * nuevo);
     void correr_vector_h();
-
+    void guardarDatos(QTextStream &a);
 };
 
 #endif // GATO

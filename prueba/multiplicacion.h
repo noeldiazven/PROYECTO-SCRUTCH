@@ -16,6 +16,7 @@ public:
     Multiplicacion(Gato * g,ventanabotones * v);
     void crear_nuevo();
     void correr();
+    virtual QString darValores();
 };
 
 #endif // MULTIPLICACION_H

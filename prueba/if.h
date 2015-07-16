@@ -28,5 +28,6 @@ public:
     inline void set_size_lista(int x){lista+=x;}
     void crear_nuevo();
     void correr();
+    virtual QString darValores();
 };
 #endif // IF_H

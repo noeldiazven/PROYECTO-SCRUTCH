@@ -46,6 +46,13 @@ void Angulo::rotacion_en_el_plano(){
     dx=cos((obj->get_receptor()*pi)/180);
 }
 
+QString Angulo::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Angulo::correr(){
 
     direccion=setpasos->toPlainText().toInt();

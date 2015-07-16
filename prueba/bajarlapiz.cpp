@@ -32,6 +32,13 @@ BajarLapiz::BajarLapiz(Gato*g, ventanabotones *v){
     this->setPixmap(bajar_lapiz);
 }
 
+QString BajarLapiz::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void BajarLapiz::paintEvent()
 {
     QPainter painter(this);

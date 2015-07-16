@@ -53,6 +53,7 @@
 #define img_comienzo QPixmap(":/image/comenzar.png")
 #define bandera_desactivada QPixmap(":/image/bandera_desactivada.png")
 #define bandera_activada QPixmap(":/image/bandera_activa.png")
+#define boton_guardar QPixmap(":/image/guardar.png")
 
 //IMAGEN DEL ICONO
 #define icono QIcon(":/image/logo.png")

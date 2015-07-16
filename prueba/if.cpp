@@ -53,6 +53,14 @@ IF::IF(Gato * g,ventanabotones * v){
 
 
 }
+
+QString IF::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void IF::crear_nuevo()
 {
     IF * n=new IF(obj,ventana);

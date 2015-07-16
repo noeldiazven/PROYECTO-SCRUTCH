@@ -53,6 +53,31 @@ void Bloques::borrar(){
     if(this->dentro_h!=nullptr){(this->dentro_h)->borrar();}
     delete(this);
 }
+
+void Bloques::verificarColicion(){
+
+    std::vector<Bloques*>::iterator it;
+    it=std::find(obj->bloques_activos.begin(),obj->bloques_activos.end(),this);
+
+    //verificar si no hay repeticiones
+    if((it==obj->bloques_activos.end())||(obj->bloques_activos.size()==0)){
+        obj->agregar_vector(this);
+        qDebug() <<"agregado"<<"\n";
+    }
+
+    obj->verificar(this);
+    qDebug() << obj->bloques_activos.size();
+    //VERIFICANDO INTERNOS
+    it=std::find(obj->bloques_operadores.begin(),obj->bloques_operadores.end(),this);
+    if((it==obj->bloques_operadores.end())||(obj->bloques_operadores.size()==0)){
+        obj->agregar_vector_h(this);
+        qDebug() <<"agregado_h"<<(obj->bloques_operadores).size();
+    }
+
+    obj->verificar_h(this);
+    qDebug() << obj->bloques_operadores.size();
+}
+
 void Bloques::mouseReleaseEvent(QMouseEvent *evento)
 {
     if(get_mover_x()<=300){
@@ -61,27 +86,7 @@ void Bloques::mouseReleaseEvent(QMouseEvent *evento)
     }
     else{
         //VERIFICANDO QUE NO SE REPITA EN EL VECTOR
-
-        std::vector<Bloques*>::iterator it;
-        it=std::find(obj->bloques_activos.begin(),obj->bloques_activos.end(),this);
-
-        //verificar si no hay repeticiones
-        if((it==obj->bloques_activos.end())||(obj->bloques_activos.size()==0)){
-            obj->agregar_vector(this);
-            qDebug() <<"agregado"<<"\n";
-        }
-
-        obj->verificar(this);
-        qDebug() << obj->bloques_activos.size();
-        //VERIFICANDO INTERNOS
-        it=std::find(obj->bloques_operadores.begin(),obj->bloques_operadores.end(),this);
-        if((it==obj->bloques_operadores.end())||(obj->bloques_operadores.size()==0)){
-            obj->agregar_vector_h(this);
-            qDebug() <<"agregado_h"<<"\n";
-        }
-
-        obj->verificar_h(this);
-        qDebug() << obj->bloques_operadores.size();
+        this->verificarColicion();
     }
 }
 

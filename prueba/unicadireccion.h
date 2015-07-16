@@ -18,6 +18,7 @@ public:
     void crear_nuevo();
     void correr();
     void rotacion_en_el_plano();
+    virtual QString darValores();
 };
 
 #endif // UNICADIRECCION_H

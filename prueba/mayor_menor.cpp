@@ -36,6 +36,14 @@ Mayor_menor::Mayor_menor(Gato * g,ventanabotones * v)
 
 
 }
+
+QString Mayor_menor::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Mayor_menor::crear_nuevo()
 {
     Mayor_menor * n=new Mayor_menor(obj,ventana);

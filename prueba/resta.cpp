@@ -36,6 +36,14 @@ Resta::Resta(Gato *g,ventanabotones *v)
 
 
 }
+
+QString Resta::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Resta::crear_nuevo()
 {
     Resta * n=new Resta(obj,ventana);

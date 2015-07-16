@@ -19,6 +19,7 @@ public:
     void cambiar_medio(entero x, int y);
     inline entero get_size_lista(){return lista;}
     inline void set_size_lista(int x){lista+=x;}
+    virtual QString darValores();
 };
 
 #endif // FOR_H

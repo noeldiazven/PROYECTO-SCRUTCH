@@ -40,6 +40,13 @@ color::color(Gato*g, ventanabotones *v,ventanamostrador *venta){
     setpasos->setGeometry(108,4,25,23);
 }
 
+QString color::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void color::crear_nuevo()
 {
 

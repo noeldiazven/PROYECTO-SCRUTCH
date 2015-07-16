@@ -36,6 +36,13 @@ PosicionarGatoEn::PosicionarGatoEn(Gato*g, ventanabotones *v){
     setpasos1->setGeometry(110,4,31,23);
 }
 
+QString PosicionarGatoEn::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void PosicionarGatoEn::crear_nuevo()
 {
     PosicionarGatoEn * n=new PosicionarGatoEn(obj,ventana);

@@ -4,6 +4,7 @@
 #include "tipos.h"
 #include "gato.h"
 #include "botoncomenzar.h"
+#include "botonguardar.h"
 #include <vector>
 #include <QLabel>
 #include "punto.h"
@@ -15,6 +16,7 @@ private:
     QLabel * comenzar;
     QLabel *puntito;
     botoncomenzar * bandera;
+    botonguardar * guardar;
     Gato * cat;
     Punto *pt;
     Puntos *pts;

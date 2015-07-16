@@ -270,3 +270,15 @@ void Gato::rotar_gato_unica_direccion(tipo_entero valor){
     delete p;
     this->setPixmap(rotatedPixmap);
 }
+
+QString Datos(Bloques * a){
+    return a->darValores();
+}
+
+void Gato::guardarDatos(QTextStream & a){
+    std::vector<Bloques*>::iterator it;
+    for(it=bloques_activos.begin();it!=bloques_activos.end();it++){
+        a << Datos((*it));
+        a << "\n";
+    }
+}

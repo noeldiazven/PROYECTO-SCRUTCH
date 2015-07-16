@@ -23,15 +23,13 @@ private:
     QWidget *operaciones;
 
 
-
 public:
     color(Gato *g, ventanabotones * v, ventanamostrador *venta);
 
     void rotateLabel();
     void crear_nuevo();
     void correr();
-
-
+    virtual QString darValores();
 };
 
 #endif // COLOR_H

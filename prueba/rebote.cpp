@@ -33,6 +33,13 @@ Rebote::Rebote(Gato*g, ventanabotones *v){
     this->setPixmap(block_rebotar);
 }
 
+QString Rebote::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Rebote::crear_nuevo()
 {
     Rebote * n=new Rebote(obj,ventana);

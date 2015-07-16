@@ -36,6 +36,14 @@ Menor_mayor::Menor_mayor(Gato *g, ventanabotones * v)
 
 
 }
+
+QString Menor_mayor::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void Menor_mayor::crear_nuevo()
 {
     Menor_mayor * n=new Menor_mayor(obj,ventana);

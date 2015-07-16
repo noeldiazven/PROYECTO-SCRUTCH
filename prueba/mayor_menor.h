@@ -15,6 +15,7 @@ public:
     Mayor_menor(Gato * g,ventanabotones * v);
     void crear_nuevo();
     void correr();
+    virtual QString darValores();
 };
 
 #endif // MAYOR_MENOR_H

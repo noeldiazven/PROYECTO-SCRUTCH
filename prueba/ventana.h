@@ -57,9 +57,6 @@ protected:
     BajarLapiz *boton_bajar;
     subirlapiz *botonsubir;
 
-
-
-
 public:
     ventana();
     inline QWidget * getbotonmover(){return botonmover;}

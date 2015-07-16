@@ -35,6 +35,13 @@ UnicaDireccion::UnicaDireccion(Gato*g, ventanabotones *v, ventanamostrador *vent
     setpasos->setGeometry(125,4,30,23);
 }
 
+QString UnicaDireccion::darValores()
+{
+    QString res="";
+    res+=id;
+    return res;
+}
+
 void UnicaDireccion::crear_nuevo()
 {
     UnicaDireccion * n=new UnicaDireccion(obj,ventana,ven);

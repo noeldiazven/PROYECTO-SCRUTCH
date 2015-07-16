@@ -11,5 +11,6 @@ public:
     Mover(Gato * g,ventanabotones * v,ventanamostrador*venta);
     void crear_nuevo();
     void correr();
+    virtual QString darValores();
 };
 #endif // MOVER
