@@ -64,11 +64,29 @@ QString IF::darValores()
     return res;
 }
 
+void IF::abrir(QTextStream &text)
+{
+    this->crear_nuevo();
+    (this->get_ventana())->sacar_vectores(this);
+    this->show();
+    QString v;
+    for(entero i=0;i<4;i++){
+        text >> v;
+        if(i==1){this->set_x(v.toDouble());}
+        if(i==3){this->set_y(v.toDouble());}
+    }
+    this->setGeometry((this->get_mover_x()),(this->get_mover_y()),this->get_width(),this->get_height());
+    this->actualizar_puntos();
+    this->verificarColicion();
+}
+
 void IF::crear_nuevo()
 {
     IF * n=new IF(obj,ventana);
     n->show();
     ventana->add_botones_control(n);
+    QLabel * aux=(*((ventana->botones_control).begin()));
+    if(aux->isHidden()){n->hide();}
     ventana->erase_todos_botones(this);
     ventana->add_todos_botones(n);
     qDebug() <<"crear"<<n->get_pointer_in_x();

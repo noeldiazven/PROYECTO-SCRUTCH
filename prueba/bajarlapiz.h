@@ -31,6 +31,7 @@ public:
     void pintar_imagen();
     void paintEvent();
     virtual QString darValores();
+    virtual void abrir(QTextStream & text);
 
 
 };

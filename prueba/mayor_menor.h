@@ -16,6 +16,7 @@ public:
     void crear_nuevo();
     void correr();
     virtual QString darValores();
+    virtual void abrir(QTextStream & text);
 };
 
 #endif // MAYOR_MENOR_H

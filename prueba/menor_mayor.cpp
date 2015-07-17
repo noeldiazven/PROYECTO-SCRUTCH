@@ -49,11 +49,31 @@ QString Menor_mayor::darValores()
     return res;
 }
 
+void Menor_mayor::abrir(QTextStream &text)
+{
+    this->crear_nuevo();
+    (this->get_ventana())->sacar_vectores(this);
+    this->show();
+    QString v;
+    for(entero i=0;i<6;i++){
+        text >> v;
+        if(i==0){comp1=v.toDouble();setpasos->setText(v);}
+        if(i==1){comp2=v.toDouble();setpasos1->setText(v);}
+        if(i==3){this->set_x(v.toDouble());qDebug()<<v.toInt();}
+        if(i==5){this->set_y(v.toDouble());qDebug()<<v.toInt()<<"/"<<v;}
+    }
+    this->setGeometry((this->get_mover_x()),(this->get_mover_y()),this->get_width(),this->get_height());
+    this->actualizar_puntos();
+    this->verificarColicion();
+}
+
 void Menor_mayor::crear_nuevo()
 {
     Menor_mayor * n=new Menor_mayor(obj,ventana);
     n->show();
     ventana->add_botones_operadores(n);
+    QLabel * aux=(*((ventana->botones_operadores).begin()));
+    if(aux->isHidden()){n->hide();}
     ventana->erase_todos_botones(this);
     ventana->add_todos_botones(n);
     qDebug() <<"crear";

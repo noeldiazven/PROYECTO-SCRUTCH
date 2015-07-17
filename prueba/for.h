@@ -20,6 +20,7 @@ public:
     inline entero get_size_lista(){return lista;}
     inline void set_size_lista(int x){lista+=x;}
     virtual QString darValores();
+    virtual void abrir(QTextStream & text);
 };
 
 #endif // FOR_H

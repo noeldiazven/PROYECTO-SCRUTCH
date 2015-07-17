@@ -57,6 +57,23 @@ QString For::darValores()
     return res;
 }
 
+void For::abrir(QTextStream &text)
+{
+    this->crear_nuevo();
+    (this->get_ventana())->sacar_vectores(this);
+    this->show();
+    QString v;
+    for(entero i=0;i<5;i++){
+        text >> v;
+        if(i==0){iteraciones=v.toDouble();setpasos->setText(v);}
+        if(i==2){this->set_x(v.toDouble());}
+        if(i==4){this->set_y(v.toDouble());}
+    }
+    this->setGeometry((this->get_mover_x()),(this->get_mover_y()),this->get_width(),this->get_height());
+    this->actualizar_puntos();
+    this->verificarColicion();
+}
+
 //CAMBIA LA IMAGEN SEGUN CUANTOS ELEMENTOS ESTEN
 void For::cambiar_medio(entero x, int y){
     if(x==0){
@@ -103,6 +120,8 @@ void For::crear_nuevo()
     For * n=new For(obj,ventana);
     n->show();
     ventana->add_botones_control(n);
+    QLabel * aux=(*((ventana->botones_control).begin()));
+    if(aux->isHidden()){n->hide();}
     ventana->erase_todos_botones(this);
     ventana->add_todos_botones(n);
     qDebug() <<"crear";
