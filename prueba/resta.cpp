@@ -8,6 +8,7 @@ Resta::Resta(Gato *g,ventanabotones *v)
 {
     aux=nullptr;
     id="operador";
+    name="resta";
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
@@ -44,7 +45,7 @@ QString Resta::darValores()
     QString texto2=setpasos1->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" "+texto1+" "+texto2+" X "+posiX+" Y "+posiY;
+    res=res+name+" "+texto1+" "+texto2+" X "+posiX+" Y "+posiY;
     return res;
 }
 
@@ -53,6 +54,8 @@ void Resta::crear_nuevo()
     Resta * n=new Resta(obj,ventana);
     n->show();
     ventana->add_botones_operadores(n);
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear";
 }
 void Resta::correr()

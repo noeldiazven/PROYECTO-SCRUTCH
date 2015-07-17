@@ -16,6 +16,7 @@ Borrar::Borrar(Gato*g, ventanabotones *v, ventanamostrador *venta){
     dy=0;
     aux=nullptr;
     id="bajarlapiz";
+    name="borrar";
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
@@ -33,7 +34,7 @@ Borrar::Borrar(Gato*g, ventanabotones *v, ventanamostrador *venta){
 
     this->setParent(ventana);
     this->setGeometry(get_mover_x(),get_mover_y(),width,height);
-    this->setPixmap(borrar);
+    this->setPixmap(borrar_b);
 }
 
 QString Borrar::darValores()
@@ -41,7 +42,7 @@ QString Borrar::darValores()
     QString res="";
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" X "+posiX+" Y "+posiY;
+    res=res+name+" X "+posiX+" Y "+posiY;
     return res;
 }
 
@@ -61,6 +62,8 @@ void Borrar::crear_nuevo()
     Borrar * n=new Borrar(obj,ventana,ven);
     n->show();
     ventana->add_botones_lapiz(n);
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear";
 }
 void Borrar::correr(){  

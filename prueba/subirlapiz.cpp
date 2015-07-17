@@ -14,6 +14,7 @@ subirlapiz::subirlapiz(Gato*g, ventanabotones *v){
     dy=0;
     aux=nullptr;
     id="subirlapiz";
+    name="subirLapiz";
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
@@ -39,7 +40,7 @@ QString subirlapiz::darValores()
     QString res="";
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" X "+posiX+" Y "+posiY;
+    res=res+name+" X "+posiX+" Y "+posiY;
     return res;
 }
 
@@ -48,6 +49,8 @@ void subirlapiz::crear_nuevo()
     subirlapiz * n=new subirlapiz(obj,ventana);
     n->show();
     ventana->add_botones_lapiz(n);
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear";
 }
 

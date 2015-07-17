@@ -11,6 +11,7 @@
 class Bloques:public QLabel{
 protected:
     IDS id;
+    IDS name;
     ventanabotones * ventana; //ventana donde se crean los bloques
     Punto *punto;
     ventanamostrador *ven;
@@ -56,6 +57,7 @@ public:
     virtual entero get_size_lista(){}
     virtual void set_size_lista(int x){}
     virtual QString darValores(){}
+    virtual void abrir(QTextStream & text){}
 
     void actualizar_puntos();
     void verificarColicion();
@@ -88,6 +90,7 @@ public:
     inline entero get_width(){return width;}
     inline entero get_height(){return height;}
     inline IDS get_id(){return id;}
+    inline IDS get_name(){return name;}
 
     inline void set_mover_x(entero valor){mover_x+=valor;}
     inline void set_mover_y(entero valor){mover_y+=valor;}

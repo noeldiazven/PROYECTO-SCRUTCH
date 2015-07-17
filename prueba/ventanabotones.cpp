@@ -2,7 +2,7 @@
 #include <algorithm>
 #include "botones.h"
 #include "imagenes.h"
-
+#include"bloques.h"
 
 ventanabotones::ventanabotones(QWidget * parent,Gato * g)
 {
@@ -26,6 +26,15 @@ ventanabotones::ventanabotones(QWidget * parent,Gato * g)
     botones * menu_operadores=new botones(this,150,35,m_operadores,"o");
 }
 
+void ventanabotones::erase_todos_botones(Bloques *nuevo)
+{
+    if(todos_botones.size()!=0){
+        std::vector<Bloques*>::iterator it;
+        it=std::find(todos_botones.begin(),todos_botones.end(),nuevo);
+        if((*it)==nuevo){todos_botones.erase(it);}
+    }
+}
+
 
 void ventanabotones::sacar_vectores(QLabel *nuevo)
 {
@@ -36,6 +45,7 @@ void ventanabotones::sacar_vectores(QLabel *nuevo)
 
     it=std::find(botones_control.begin(),botones_control.end(),nuevo);
     if((*it)==nuevo){botones_control.erase(it);}
+
 
     it=std::find(botones_lapiz.begin(),botones_lapiz.end(),nuevo);
     if((*it)==nuevo){botones_lapiz.erase(it);}

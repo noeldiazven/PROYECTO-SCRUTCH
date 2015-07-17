@@ -41,7 +41,7 @@
 ////////////////////////////////////
 #define bajar_lapiz QPixmap(":/image/bajarlapiz.png")
 #define subir_lapiz QPixmap(":/image/subirlapiz.png")
-#define borrar QPixmap(":/image/borrar.png")
+#define borrar_b QPixmap(":/image/borrar.png")
 #define color_lapiz QPixmap(":/image/color.png")
 #define sellar QPixmap(":/image/sellar.png")
 //colores
@@ -54,6 +54,7 @@
 #define bandera_desactivada QPixmap(":/image/bandera_desactivada.png")
 #define bandera_activada QPixmap(":/image/bandera_activa.png")
 #define boton_guardar QPixmap(":/image/guardar.png")
+#define boton_abrir QPixmap(":/image/abrir.png")
 
 //IMAGEN DEL ICONO
 #define icono QIcon(":/image/logo.png")

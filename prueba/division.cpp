@@ -7,6 +7,7 @@ Division::Division(Gato * g,ventanabotones * v  )
 {
     aux=nullptr;
     id="operador";
+    name="division";
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
@@ -43,7 +44,7 @@ QString Division::darValores()
     QString texto2=setpasos1->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" "+texto1+" "+texto2+" X "+posiX+" Y "+posiY;
+    res=res+name+" "+texto1+" "+texto2+" X "+posiX+" Y "+posiY;
     return res;
 }
 
@@ -52,6 +53,8 @@ void Division::crear_nuevo()
     Division * n=new Division(obj,ventana);
     n->show();
     ventana->add_botones_operadores(n);
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear";
 }
 void Division::correr()

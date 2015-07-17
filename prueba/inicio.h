@@ -9,6 +9,7 @@ public:
     void correr();
     void crear_nuevo();
     virtual QString darValores();
+    virtual void abrir(QTextStream & text);
 };
 
 #endif // INICIO_H

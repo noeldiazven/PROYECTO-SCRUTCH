@@ -17,6 +17,7 @@ public:
     void rotateLabel();
     void crear_nuevo();
     void correr();
+    virtual void abrir(QTextStream & text);
     void rotacion_en_el_plano();
     virtual QString darValores();
 };

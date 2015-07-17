@@ -43,5 +43,6 @@
         <file>multiplicacion.png</file>
         <file>division.png</file>
         <file>guardar.png</file>
+        <file>abrir.png</file>
     </qresource>
 </RCC>

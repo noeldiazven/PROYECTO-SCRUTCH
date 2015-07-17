@@ -3,7 +3,7 @@
 #include <QDebug>
 #include <cmath>
 #include <QPainter>
-ventanamostrador::ventanamostrador(QWidget *p)
+ventanamostrador::ventanamostrador(QWidget *p, ventanabotones *botones)
 {
     anteriorX=0;
     activador=40;
@@ -12,6 +12,7 @@ ventanamostrador::ventanamostrador(QWidget *p)
     width=450;
     heigth=600;
     nuevo=p;
+    b=botones;
     comenzar=new QLabel(this);
     comenzar->setGeometry(0,0,450,39);
     comenzar->setPixmap(img_comienzo);
@@ -20,6 +21,7 @@ ventanamostrador::ventanamostrador(QWidget *p)
     cat=new Gato(this); 
     bandera=new botoncomenzar(cat,comenzar);
     guardar=new botonguardar(cat,comenzar);
+    abrir=new botonabrir(cat,comenzar,guardar,b);
     sumador_de_angulo=(cat->get_captor_de_rotacion());
     //mostrar_puntitos();
 
@@ -52,7 +54,7 @@ void ventanamostrador::pintar_linea(){
     //posInicialX=cat->get_posicion_x();
     //posInicialY=cat->get_posicion_y();
 
-    qDebug()<<posInicialX;
+    //qDebug()<<posInicialX;
 
     if(cat->get_activador2()==1){
         if(cat->get_sumador()==1){

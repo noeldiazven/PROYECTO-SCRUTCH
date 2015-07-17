@@ -5,10 +5,13 @@
 #include "gato.h"
 #include "botoncomenzar.h"
 #include "botonguardar.h"
+#include "botonabrir.h"
 #include <vector>
 #include <QLabel>
 #include "punto.h"
 #include "puntos.h"
+#include "ventanabotones.h"
+
 class ventanamostrador:public QWidget{
 private:
     entero posx,posy;
@@ -17,10 +20,12 @@ private:
     QLabel *puntito;
     botoncomenzar * bandera;
     botonguardar * guardar;
+    botonabrir * abrir;
     Gato * cat;
     Punto *pt;
     Puntos *pts;
     QWidget *nuevo;
+    ventanabotones * b;//puntero a la ventana botones
 
     entero pos_x_punto;
     entero pos_y_punto;
@@ -41,7 +46,7 @@ private:
     std::vector<QLabel*>::iterator B;
 
 public:
-    ventanamostrador(QWidget * p);
+    ventanamostrador(QWidget * p, ventanabotones *botones);
     inline void add_lapiz(QLabel* nuevo){lapiz.push_back(nuevo);}
 
     inline void set_posx(entero x){posx=x;}
@@ -53,6 +58,7 @@ public:
     inline entero get_width(){return width;}
     inline entero get_heigth(){return heigth;}
     inline Gato * get_cat(){return cat;}
+    inline QWidget * get_b(){return b;}
 
     QLabel *get_linea(){return puntito;}
     void paintEvent(QPaintEvent*);

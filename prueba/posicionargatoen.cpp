@@ -9,6 +9,7 @@
 PosicionarGatoEn::PosicionarGatoEn(Gato*g, ventanabotones *v){
     aux=nullptr;
     id="girarDerecha";
+    name="Posicion";
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
@@ -43,8 +44,26 @@ QString PosicionarGatoEn::darValores()
     QString texto2=setpasos1->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" "+texto1+" "+texto2+" X "+posiX+" Y "+posiY;
+    res=res+name+" "+texto1+" "+texto2+" X "+posiX+" Y "+posiY;
     return res;
+}
+
+void PosicionarGatoEn::abrir(QTextStream &text)
+{
+    this->crear_nuevo();
+    (this->get_ventana())->sacar_vectores(this);
+    this->show();
+    QString v;
+    for(entero i=0;i<6;i++){
+        text >> v;
+        if(i==0){direccion=v.toDouble();setpasos->setText(v);}
+        if(i==1){direccion1=v.toDouble();setpasos1->setText(v);}
+        if(i==3){this->set_x(v.toDouble());qDebug()<<v.toInt();}
+        if(i==5){this->set_y(v.toDouble());qDebug()<<v.toInt()<<"/"<<v;}
+    }
+    this->setGeometry((this->get_mover_x()),(this->get_mover_y()),this->get_width(),this->get_height());
+    this->actualizar_puntos();
+    this->verificarColicion();
 }
 
 void PosicionarGatoEn::crear_nuevo()
@@ -52,6 +71,10 @@ void PosicionarGatoEn::crear_nuevo()
     PosicionarGatoEn * n=new PosicionarGatoEn(obj,ventana);
     n->show();
     ventana->add_botones_movimiento(n);
+    QLabel * aux=(*((ventana->botones_movimiento).begin()));
+    if(aux->isHidden()){n->hide();}
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear";
 }
 void PosicionarGatoEn::correr(){

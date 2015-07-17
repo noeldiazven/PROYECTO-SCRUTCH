@@ -6,6 +6,7 @@ For::For(Gato * g, ventanabotones *v)
 {
     aux=nullptr;
     id="for";
+    name="for";
     lista=0; //lista es el numero de elementos dentro del for
     obj=g;
     ventana=v;
@@ -52,7 +53,7 @@ QString For::darValores()
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" "+texto+" X "+posiX+" Y "+posiY;
+    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
     return res;
 }
 
@@ -102,6 +103,8 @@ void For::crear_nuevo()
     For * n=new For(obj,ventana);
     n->show();
     ventana->add_botones_control(n);
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear";
 }
 

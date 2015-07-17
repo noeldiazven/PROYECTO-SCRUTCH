@@ -17,6 +17,7 @@ color::color(Gato*g, ventanabotones *v,ventanamostrador *venta){
     dy=0;
     aux=nullptr;
     id="color";
+    name="color";
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
@@ -46,7 +47,7 @@ QString color::darValores()
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" "+texto+" X "+posiX+" Y "+posiY;
+    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
     return res;
 }
 
@@ -56,6 +57,8 @@ void color::crear_nuevo()
     color * n=new color(obj,ventana,ven);
     n->show();
     ventana->add_botones_lapiz(n);
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear";
 }
 void color::correr(){

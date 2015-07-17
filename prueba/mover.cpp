@@ -10,6 +10,7 @@ Mover::Mover(Gato * g, ventanabotones *v, ventanamostrador *venta)
     ven=venta;
     aux=nullptr;
     id="mover";
+    name="mover";
     siguiente=nullptr;
     dentro=nullptr;
     obj=g;
@@ -34,13 +35,30 @@ Mover::Mover(Gato * g, ventanabotones *v, ventanamostrador *venta)
     setpasos->setGeometry(51,5,33,23);
 }
 
+void Mover::abrir(QTextStream & text)
+{
+    this->crear_nuevo();
+    (this->get_ventana())->sacar_vectores(this);
+    this->show();
+    QString v;
+    for(entero i=0;i<5;i++){
+        text >> v;
+        if(i==0){pasos=v.toDouble();setpasos->setText(v);}
+        if(i==2){this->set_x(v.toDouble());}
+        if(i==4){this->set_y(v.toDouble());}
+    }
+    this->setGeometry((this->get_mover_x()),(this->get_mover_y()),this->get_width(),this->get_height());
+    this->actualizar_puntos();
+    this->verificarColicion();
+}
+
 QString Mover::darValores()
 {
     QString res="";
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" "+texto+" X "+posiX+" Y "+posiY;
+    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
     return res;
 }
 
@@ -49,6 +67,10 @@ void Mover::crear_nuevo()
     Mover * n=new Mover(obj,ventana,ven);
     n->show();
     ventana->add_botones_movimiento(n);
+    QLabel * aux=(*((ventana->botones_movimiento).begin()));
+    if(aux->isHidden()){n->hide();}
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear";
 }
 

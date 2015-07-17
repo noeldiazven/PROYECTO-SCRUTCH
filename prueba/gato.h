@@ -119,6 +119,7 @@ public:
     void verificar_h(Bloques * nuevo);
     void correr_vector_h();
     void guardarDatos(QTextStream &a);
+    void borrarTodo();
 };
 
 #endif // GATO

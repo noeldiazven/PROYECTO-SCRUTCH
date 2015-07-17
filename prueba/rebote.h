@@ -26,6 +26,7 @@ public:
     void correr();
     void rotacion_en_el_plano();
     virtual QString darValores();
+    virtual void abrir(QTextStream & text);
 };
 
 

@@ -55,18 +55,22 @@ void Bloques::borrar(){
 }
 
 void Bloques::verificarColicion(){
-
     std::vector<Bloques*>::iterator it;
-    it=std::find(obj->bloques_activos.begin(),obj->bloques_activos.end(),this);
+    if(obj->bloques_activos.size()>0){
+        it=std::find(obj->bloques_activos.begin(),obj->bloques_activos.end(),this);
 
-    //verificar si no hay repeticiones
-    if((it==obj->bloques_activos.end())||(obj->bloques_activos.size()==0)){
-        obj->agregar_vector(this);
-        qDebug() <<"agregado"<<"\n";
+        //verificar si no hay repeticiones
+        if((it==obj->bloques_activos.end())||(obj->bloques_activos.size()==0)){
+            obj->agregar_vector(this);
+            qDebug() <<"agregado"<<"\n";
+        }
     }
-
+    else{
+        obj->agregar_vector(this);
+    }
     obj->verificar(this);
     qDebug() << obj->bloques_activos.size();
+
     //VERIFICANDO INTERNOS
     it=std::find(obj->bloques_operadores.begin(),obj->bloques_operadores.end(),this);
     if((it==obj->bloques_operadores.end())||(obj->bloques_operadores.size()==0)){

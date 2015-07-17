@@ -13,6 +13,7 @@ private:
 public:
     Angulo(Gato *g,ventanabotones * v,ventanamostrador *venta);
 
+    virtual void abrir(QTextStream & text);
     void rotateLabel();
     void crear_nuevo();
     void correr();

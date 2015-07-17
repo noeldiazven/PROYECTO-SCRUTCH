@@ -282,3 +282,16 @@ void Gato::guardarDatos(QTextStream & a){
         a << "\n";
     }
 }
+
+void borrarBoton(Bloques * a){
+    delete(a);
+}
+void Gato::borrarTodo()
+{
+    std::vector<Bloques*>::iterator it;
+    for(it=bloques_activos.begin();it!=bloques_activos.end();it++){
+        borrarBoton((*it));
+    }
+    bloques_activos.clear();
+    bloques_operadores.clear();
+}

@@ -5,6 +5,7 @@
 IF::IF(Gato * g,ventanabotones * v){
     aux=nullptr;
     id="for";
+    name="if";
     lista=0; //lista es el numero de elementos dentro del for
     obj=g;
     ventana=v;
@@ -59,7 +60,7 @@ QString IF::darValores()
     QString res="";
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" X "+posiX+" Y "+posiY;
+    res=res+name+" X "+posiX+" Y "+posiY;
     return res;
 }
 
@@ -68,6 +69,8 @@ void IF::crear_nuevo()
     IF * n=new IF(obj,ventana);
     n->show();
     ventana->add_botones_control(n);
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear"<<n->get_pointer_in_x();
 }
 

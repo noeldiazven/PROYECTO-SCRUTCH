@@ -11,6 +11,7 @@ Angulo::Angulo(Gato*g, ventanabotones *v, ventanamostrador *venta){
     dy=0;
     aux=nullptr;
     id="angulo";
+    name="girarIzquierda";
     siguiente=nullptr;
     dentro=nullptr;
 
@@ -34,11 +35,32 @@ Angulo::Angulo(Gato*g, ventanabotones *v, ventanamostrador *venta){
     setpasos->setGeometry(53,3,30,23);
 }
 
+void Angulo::abrir(QTextStream & text)
+{
+    this->crear_nuevo();
+    (this->get_ventana())->sacar_vectores(this);
+    this->show();
+    QString v;
+    for(entero i=0;i<5;i++){
+        text >> v;
+        if(i==0){direccion=v.toDouble();setpasos->setText(v);}
+        if(i==2){this->set_x(v.toDouble());}
+        if(i==4){this->set_y(v.toDouble());}
+    }
+    this->setGeometry((this->get_mover_x()),(this->get_mover_y()),this->get_width(),this->get_height());
+    this->actualizar_puntos();
+    this->verificarColicion();
+}
+
 void Angulo::crear_nuevo()
 {
     Angulo * n=new Angulo(obj,ventana,ven);
     n->show();
     ventana->add_botones_movimiento(n);
+    QLabel * aux=(*((ventana->botones_movimiento).begin()));
+    if(aux->isHidden()){n->hide();}
+    ventana->erase_todos_botones(this);
+    ventana->add_todos_botones(n);
     qDebug() <<"crear";
 }
 void Angulo::rotacion_en_el_plano(){
@@ -52,7 +74,7 @@ QString Angulo::darValores()
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+id+" "+texto+" X "+posiX+" Y "+posiY;
+    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
 
     return res;
 }

@@ -9,6 +9,7 @@ private:
 
 public:
     Mover(Gato * g,ventanabotones * v,ventanamostrador*venta);
+    virtual void abrir(QTextStream & text);
     void crear_nuevo();
     void correr();
     virtual QString darValores();

@@ -43,7 +43,8 @@ SOURCES += main.cpp \
     multiplicacion.cpp \
     resta.cpp \
     mayor_menor.cpp \
-    botonguardar.cpp
+    botonguardar.cpp \
+    botonabrir.cpp
 
 HEADERS  += \
     mover.h \
@@ -77,7 +78,8 @@ HEADERS  += \
     multiplicacion.h \
     resta.h \
     suma.h \
-    botonguardar.h
+    botonguardar.h \
+    botonabrir.h
 
 FORMS    +=
 
