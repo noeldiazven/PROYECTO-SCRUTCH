@@ -40,12 +40,14 @@ private:
 
     entero activador3;
     entero activador2;
+    entero activador4;
     entero sumador;
     entero borra;
 
 public:
 
     Gato(QWidget *par);
+
     entero get_borra(){return borra;}
     void set_borra(entero valor){borra==valor;}
     entero get_color(){return color;}
@@ -57,6 +59,9 @@ public:
 
     entero get_activador3(){return activador3;}
     entero set_Activador3(entero valor){activador3=valor;}
+
+    entero get_activador4(){return activador4;}
+    entero set_Activador4(entero valor){activador4=valor;}
 
     entero get_activador2(){return activador2;}
     entero set_Activador2(entero valor){activador2=valor;}

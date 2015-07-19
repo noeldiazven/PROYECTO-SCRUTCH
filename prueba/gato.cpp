@@ -26,6 +26,7 @@ Gato::Gato(QWidget * par){
     activador_De_punto=0;
     activador3=0;
     activador2=0;
+    activador4=0;
     sumador=0;
     color=0;
     borra=0;

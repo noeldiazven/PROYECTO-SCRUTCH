@@ -96,6 +96,7 @@ void BajarLapiz::rotacion_en_el_plano(){
 void BajarLapiz::correr(){
 
     obj->set_Activador2(1);
+    obj->set_Activador4(1);
     if(siguiente!=nullptr){siguiente->correr();}
 
 }

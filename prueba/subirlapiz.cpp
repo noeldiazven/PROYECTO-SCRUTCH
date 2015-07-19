@@ -75,8 +75,8 @@ void subirlapiz::crear_nuevo()
 
 
 void subirlapiz::correr(){
-
     obj->set_Activador2(0);
+    obj->set_Activador4(0);
     if(siguiente!=nullptr){siguiente->correr();}
 
 }

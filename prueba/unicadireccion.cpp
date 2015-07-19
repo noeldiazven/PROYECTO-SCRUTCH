@@ -85,15 +85,17 @@ void UnicaDireccion::rotacion_en_el_plano(){
 void UnicaDireccion::correr(){
 
     direccion=setpasos->toPlainText().toInt();
-    obj->set_Activador3(3);
+    obj->set_captor_de_rotacion(direccion);
+
     obj->rotar_gato_unica_direccion(direccion);
     obj->set_receptor_unica_direccion(-direccion);
-
     rotacion_en_el_plano();
     qDebug() << "giro";
-    obj->set_captor_de_rotacion(direccion);
     obj->set_cambiar_posicion_y(dy);
     obj->set_cambiar_posicion_x(dx);
-    if(siguiente!=nullptr){siguiente->correr();}
+    obj->set_Activador3(3);
     ven->pintar_linea();
+    if(siguiente!=nullptr){siguiente->correr();}
+
+
 }

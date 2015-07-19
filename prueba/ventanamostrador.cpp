@@ -116,11 +116,11 @@ void ventanamostrador::pintar_linea(){
                }
 
                if(sumador_de_angulo!=cat->get_captor_de_rotacion()){
-                    sumador_de_angulo+=cat->get_captor_de_rotacion();
+                    sumador_de_angulo=cat->get_captor_de_rotacion();
                }
                cat->set_sumador(0);
 
-               cat->set_Activador3(0);
+               cat->set_Activador3(6);
            }
            else if (cat->get_activador3()==4){
                for(int g=0;g<cat->get_captor_De_mover();g+=1){
@@ -145,6 +145,115 @@ void ventanamostrador::pintar_linea(){
 
 
                cat->set_sumador(0);
+           }
+           if(cat->get_activador3()==6){
+                for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                    pt=new Punto(cat,this,(cat->get_posicion_x()),cat->get_posicion_y());
+                    //qDebug()<<cat->get_posicion_x()<<"  "<<g;
+
+                }
+
+           }
+           qDebug()<<posInicialX<<" "<<posInicialY<<"mejor para "<<cos((sumador_de_angulo*pi)/180);
+        }
+    }
+    if(cat->get_activador4()==0){
+        if(cat->get_sumador()==1){
+           if(cat->get_activador3()==0){
+                for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                    pt=new Punto(cat,this,(cat->get_posicion_x()+g)-cat->get_captor_De_mover(),cat->get_posicion_y());
+                    //qDebug()<<cat->get_posicion_x()<<"  "<<g;
+                    // add_lapiz(pt);
+                }
+                posInicialX=cat->get_posicion_x();
+                posInicialY=cat->get_posicion_y();
+                cat->set_sumador(0);
+
+           }
+           else if(cat->get_activador3()==1){
+
+               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                   pt=new Punto(cat,this,posInicialX,posInicialY);
+                  // add_lapiz(pt);
+                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/180);
+
+                   posInicialX+=1*cos((sumador_de_angulo*pi)/180);
+                   posInicialY-=1*sin((sumador_de_angulo*pi)/180);
+
+
+               }
+                sumador_de_angulo+=cat->get_captor_de_rotacion();
+
+               cat->set_sumador(0);
+
+               cat->set_Activador3(4);
+
+           }
+           else if(cat->get_activador3()==2){
+               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                   pt=new Punto(cat,this,posInicialX,posInicialY);
+                  // add_lapiz(pt);
+                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/180);
+
+                   posInicialX+=1*cos((sumador_de_angulo*pi)/180);
+                   posInicialY+=1*sin((sumador_de_angulo*pi)/180);
+
+
+               }
+                sumador_de_angulo+=cat->get_captor_de_rotacion();
+
+               cat->set_sumador(0);
+
+               cat->set_Activador3(5);
+           }
+           else if(cat->get_activador3()==3){
+               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                   pt=new Punto(cat,this,posInicialX,posInicialY);
+                  // add_lapiz(pt);
+                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/180);
+
+                   posInicialX+=1*cos((sumador_de_angulo*pi)/180);
+                   posInicialY-=1*sin((sumador_de_angulo*pi)/180);
+               }
+
+               if(sumador_de_angulo!=cat->get_captor_de_rotacion()){
+                    sumador_de_angulo=cat->get_captor_de_rotacion();
+               }
+               cat->set_sumador(0);
+
+               cat->set_Activador3(6);
+           }
+           else if (cat->get_activador3()==4){
+               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                   pt=new Punto(cat,this,posInicialX,posInicialY);
+                   //qDebug()<<cat->get_posicion_x()<<"  "<<g;
+                   // add_lapiz(pt);
+                    posInicialX+=1*cos((sumador_de_angulo*pi)/180);
+                    posInicialY-=1*sin((sumador_de_angulo*pi)/180);
+               }
+
+
+               cat->set_sumador(0);
+           }
+           else if (cat->get_activador3()==5){
+               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                   pt=new Punto(cat,this,posInicialX,posInicialY);
+                   //qDebug()<<cat->get_posicion_x()<<"  "<<g;
+                  //  add_lapiz(pt);
+                    posInicialX+=1*cos((sumador_de_angulo*pi)/180);
+                    posInicialY+=1*sin((sumador_de_angulo*pi)/180);
+               }
+
+
+               cat->set_sumador(0);
+           }
+           if(cat->get_activador3()==6){
+                for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                    pt=new Punto(cat,this,(cat->get_posicion_x()),cat->get_posicion_y());
+                    //qDebug()<<cat->get_posicion_x()<<"  "<<g;
+
+                }
+
            }
            qDebug()<<posInicialX<<" "<<posInicialY<<"mejor para "<<cos((sumador_de_angulo*pi)/180);
         }
