@@ -17,7 +17,6 @@ protected:
     void mousePressEvent(QMouseEvent * evento);
 public:
     botones(ventanabotones *parent, entero x, entero y, QPixmap i, IDS name);
-    void cambiar_imagen();
     inline IDS get_id(){return id;}
 };
 

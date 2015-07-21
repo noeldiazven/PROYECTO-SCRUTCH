@@ -28,14 +28,11 @@ botones::botones(ventanabotones * p, entero x, entero y, QPixmap i,IDS name)
     posy=y;
     width=150;
     heigth=30;
+
     this->setParent(parent);
     this->setGeometry(posx,posy,width,heigth);
     this->setPixmap(image);
 }
 
-void botones::cambiar_imagen()
-{
-
-}
 
 

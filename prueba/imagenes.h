@@ -58,6 +58,7 @@
 
 //IMAGEN DEL ICONO
 #define icono QIcon(":/image/logo.png")
+#define logo QPixmap(":/image/logo.png")
 
 #endif // IMAGENES
 

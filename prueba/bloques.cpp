@@ -82,9 +82,15 @@ void Bloques::verificarColicion(){
     qDebug() << obj->bloques_operadores.size();
 }
 
+void Bloques::cambiar_posision(entero a, entero b)
+{
+    this->set_x(a);
+    this->set_y(b);
+}
+
 void Bloques::mouseReleaseEvent(QMouseEvent *evento)
 {
-    if(get_mover_x()<=300){
+    if(get_mover_x()<=ventana->limite){
         qDebug()<<"borrado";
         this->borrar();
     }
@@ -101,7 +107,7 @@ void Bloques::mouseDoubleClickEvent(QMouseEvent * evento)
 
 void Bloques::mousePressEvent(QMouseEvent *evento)
 {
-    if(this->get_mover_x()<=300){
+    if(this->get_mover_x()<=ventana->limite){
         this->crear_nuevo();
         (this->get_ventana())->sacar_vectores(this);
     }

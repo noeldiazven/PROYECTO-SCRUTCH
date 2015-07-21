@@ -8,6 +8,7 @@ class botonguardar:public QLabel
 private:
     Gato * gato;
     QString file="";
+    entero posX,posY,width,height;
 public:
     botonguardar(Gato * g,QLabel * parent);
     void mousePressEvent(QMouseEvent * evento);

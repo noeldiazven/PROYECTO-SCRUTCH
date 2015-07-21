@@ -1,5 +1,4 @@
 #include "borrar.h"
-
 #include "bajarlapiz.h"
 #include "angulo.h"
 #include "imagenes.h"
@@ -44,17 +43,6 @@ QString Borrar::darValores()
     QString posiY = QString::number(mover_y);
     res=res+name+" X "+posiX+" Y "+posiY;
     return res;
-}
-
-void Borrar::paintEvent()
-{
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setPen(Qt::darkGreen);
-
-
-    painter.setPen(Qt::darkGray);
-    painter.drawLine(100,200,300,400);
 }
 
 void Borrar::abrir(QTextStream &text)

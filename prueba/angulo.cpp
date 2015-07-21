@@ -27,12 +27,17 @@ Angulo::Angulo(Gato*g, ventanabotones *v, ventanamostrador *venta){
     varianza_back_x=20;
     varianza_back_y=30;
 
+    posX_t=53;
+    posY_t=3;
+    width_t=30;
+    height_t=23;
+
     this->setParent(ventana);
     this->setGeometry(get_mover_x(),get_mover_y(),width,height);
     this->setPixmap(block_angulo);
 
     setpasos=new QTextEdit(this);
-    setpasos->setGeometry(53,3,30,23);
+    setpasos->setGeometry(posX_t,posY_t,width_t,height_t);
 }
 
 void Angulo::abrir(QTextStream & text)
@@ -64,8 +69,8 @@ void Angulo::crear_nuevo()
     qDebug() <<"crear";
 }
 void Angulo::rotacion_en_el_plano(){
-    dy=sin((obj->get_receptor()*pi)/180);
-    dx=cos((obj->get_receptor()*pi)/180);
+    dy=sin((obj->get_receptor()*pi)/divisor);
+    dx=cos((obj->get_receptor()*pi)/divisor);
 }
 
 QString Angulo::darValores()
@@ -74,7 +79,8 @@ QString Angulo::darValores()
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
+    if(texto==""){res=res+name+" "+"0"+" X "+posiX+" Y "+posiY;}
+    else{res=res+name+" "+texto+" X "+posiX+" Y "+posiY;}
 
     return res;
 }

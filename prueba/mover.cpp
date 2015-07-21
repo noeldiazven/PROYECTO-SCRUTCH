@@ -30,9 +30,13 @@ Mover::Mover(Gato * g, ventanabotones *v, ventanamostrador *venta)
     this->setGeometry(mover_x,mover_y,width,height);
     this->setPixmap(block_mover);
 
+    posX_t=51;
+    posY_t=5;
+    width_t=33;
+    height_t=23;
 
     setpasos=new QTextEdit(this);
-    setpasos->setGeometry(51,5,33,23);
+    setpasos->setGeometry(posX_t,posY_t,width_t,height_t);
 }
 
 void Mover::abrir(QTextStream & text)
@@ -58,7 +62,8 @@ QString Mover::darValores()
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
+    if(texto==""){res=res+name+" "+"0"+" X "+posiX+" Y "+posiY;}
+    else{res=res+name+" "+texto+" X "+posiX+" Y "+posiY;}
     return res;
 }
 

@@ -11,6 +11,8 @@ private:
     QWidget * second;
     dobles dx;
     dobles dy;
+    entero largo=200;
+    entero ancho=100;
 public:
     Puntos(QWidget *par);
 

@@ -8,12 +8,19 @@
 botonguardar::botonguardar(Gato *g,QLabel * parent)
 {
     gato=g;
-    this->setGeometry(350,4,30,30);
+
+    posX=350;
+    posY=4;
+    width=30;
+    height=30;
+
+    this->setGeometry(posX,posY,width,height);
     this->setPixmap(boton_guardar);
     this->setParent(parent);
 }
 void guardadoexitoso(){
     QMessageBox msgBox;
+    msgBox.setWindowTitle("Guardado!");
     msgBox.setText("Guardado exitoso.");
     msgBox.exec();
 }

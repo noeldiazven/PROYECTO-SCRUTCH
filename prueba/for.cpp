@@ -14,6 +14,7 @@ For::For(Gato * g, ventanabotones *v)
     mover_y=220;
     width=100;
     height=60;
+    height_original=60;
     siguiente=nullptr;
     dentro=nullptr;
     iteraciones=0;
@@ -25,26 +26,35 @@ For::For(Gato * g, ventanabotones *v)
     varianza_in_x=42;
     varianza_in_y=29;
 
+    posY_arriba=0;
+    posY_medio=25;
+    posY_abajo=35;
+
     arriba=new QLabel();
-    arriba->setGeometry(0,0,100,30);
+    arriba->setGeometry(universal,posY_arriba,width,height/2);
     arriba->setPixmap(for_arriba);
     arriba->setParent(this);
 
     medio=new QLabel();
-    medio->setGeometry(0,25,100,10);
+    medio->setGeometry(universal,posY_medio,width,height/6);
     medio->setPixmap(for_medio);
     medio->setParent(this);
 
     abajo=new QLabel();
-    abajo->setGeometry(0,35,100,20);
+    abajo->setGeometry(universal,posY_abajo,width,height/3);
     abajo->setPixmap(for_abajo);
     abajo->setParent(this);
 
     this->setParent(ventana);
     this->setGeometry(mover_x,mover_y,width,height);
 
+    posX_t=55;
+    posY_t=3;
+    width_t=30;
+    height_t=23;
+
     setpasos=new QTextEdit(this);
-    setpasos->setGeometry(55,2,33,23);
+    setpasos->setGeometry(posX_t,posY_t,width_t,height_t);
 }
 
 QString For::darValores()
@@ -53,7 +63,8 @@ QString For::darValores()
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
+    if(texto==""){res=res+name+" "+"0"+" X "+posiX+" Y "+posiY;}
+    else{res=res+name+" "+texto+" X "+posiX+" Y "+posiY;}
     return res;
 }
 
@@ -75,31 +86,31 @@ void For::abrir(QTextStream &text)
 }
 
 //CAMBIA LA IMAGEN SEGUN CUANTOS ELEMENTOS ESTEN
-void For::cambiar_medio(entero x, int y){
+void For::cambiar_medio(entero x, tipo_entero y){
     if(x==0){
         height=60;
-        medio->setGeometry(0,25,100,10);
+        medio->setGeometry(universal,posY_medio,width,height/6);
         medio->setPixmap(for_medio);
-        abajo->setGeometry(0,35,100,20);
+        abajo->setGeometry(universal,posY_abajo,width,height/3);
         varianza_back_y=height-6;
     }
     else{
         if(x==1){height-=5;}
-        if(y>0){height=(height+(25));}
-        else{height=(height-(25));}
+        if(y>0){height=(height+(varianza));}
+        else{height=(height-(varianza));}
         medio->clear();
-        medio->setGeometry(0,25,100,(30)*x);
+        medio->setGeometry(universal,posY_medio,width,(30)*x);
         varianza_back_y=height-6;
         int a=0;
-        for(int i=0;i<x;i++){
+        for(entero i=0;i<x;i++){
             QLabel * nuevo=new QLabel(medio);
-            nuevo->setGeometry(0,a,100,30);
+            nuevo->setGeometry(universal,a,width,height_original/2);
             nuevo->setPixmap(for_largo);
             nuevo->show();
-            a=a+25;
+            a=a+varianza;
             qDebug()<<a;
         }
-        abajo->setGeometry(0,a+30,100,20);
+        abajo->setGeometry(universal,a+30,width,height_original/3);
     }
     this->setGeometry(mover_x,mover_y,width,height);
     this->actualizar_puntos();
@@ -109,7 +120,7 @@ void For::cambiar_medio(entero x, int y){
 void For::correr()
 {
     iteraciones=setpasos->toPlainText().toDouble();
-    for(int i=0;i<iteraciones;i++){
+    for(entero i=0;i<iteraciones;i++){
         if(dentro!=nullptr){dentro->correr();}
     }
     if(siguiente!=nullptr){siguiente->correr();}

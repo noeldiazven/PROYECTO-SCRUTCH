@@ -11,7 +11,13 @@ botonabrir::botonabrir(Gato *g, QLabel *parent, botonguardar *guardar,ventanabot
     botones=b;
     b_guardar=guardar;
     gato=g;
-    this->setGeometry(290,4,30,30);
+
+    posX=290;
+    posY=4;
+    width=30;
+    height=30;
+
+    this->setGeometry(posX,posY,width,height);
     this->setPixmap(boton_abrir);
     this->setParent(parent);
 }

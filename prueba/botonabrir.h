@@ -10,7 +10,8 @@ class botonabrir:public QLabel
 private:
     Gato * gato;
     botonguardar * b_guardar;
-    bool abrir=false;
+    buleo abrir=false;
+    entero posX,posY,width,height;
     ventanabotones * botones;
 public:
     botonabrir(Gato * g, QLabel * parent, botonguardar * guardar, ventanabotones *b);

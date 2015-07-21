@@ -5,11 +5,13 @@
 
 ventana::ventana()
 {
+    entero tX=1200;//size main windows
+    entero tY=600;
     this->setWindowTitle(QString::fromUtf8("SCRUTCH"));
     this->setWindowIcon(icono);
-    this->resize(1200,600);
-    this->setMinimumSize(QSize(1200,600));
-    this->setMaximumSize(QSize(1200,600));
+    this->resize(tX,tY);
+    this->setMinimumSize(QSize(tX,tY));
+    this->setMaximumSize(QSize(tX,tY));
 
     Botones=new ventanabotones(this,mostrador->get_cat());
 

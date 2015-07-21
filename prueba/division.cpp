@@ -27,13 +27,21 @@ Division::Division(Gato * g,ventanabotones * v  )
     this->setGeometry(mover_x,mover_y,width,height);
     this->setPixmap(division);
 
+    posX_t=10;
+    posY_t=5;
+    width_t=23;
+    height_t=23;
+
+    posX_t1=50;
+    posY_t1=5;
+    width_t1=23;
+    height_t1=23;
 
     setpasos=new QTextEdit(this);
-    setpasos->setGeometry(10,5,23,23);
+    setpasos->setGeometry(posX_t,posY_t,width_t,height_t);
 
     setpasos1=new QTextEdit(this);
-    setpasos1->setGeometry(50,5,23,23);
-
+    setpasos1->setGeometry(posX_t1,posY_t1,width_t1,height_t1);
 
 }
 

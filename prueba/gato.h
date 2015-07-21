@@ -51,7 +51,7 @@ public:
     entero get_borra(){return borra;}
     void set_borra(entero valor){borra==valor;}
     entero get_color(){return color;}
-    void set_color(int valor){color=valor;}
+    void set_color(tipo_entero valor){color=valor;}
     entero get_sumador(){return sumador;}
     void set_sumador(tipo_entero valor){sumador=valor;}
 
@@ -129,7 +129,3 @@ public:
 
 #endif // GATO
 
-/***************************************************************************************************
-*****FALTA IMPLEMENTAR LOS EVENTOS DEL MOUSE PARA PODER MOVER EL GATO CON EL RATON SIN NECESIDAD DE*
-*****ALGUN BOTON,ADEMAS UN POCO DE ORDEN RESPECTO A SU .CPP*****************************************
-***************************************************************************************************/

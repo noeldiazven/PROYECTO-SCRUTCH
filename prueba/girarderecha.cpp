@@ -31,8 +31,13 @@ GirarDerecha::GirarDerecha(Gato*g, ventanabotones *v, ventanamostrador *venta){
     this->setGeometry(get_mover_x(),get_mover_y(),width,height);
     this->setPixmap(block_girar_derecha);
 
+    posX_t=53;
+    posY_t=3;
+    width_t=30;
+    height_t=23;
+
     setpasos=new QTextEdit(this);
-    setpasos->setGeometry(53,3,30,23);
+    setpasos->setGeometry(posX_t,posY_t,width_t,height_t);
 }
 
 void GirarDerecha::abrir(QTextStream & text)
@@ -58,7 +63,8 @@ QString GirarDerecha::darValores()
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
+    if(texto==""){res=res+name+" "+"0"+" X "+posiX+" Y "+posiY;}
+    else{res=res+name+" "+texto+" X "+posiX+" Y "+posiY;}
     return res;
 }
 
@@ -74,8 +80,8 @@ void GirarDerecha::crear_nuevo()
     qDebug() <<"crear";
 }
 void GirarDerecha::rotacion_en_el_plano(){
-    dy=sin((obj->get_receptor()*pi)/180);
-    dx=cos((obj->get_receptor()*pi)/180);
+    dy=sin((obj->get_receptor()*pi)/divisor);
+    dx=cos((obj->get_receptor()*pi)/divisor);
 
 }
 

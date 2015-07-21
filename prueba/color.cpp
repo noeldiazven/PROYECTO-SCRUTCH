@@ -1,7 +1,5 @@
 #include "color.h"
-
 #include "subirlapiz.h"
-
 #include "bajarlapiz.h"
 #include "angulo.h"
 #include "imagenes.h"
@@ -37,8 +35,13 @@ color::color(Gato*g, ventanabotones *v,ventanamostrador *venta){
     this->setGeometry(get_mover_x(),get_mover_y(),width,height);
     this->setPixmap(color_lapiz);
 
+    posX_t=108;
+    posY_t=4;
+    width_t=25;
+    height_t=23;
+
     setpasos=new QTextEdit(this);
-    setpasos->setGeometry(108,4,25,23);
+    setpasos->setGeometry(posX_t,posY_t,width_t,height_t);
 }
 
 QString color::darValores()
@@ -47,7 +50,8 @@ QString color::darValores()
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
+    if(texto==""){res=res+name+" "+"0"+" X "+posiX+" Y "+posiY;}
+    else{res=res+name+" "+texto+" X "+posiX+" Y "+posiY;}
     return res;
 }
 

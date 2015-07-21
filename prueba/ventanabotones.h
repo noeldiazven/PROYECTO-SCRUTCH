@@ -16,6 +16,7 @@ private:
     QWidget * operaciones;
 
 public:
+    entero limite=300;
     ventanabotones(QWidget * parent, Gato *g);
     inline void set_posx(entero x){posx=x;}
     inline void set_posy(entero y){posy=y;}

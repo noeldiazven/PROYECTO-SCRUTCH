@@ -19,13 +19,15 @@ public:
     QLabel * medio;
     entero lista;
     entero lista_h;
-    void cambiar_medio_a(entero x, int y);
-    inline entero get_size_lista_h(){return lista_h;}
-    inline void set_size_lista_h(int x){lista_h+=x;}
+    entero posX_medio1,posX_medio2;
 
-    void cambiar_medio(entero x, int y);
+    void cambiar_medio_a(entero x, tipo_entero y);
+    inline entero get_size_lista_h(){return lista_h;}
+    inline void set_size_lista_h(entero x){lista_h+=x;}
+
+    void cambiar_medio(entero x, tipo_entero y);//FALTA EL INT
     inline entero get_size_lista(){return lista;}
-    inline void set_size_lista(int x){lista+=x;}
+    inline void set_size_lista(entero x){lista+=x;}
     void crear_nuevo();
     void correr();
     virtual QString darValores();

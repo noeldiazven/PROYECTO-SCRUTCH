@@ -31,7 +31,6 @@ public:
     void correr();
     void rotacion_en_el_plano();
     void pintar_imagen();
-    void paintEvent();
     virtual void abrir(QTextStream & text);
     virtual QString darValores();
 

@@ -32,8 +32,13 @@ UnicaDireccion::UnicaDireccion(Gato*g, ventanabotones *v, ventanamostrador *vent
     this->setGeometry(get_mover_x(),get_mover_y(),width,height);
     this->setPixmap(block_unica_direccion);
 
+    posX_t=125;
+    posY_t=4;
+    width_t=30;
+    height_t=23;
+
     setpasos=new QTextEdit(this);
-    setpasos->setGeometry(125,4,30,23);
+    setpasos->setGeometry(posX_t,posY_t,width_t,height_t);
 }
 
 void UnicaDireccion::abrir(QTextStream &text)
@@ -60,7 +65,8 @@ QString UnicaDireccion::darValores()
     QString texto=setpasos->toPlainText();
     QString posiX = QString::number(mover_x);
     QString posiY = QString::number(mover_y);
-    res=res+name+" "+texto+" X "+posiX+" Y "+posiY;
+    if(texto==""){res=res+name+" "+"0"+" X "+posiX+" Y "+posiY;}
+    else{res=res+name+" "+texto+" X "+posiX+" Y "+posiY;}
     return res;
 }
 
@@ -76,8 +82,8 @@ void UnicaDireccion::crear_nuevo()
     qDebug() <<"crear";
 }
 void UnicaDireccion::rotacion_en_el_plano(){
-    dy=sin((obj->get_receptor_unica_direccion()*pi)/180);
-    dx=cos((obj->get_receptor_unica_direccion()*pi)/180);
+    dy=sin((obj->get_receptor_unica_direccion()*pi)/divisor);
+    dx=cos((obj->get_receptor_unica_direccion()*pi)/divisor);
 
 
 }

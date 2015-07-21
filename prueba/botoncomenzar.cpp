@@ -4,7 +4,13 @@
 botoncomenzar::botoncomenzar(Gato *g,QLabel * parent)
 {
     gato=g;
-    this->setGeometry(400,4,30,30);
+
+    posX=400;
+    posY=4;
+    width=30;
+    height=30;
+
+    this->setGeometry(posX,posY,width,height);
     this->setPixmap(bandera_desactivada);
     this->setParent(parent);
 }

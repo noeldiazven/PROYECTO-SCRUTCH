@@ -30,7 +30,7 @@ private:
     entero pos_x_punto;
     entero pos_y_punto;
 
-    int activador;
+    tipo_entero activador;
     entero posInicialX;
     entero posInicialY;
     tipo_entero comparador;

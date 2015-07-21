@@ -15,6 +15,7 @@ private:
     dobles dx;
     dobles dy;
     Gato*hola;
+
 public:
     Punto(Gato *g, QWidget *par, entero x, entero y);
     void create_nuevo();

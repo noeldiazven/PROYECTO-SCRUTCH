@@ -30,11 +30,21 @@ PosicionarGatoEn::PosicionarGatoEn(Gato*g, ventanabotones *v){
     this->setGeometry(get_mover_x(),get_mover_y(),width,height);
     this->setPixmap(block_posicion);
 
+    posX_t=58;
+    posY_t=4;
+    width_t=31;
+    height_t=23;
+
+    posX_t1=110;
+    posY_t1=4;
+    width_t1=31;
+    height_t1=23;
+
     setpasos=new QTextEdit(this);
-    setpasos->setGeometry(58,4,31,23);
+    setpasos->setGeometry(posX_t,posY_t,width_t,height_t);
 
     setpasos1=new QTextEdit(this);
-    setpasos1->setGeometry(110,4,31,23);
+    setpasos1->setGeometry(posX_t1,posY_t1,width_t1,height_t1);
 }
 
 QString PosicionarGatoEn::darValores()

@@ -72,28 +72,27 @@ void Rebote::crear_nuevo()
 }
 
 void Rebote::rotacion_en_el_plano(){
-    dy=sin((obj->get_receptor_unica_direccion()*pi)/180);
-    dx=cos((obj->get_receptor_unica_direccion()*pi)/180);
+    dy=sin((obj->get_receptor_unica_direccion()*pi)/divisor);
+    dx=cos((obj->get_receptor_unica_direccion()*pi)/divisor);
 }
 void Rebote::correr(){
-    if(obj->get_posicion_x()>=390){
-        obj->rotar_gato_unica_direccion(180);
+    if(obj->get_posicion_x()>=(ventana->get_width()-60)){
+        obj->rotar_gato_unica_direccion(giro2);
         obj->set_activador(1);
     }
 
     else if(obj->get_posicion_x()<=-15){
-       obj->rotar_gato_unica_direccion(360);
+       obj->rotar_gato_unica_direccion(giro4);
        obj->set_activador(0);
     }
 
-    else if(obj->get_posicion_y()>=500){
-       obj->rotar_gato_unica_direccion(-270);
+    else if(obj->get_posicion_y()>=(ventana->get_heigth()-100)){
+       obj->rotar_gato_unica_direccion(giro1);
        obj->set_activador(2);
     }
     else if(obj->get_posicion_y()<=20){
-        obj->rotar_gato_unica_direccion(270);
+        obj->rotar_gato_unica_direccion(giro3);
         obj->set_activador(3);
-
     }
 
 

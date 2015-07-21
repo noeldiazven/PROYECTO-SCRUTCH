@@ -58,18 +58,6 @@ void BajarLapiz::abrir(QTextStream &text)
     this->verificarColicion();
 }
 
-void BajarLapiz::paintEvent()
-{
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setPen(Qt::darkGreen);
-
-
-    painter.setPen(Qt::darkGray);
-    painter.drawLine(100,200,300,400);
-}
-
-
 void BajarLapiz::pintar_imagen(){
     entero xx=obj->get_posicion_x()-10;
     entero yy=obj->get_posicion_y()-10;
@@ -89,8 +77,8 @@ void BajarLapiz::crear_nuevo()
 }
 
 void BajarLapiz::rotacion_en_el_plano(){
-    dy=sin((obj->get_receptor()*pi)/180);
-    dx=cos((obj->get_receptor()*pi)/180);
+    dy=sin((obj->get_receptor()*pi)/divisor);
+    dx=cos((obj->get_receptor()*pi)/divisor);
 }
 
 void BajarLapiz::correr(){

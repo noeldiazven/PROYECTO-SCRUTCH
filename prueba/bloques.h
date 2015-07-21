@@ -25,11 +25,20 @@ protected:
     Bloques * aux_h=nullptr;
     Bloques * dentro_h=nullptr;
     Bloques * siguiente_h=nullptr;
-    bool valor;
-    float valor_num=0;
+    buleo valor;
+    flotando valor_num=0;
     //Posiciones x,y
     entero mover_x;entero mover_y;
     entero width;entero height; //the block's size
+
+    entero divisor=180;
+    entero posY_abajo,posY_arriba,posY_medio;
+    entero universal=0;
+    entero height_original;
+    entero varianza=25;
+
+    entero posX_t,posY_t,width_t,height_t;//posiciones de las cajas de texto 1 y 2
+    entero posX_t1,posY_t1,width_t1,height_t1;
 
     entero varianza_up_x,varianza_up_y;     //varianza de los puntos de enlace
     entero varianza_back_x,varianza_back_y; //arriba y abajo
@@ -53,19 +62,20 @@ public:
     inline float get_valor_num(){return valor_num;}
 
     virtual void correr(){}
-    virtual void cambiar_medio(entero x,int y){}
+    virtual void cambiar_medio(entero x,tipo_entero y){}
     virtual entero get_size_lista(){}
-    virtual void set_size_lista(int x){}
+    virtual void set_size_lista(entero x){}
     virtual QString darValores(){}
     virtual void abrir(QTextStream & text){}
 
     void actualizar_puntos();
     void verificarColicion();
+    void cambiar_posision(entero a,entero b);
 
     //alargamiento horizontal
-    virtual void cambiar_medio_a(entero x,int y){}
+    virtual void cambiar_medio_a(entero x,tipo_entero y){}
     virtual entero get_size_lista_h(){}
-    virtual void set_size_lista_h(int x){}
+    virtual void set_size_lista_h(entero x){}
     inline void set_aux_h(Bloques * nuevo){aux_h=nuevo;}
     inline Bloques * get_aux_h(){return aux_h;}
     inline void set_dentro_h(Bloques * nuevo){dentro_h=nuevo;}

@@ -38,15 +38,15 @@ Gato::Gato(QWidget * par){
 
 void Gato::rotar_gato(tipo_entero giro){
     rotar+=giro;
-
+    entero color=0;
     QPixmap rotatedPixmap(img.size());//adapto el valor del img a otro pixmap
-    rotatedPixmap.fill(QColor::fromRgb(0, 0, 0, 0));//cambio el color de fondo
+    rotatedPixmap.fill(QColor::fromRgb(color,color,color,color));//cambio el color de fondo
     QPainter* p = new QPainter(&rotatedPixmap);//creo un q painter
     QSize size = img.size();//adapto al tamaño
     p->translate(size.height()/2,size.height()/2);//posiciono al centro
     p->rotate(-rotar);
     p->translate(-size.height()/2,-size.height()/2);
-    p->drawPixmap(0, 0, img);
+    p->drawPixmap(color,color, img);
     p->end();
     delete p;
     this->setPixmap(rotatedPixmap);
@@ -119,20 +119,27 @@ inline bool verificar_den(Bloques *a,Bloques *b){
     return false;
 }
 
-void reacomodar(Bloques * a,Bloques *b){
-    b->set_x((a->get_pointer_back_x())-20);
-    b->set_y((a->get_pointer_back_y())-6);
-    b->setGeometry((b->get_mover_x()),(b->get_mover_y()),b->get_width(),b->get_height());
-    b->actualizar_puntos();
+void reacomodar(Bloques * a,Bloques *b,int c){
+    if(c==1){
+        b->cambiar_posision(((a->get_pointer_back_x())-20),((a->get_pointer_back_y())-6));
+        b->setGeometry((b->get_mover_x()),(b->get_mover_y()),b->get_width(),b->get_height());
+        b->actualizar_puntos();
+    }
+    else{
+        b->cambiar_posision(((a->get_pointer_back_x())-21.5),((a->get_pointer_up_y())-30));
+        b->setGeometry((b->get_mover_x()),(b->get_mover_y()),b->get_width(),b->get_height());
+        b->actualizar_puntos();
+    }
 }
 
 //VERIFICA SI SE ROZAN
 inline bool verificar_pos(Bloques * a,Bloques * b){
     if(a!=b){
         if(a->get_id()=="for"){
+            entero rango_for=5;
             if(
-              (((a->get_pointer_in_y()+5>=b->get_pointer_up_y())&&(a->get_pointer_in_y()-5<=b->get_pointer_up_y()))&&
-               ((a->get_pointer_in_x()+5>=b->get_pointer_up_x())&&(a->get_pointer_in_x()-5<=b->get_pointer_up_x()))
+              (((a->get_pointer_in_y()+rango_for>=b->get_pointer_up_y())&&(a->get_pointer_in_y()-rango_for<=b->get_pointer_up_y()))&&
+               ((a->get_pointer_in_x()+rango_for>=b->get_pointer_up_x())&&(a->get_pointer_in_x()-rango_for<=b->get_pointer_up_x()))
               )
             )
             {
@@ -146,21 +153,23 @@ inline bool verificar_pos(Bloques * a,Bloques * b){
                 return false;
             }
         }
+        entero rango_normal=10;
         if(
-         (((a->get_pointer_back_y()+5>=b->get_pointer_up_y())&&(a->get_pointer_back_y()-5<=b->get_pointer_up_y()))&&
-         ((a->get_pointer_back_x()+5>=b->get_pointer_up_x())&&(a->get_pointer_back_x()-5<=b->get_pointer_up_x())))
+         (((a->get_pointer_back_y()+rango_normal>=b->get_pointer_up_y())&&(a->get_pointer_back_y()-rango_normal<=b->get_pointer_up_y()))&&
+         ((a->get_pointer_back_x()+rango_normal>=b->get_pointer_up_x())&&(a->get_pointer_back_x()-rango_normal<=b->get_pointer_up_x())))
         ){
             if(a->get_siguiente()==nullptr || a->get_siguiente()==b){
                 a->set_siguiente(b);
-                reacomodar(a,b);
+                reacomodar(a,b,1);
                 if(b->get_aux()==nullptr){verificar_bucle(a,b);}
                 return true;
             }
         }
         else if(
-          ((a->get_pointer_up_y()-5<=b->get_pointer_back_y())&&((a->get_pointer_up_y()+5>=b->get_pointer_back_y()))&&
-          ((a->get_pointer_up_x()-5<=b->get_pointer_back_x())&&(a->get_pointer_up_x()+5>=b->get_pointer_back_x())))
+          ((a->get_pointer_up_y()-rango_normal<=b->get_pointer_back_y())&&((a->get_pointer_up_y()+rango_normal>=b->get_pointer_back_y()))&&
+          ((a->get_pointer_up_x()-rango_normal<=b->get_pointer_back_x())&&(a->get_pointer_up_x()+rango_normal>=b->get_pointer_back_x())))
         ){
+            if(b->get_id()!="for"){reacomodar(a,b,2);}
             if(a->get_siguiente()!=b){b->set_siguiente(a);}
             else{a->set_siguiente(nullptr);b->set_siguiente(a);}
             return true;
@@ -259,14 +268,15 @@ void Gato::mover_gato(entero a, entero b){
 }
 
 void Gato::rotar_gato_unica_direccion(tipo_entero valor){
+    entero color=0;
     QPixmap rotatedPixmap(img.size());//adapto el valor del img a otro pixmap
-    rotatedPixmap.fill(QColor::fromRgb(0, 0, 0, 0));//cambio el color de fondo
+    rotatedPixmap.fill(QColor::fromRgb(color,color,color,color));//cambio el color de fondo
     QPainter* p = new QPainter(&rotatedPixmap);//creo un q painter
     QSize size = img.size();//adapto al tamaño
     p->translate(size.height()/2,size.height()/2);//posiciono al centro
     p->rotate(-valor);
     p->translate(-size.height()/2,-size.height()/2);
-    p->drawPixmap(0, 0, img);
+    p->drawPixmap(color,color, img);
     p->end();
     delete p;
     this->setPixmap(rotatedPixmap);

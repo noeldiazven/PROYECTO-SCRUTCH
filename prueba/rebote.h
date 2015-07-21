@@ -13,6 +13,10 @@ private:
     dobles pi=3.14159265358979323846;
     dobles dx;
     dobles dy;
+    entero giro1=-270;
+    entero giro2=180;
+    entero giro3=270;
+    entero giro4=360;
 public:
 
     void set_posicionar_en_x(entero valor){posicionar_en_x=valor;}

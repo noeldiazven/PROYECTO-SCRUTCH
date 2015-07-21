@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <cmath>
 #include <QPainter>
+
 ventanamostrador::ventanamostrador(QWidget *p, ventanabotones *botones)
 {
     anteriorX=0;
@@ -48,18 +49,13 @@ void ocultar_lapiz(QLabel * i) {  // function:
 }
 
 void ventanamostrador::pintar_linea(){
-
+    entero div=180;
     anteriorX=cat->get_captor_de_rotacion();
-
-    //posInicialX=cat->get_posicion_x();
-    //posInicialY=cat->get_posicion_y();
-
-    //qDebug()<<posInicialX;
 
     if(cat->get_activador2()==1){
         if(cat->get_sumador()==1){
            if(cat->get_activador3()==0){
-                for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                     pt=new Punto(cat,this,(cat->get_posicion_x()+g)-cat->get_captor_De_mover(),cat->get_posicion_y());
                     //qDebug()<<cat->get_posicion_x()<<"  "<<g;
                      add_lapiz(pt);
@@ -71,13 +67,13 @@ void ventanamostrador::pintar_linea(){
            }
            else if(cat->get_activador3()==1){
 
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                    add_lapiz(pt);
-                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/180);
+                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/div);
 
-                   posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                   posInicialY-=1*sin((sumador_de_angulo*pi)/180);
+                   posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                   posInicialY-=1*sin((sumador_de_angulo*pi)/div);
 
 
                }
@@ -89,13 +85,13 @@ void ventanamostrador::pintar_linea(){
 
            }
            else if(cat->get_activador3()==2){
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                    add_lapiz(pt);
-                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/180);
+                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/div);
 
-                   posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                   posInicialY+=1*sin((sumador_de_angulo*pi)/180);
+                   posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                   posInicialY+=1*sin((sumador_de_angulo*pi)/div);
 
 
                }
@@ -106,13 +102,13 @@ void ventanamostrador::pintar_linea(){
                cat->set_Activador3(5);
            }
            else if(cat->get_activador3()==3){
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                    add_lapiz(pt);
-                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/180);
+                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/div);
 
-                   posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                   posInicialY-=1*sin((sumador_de_angulo*pi)/180);
+                   posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                   posInicialY-=1*sin((sumador_de_angulo*pi)/div);
                }
 
                if(sumador_de_angulo!=cat->get_captor_de_rotacion()){
@@ -123,44 +119,44 @@ void ventanamostrador::pintar_linea(){
                cat->set_Activador3(6);
            }
            else if (cat->get_activador3()==4){
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                    //qDebug()<<cat->get_posicion_x()<<"  "<<g;
                     add_lapiz(pt);
-                    posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                    posInicialY-=1*sin((sumador_de_angulo*pi)/180);
+                    posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                    posInicialY-=1*sin((sumador_de_angulo*pi)/div);
                }
 
 
                cat->set_sumador(0);
            }
            else if (cat->get_activador3()==5){
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                    //qDebug()<<cat->get_posicion_x()<<"  "<<g;
                     add_lapiz(pt);
-                    posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                    posInicialY+=1*sin((sumador_de_angulo*pi)/180);
+                    posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                    posInicialY+=1*sin((sumador_de_angulo*pi)/div);
                }
 
 
                cat->set_sumador(0);
            }
            if(cat->get_activador3()==6){
-                for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                     pt=new Punto(cat,this,(cat->get_posicion_x()),cat->get_posicion_y());
                     //qDebug()<<cat->get_posicion_x()<<"  "<<g;
 
                 }
 
            }
-           qDebug()<<posInicialX<<" "<<posInicialY<<"mejor para "<<cos((sumador_de_angulo*pi)/180);
+           qDebug()<<posInicialX<<" "<<posInicialY<<"mejor para "<<cos((sumador_de_angulo*pi)/div);
         }
     }
     if(cat->get_activador4()==0){
         if(cat->get_sumador()==1){
            if(cat->get_activador3()==0){
-                for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                     pt=new Punto(cat,this,(cat->get_posicion_x()+g)-cat->get_captor_De_mover(),cat->get_posicion_y());
                     //qDebug()<<cat->get_posicion_x()<<"  "<<g;
                     // add_lapiz(pt);
@@ -172,13 +168,13 @@ void ventanamostrador::pintar_linea(){
            }
            else if(cat->get_activador3()==1){
 
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                   // add_lapiz(pt);
-                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/180);
+                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/div);
 
-                   posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                   posInicialY-=1*sin((sumador_de_angulo*pi)/180);
+                   posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                   posInicialY-=1*sin((sumador_de_angulo*pi)/div);
 
 
                }
@@ -190,13 +186,13 @@ void ventanamostrador::pintar_linea(){
 
            }
            else if(cat->get_activador3()==2){
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                   // add_lapiz(pt);
-                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/180);
+                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/div);
 
-                   posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                   posInicialY+=1*sin((sumador_de_angulo*pi)/180);
+                   posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                   posInicialY+=1*sin((sumador_de_angulo*pi)/div);
 
 
                }
@@ -207,13 +203,13 @@ void ventanamostrador::pintar_linea(){
                cat->set_Activador3(5);
            }
            else if(cat->get_activador3()==3){
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                   // add_lapiz(pt);
-                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/180);
+                   qDebug()<<posInicialX<<" "<<posInicialY<<"esto es de x"<<cos((sumador_de_angulo*pi)/div);
 
-                   posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                   posInicialY-=1*sin((sumador_de_angulo*pi)/180);
+                   posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                   posInicialY-=1*sin((sumador_de_angulo*pi)/div);
                }
 
                if(sumador_de_angulo!=cat->get_captor_de_rotacion()){
@@ -224,38 +220,38 @@ void ventanamostrador::pintar_linea(){
                cat->set_Activador3(6);
            }
            else if (cat->get_activador3()==4){
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                    //qDebug()<<cat->get_posicion_x()<<"  "<<g;
                    // add_lapiz(pt);
-                    posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                    posInicialY-=1*sin((sumador_de_angulo*pi)/180);
+                    posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                    posInicialY-=1*sin((sumador_de_angulo*pi)/div);
                }
 
 
                cat->set_sumador(0);
            }
            else if (cat->get_activador3()==5){
-               for(int g=0;g<cat->get_captor_De_mover();g+=1){
+               for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                    pt=new Punto(cat,this,posInicialX,posInicialY);
                    //qDebug()<<cat->get_posicion_x()<<"  "<<g;
                   //  add_lapiz(pt);
-                    posInicialX+=1*cos((sumador_de_angulo*pi)/180);
-                    posInicialY+=1*sin((sumador_de_angulo*pi)/180);
+                    posInicialX+=1*cos((sumador_de_angulo*pi)/div);
+                    posInicialY+=1*sin((sumador_de_angulo*pi)/div);
                }
 
 
                cat->set_sumador(0);
            }
            if(cat->get_activador3()==6){
-                for(int g=0;g<cat->get_captor_De_mover();g+=1){
+                for(entero g=0;g<cat->get_captor_De_mover();g+=1){
                     pt=new Punto(cat,this,(cat->get_posicion_x()),cat->get_posicion_y());
                     //qDebug()<<cat->get_posicion_x()<<"  "<<g;
 
                 }
 
            }
-           qDebug()<<posInicialX<<" "<<posInicialY<<"mejor para "<<cos((sumador_de_angulo*pi)/180);
+           qDebug()<<posInicialX<<" "<<posInicialY<<"mejor para "<<cos((sumador_de_angulo*pi)/div);
         }
     }
 
