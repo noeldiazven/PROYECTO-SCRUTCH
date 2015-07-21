@@ -15,6 +15,9 @@ Punto::Punto(Gato*g,QWidget * par, entero x, entero y){
     if(g->get_color()==1){
         this->setPixmap(puntoo);
     }
+    else if(g->get_color()==0) {
+        this->setPixmap(puntoo);
+    }
     else if(g->get_color()==2){
         this->setPixmap(color0);
     }
@@ -27,8 +30,10 @@ Punto::Punto(Gato*g,QWidget * par, entero x, entero y){
     else if(g->get_color()==5){
         this->setPixmap(color3);
     }
-    else{
-        this->setPixmap(color0);
+    else if (g->get_color()>=6){
+        random=rand()%5;
+        g->set_color(random);
+
     }
     this->setGeometry(x,y+80,size,size);
     this->setParent(second);
